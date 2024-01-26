@@ -8,17 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		CF2257AC2B61B56300ED8DAD /* VacScanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2257AB2B61B56300ED8DAD /* VacScanApp.swift */; };
-		CF2257AE2B61B56300ED8DAD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2257AD2B61B56300ED8DAD /* ContentView.swift */; };
+		CF2257AE2B61B56300ED8DAD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2257AD2B61B56300ED8DAD /* HomeView.swift */; };
 		CF2257B02B61B56400ED8DAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF2257AF2B61B56400ED8DAD /* Assets.xcassets */; };
 		CF2257B32B61B56400ED8DAD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF2257B22B61B56400ED8DAD /* Preview Assets.xcassets */; };
+		CF2257BA2B61FEF500ED8DAD /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2257B92B61FEF500ED8DAD /* ScanView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CF2257A82B61B56300ED8DAD /* VacScan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VacScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF2257AB2B61B56300ED8DAD /* VacScanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacScanApp.swift; sourceTree = "<group>"; };
-		CF2257AD2B61B56300ED8DAD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CF2257AD2B61B56300ED8DAD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CF2257AF2B61B56400ED8DAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF2257B22B61B56400ED8DAD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CF2257B92B61FEF500ED8DAD /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +54,8 @@
 			isa = PBXGroup;
 			children = (
 				CF2257AB2B61B56300ED8DAD /* VacScanApp.swift */,
-				CF2257AD2B61B56300ED8DAD /* ContentView.swift */,
+				CF2257B92B61FEF500ED8DAD /* ScanView.swift */,
+				CF2257AD2B61B56300ED8DAD /* HomeView.swift */,
 				CF2257AF2B61B56400ED8DAD /* Assets.xcassets */,
 				CF2257B12B61B56400ED8DAD /* Preview Content */,
 			);
@@ -137,8 +140,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF2257AE2B61B56300ED8DAD /* ContentView.swift in Sources */,
+				CF2257AE2B61B56300ED8DAD /* HomeView.swift in Sources */,
 				CF2257AC2B61B56300ED8DAD /* VacScanApp.swift in Sources */,
+				CF2257BA2B61FEF500ED8DAD /* ScanView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,11 +279,13 @@
 				DEVELOPMENT_TEAM = KC37C9ZJH4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = VacScan;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to camera to scan.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -287,9 +293,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.phi.vacscan.VacScan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -304,11 +314,13 @@
 				DEVELOPMENT_TEAM = KC37C9ZJH4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = VacScan;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please allow access to camera to scan.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -316,9 +328,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.phi.vacscan.VacScan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
