@@ -28,25 +28,25 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		23FAF6989F758AC2DD644302 /* Provider+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "Provider+Schema.swift"; path = "amplify/generated/models/Provider+Schema.swift"; sourceTree = "<group>"; };
-		29BA7E1C3EAF1F023C6CA7C9 /* Encounter+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "Encounter+Schema.swift"; path = "amplify/generated/models/Encounter+Schema.swift"; sourceTree = "<group>"; };
-		33E61F7AF946EF3CBDCF9774 /* Patient.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = Patient.swift; path = amplify/generated/models/Patient.swift; sourceTree = "<group>"; };
-		37D5FDFBC804591624871636 /* Vaccine.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = Vaccine.swift; path = amplify/generated/models/Vaccine.swift; sourceTree = "<group>"; };
-		4C9F43488C48675B551970DE /* Patient+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "Patient+Schema.swift"; path = "amplify/generated/models/Patient+Schema.swift"; sourceTree = "<group>"; };
-		5584AD9111C88EFD3E99FF97 /* Encounter.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = Encounter.swift; path = amplify/generated/models/Encounter.swift; sourceTree = "<group>"; };
-		5F46AD8FD780745678684920 /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; lastKnownFileType = text.json; name = amplifyconfiguration.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
-		7994E8C44F6CA05E61A1A2EA /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; lastKnownFileType = text.json; name = awsconfiguration.json; path = awsconfiguration.json; sourceTree = "<group>"; };
-		95FEF1E958F85BCE7DF45056 /* Vaccine+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "Vaccine+Schema.swift"; path = "amplify/generated/models/Vaccine+Schema.swift"; sourceTree = "<group>"; };
-		98173674C79EE589A2333FEC /* AmplifyModels.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = AmplifyModels.swift; path = amplify/generated/models/AmplifyModels.swift; sourceTree = "<group>"; };
-		AA18326B08E946453FAA6DBE /* Scan+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "Scan+Schema.swift"; path = "amplify/generated/models/Scan+Schema.swift"; sourceTree = "<group>"; };
+		23FAF6989F758AC2DD644302 /* Provider+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = "Provider+Schema.swift"; path = "amplify/generated/models/Provider+Schema.swift"; sourceTree = "<group>"; };
+		29BA7E1C3EAF1F023C6CA7C9 /* Encounter+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = "Encounter+Schema.swift"; path = "amplify/generated/models/Encounter+Schema.swift"; sourceTree = "<group>"; };
+		33E61F7AF946EF3CBDCF9774 /* Patient.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Patient.swift; path = amplify/generated/models/Patient.swift; sourceTree = "<group>"; };
+		37D5FDFBC804591624871636 /* Vaccine.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Vaccine.swift; path = amplify/generated/models/Vaccine.swift; sourceTree = "<group>"; };
+		4C9F43488C48675B551970DE /* Patient+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = "Patient+Schema.swift"; path = "amplify/generated/models/Patient+Schema.swift"; sourceTree = "<group>"; };
+		5584AD9111C88EFD3E99FF97 /* Encounter.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Encounter.swift; path = amplify/generated/models/Encounter.swift; sourceTree = "<group>"; };
+		5F46AD8FD780745678684920 /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
+		7994E8C44F6CA05E61A1A2EA /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
+		95FEF1E958F85BCE7DF45056 /* Vaccine+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = "Vaccine+Schema.swift"; path = "amplify/generated/models/Vaccine+Schema.swift"; sourceTree = "<group>"; };
+		98173674C79EE589A2333FEC /* AmplifyModels.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = AmplifyModels.swift; path = amplify/generated/models/AmplifyModels.swift; sourceTree = "<group>"; };
+		AA18326B08E946453FAA6DBE /* Scan+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = "Scan+Schema.swift"; path = "amplify/generated/models/Scan+Schema.swift"; sourceTree = "<group>"; };
 		CF2257A82B61B56300ED8DAD /* VacScan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VacScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF2257AB2B61B56300ED8DAD /* VacScanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacScanApp.swift; sourceTree = "<group>"; };
 		CF2257AD2B61B56300ED8DAD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CF2257AF2B61B56400ED8DAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF2257B22B61B56400ED8DAD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CF2257B92B61FEF500ED8DAD /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
-		DCF813F8DB46D9809D08EA29 /* Scan.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = Scan.swift; path = amplify/generated/models/Scan.swift; sourceTree = "<group>"; };
-		F53C7DDB501DF15C83D0EAF5 /* Provider.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = Provider.swift; path = amplify/generated/models/Provider.swift; sourceTree = "<group>"; };
+		DCF813F8DB46D9809D08EA29 /* Scan.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Scan.swift; path = amplify/generated/models/Scan.swift; sourceTree = "<group>"; };
+		F53C7DDB501DF15C83D0EAF5 /* Provider.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Provider.swift; path = amplify/generated/models/Provider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,9 +108,9 @@
 		CF2257AA2B61B56300ED8DAD /* VacScan */ = {
 			isa = PBXGroup;
 			children = (
+				CF776D712B7ECBFD00A83244 /* Models */,
+				CF776D702B7ECBF100A83244 /* Views */,
 				CF2257AB2B61B56300ED8DAD /* VacScanApp.swift */,
-				CF2257B92B61FEF500ED8DAD /* ScanView.swift */,
-				CF2257AD2B61B56300ED8DAD /* HomeView.swift */,
 				CF2257AF2B61B56400ED8DAD /* Assets.xcassets */,
 				CF2257B12B61B56400ED8DAD /* Preview Content */,
 			);
@@ -123,6 +123,22 @@
 				CF2257B22B61B56400ED8DAD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CF776D702B7ECBF100A83244 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CF2257B92B61FEF500ED8DAD /* ScanView.swift */,
+				CF2257AD2B61B56300ED8DAD /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CF776D712B7ECBFD00A83244 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
