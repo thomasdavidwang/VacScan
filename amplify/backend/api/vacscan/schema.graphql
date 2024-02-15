@@ -1,0 +1,33 @@
+type Patient @model @auth(rules: [{allow: private}]) {
+  	id: ID! @primaryKey
+  	firstName: String
+  	lastName: String
+  	dateOfBirth: AWSDate
+}
+
+type Provider @model @auth(rules: [{allow: private}]) {
+	id: ID! @primaryKey
+	firstName: String
+	lastName: String
+	phoneNumber: AWSPhone
+}
+
+type Encounter @model @auth(rules: [{allow: private}]){
+	id: ID! @primaryKey
+	scans: [Scan] @hasMany
+	vaccines: [Vaccine] @hasMany
+}
+
+type Vaccine @model @auth(rules: [{allow: private}]) {
+	id: ID! @primaryKey
+	lotNumber: String
+	expirationDate: String
+	encounter: Encounter @belongsTo
+}
+
+type Scan @model @auth(rules: [{allow: private}]) {
+	id: ID! @primaryKey
+	fileName: String
+	encounter: Encounter @belongsTo
+}
+

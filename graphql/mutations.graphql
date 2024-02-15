@@ -1,0 +1,271 @@
+# this is an auto generated file. This will be overwritten
+
+mutation CreatePatient(
+  $input: CreatePatientInput!
+  $condition: ModelPatientConditionInput
+) {
+  createPatient(input: $input, condition: $condition) {
+    id
+    firstName
+    lastName
+    dateOfBirth
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation UpdatePatient(
+  $input: UpdatePatientInput!
+  $condition: ModelPatientConditionInput
+) {
+  updatePatient(input: $input, condition: $condition) {
+    id
+    firstName
+    lastName
+    dateOfBirth
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation DeletePatient(
+  $input: DeletePatientInput!
+  $condition: ModelPatientConditionInput
+) {
+  deletePatient(input: $input, condition: $condition) {
+    id
+    firstName
+    lastName
+    dateOfBirth
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation CreateProvider(
+  $input: CreateProviderInput!
+  $condition: ModelProviderConditionInput
+) {
+  createProvider(input: $input, condition: $condition) {
+    id
+    firstName
+    lastName
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation UpdateProvider(
+  $input: UpdateProviderInput!
+  $condition: ModelProviderConditionInput
+) {
+  updateProvider(input: $input, condition: $condition) {
+    id
+    firstName
+    lastName
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation DeleteProvider(
+  $input: DeleteProviderInput!
+  $condition: ModelProviderConditionInput
+) {
+  deleteProvider(input: $input, condition: $condition) {
+    id
+    firstName
+    lastName
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation CreateEncounter(
+  $input: CreateEncounterInput!
+  $condition: ModelEncounterConditionInput
+) {
+  createEncounter(input: $input, condition: $condition) {
+    id
+    scans {
+      nextToken
+      __typename
+    }
+    vaccines {
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation UpdateEncounter(
+  $input: UpdateEncounterInput!
+  $condition: ModelEncounterConditionInput
+) {
+  updateEncounter(input: $input, condition: $condition) {
+    id
+    scans {
+      nextToken
+      __typename
+    }
+    vaccines {
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation DeleteEncounter(
+  $input: DeleteEncounterInput!
+  $condition: ModelEncounterConditionInput
+) {
+  deleteEncounter(input: $input, condition: $condition) {
+    id
+    scans {
+      nextToken
+      __typename
+    }
+    vaccines {
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation CreateVaccine(
+  $input: CreateVaccineInput!
+  $condition: ModelVaccineConditionInput
+) {
+  createVaccine(input: $input, condition: $condition) {
+    id
+    lotNumber
+    expirationDate
+    encounter {
+      id
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    encounterVaccinesId
+    __typename
+  }
+}
+
+mutation UpdateVaccine(
+  $input: UpdateVaccineInput!
+  $condition: ModelVaccineConditionInput
+) {
+  updateVaccine(input: $input, condition: $condition) {
+    id
+    lotNumber
+    expirationDate
+    encounter {
+      id
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    encounterVaccinesId
+    __typename
+  }
+}
+
+mutation DeleteVaccine(
+  $input: DeleteVaccineInput!
+  $condition: ModelVaccineConditionInput
+) {
+  deleteVaccine(input: $input, condition: $condition) {
+    id
+    lotNumber
+    expirationDate
+    encounter {
+      id
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    encounterVaccinesId
+    __typename
+  }
+}
+
+mutation CreateScan(
+  $input: CreateScanInput!
+  $condition: ModelScanConditionInput
+) {
+  createScan(input: $input, condition: $condition) {
+    id
+    fileName
+    encounter {
+      id
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    encounterScansId
+    __typename
+  }
+}
+
+mutation UpdateScan(
+  $input: UpdateScanInput!
+  $condition: ModelScanConditionInput
+) {
+  updateScan(input: $input, condition: $condition) {
+    id
+    fileName
+    encounter {
+      id
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    encounterScansId
+    __typename
+  }
+}
+
+mutation DeleteScan(
+  $input: DeleteScanInput!
+  $condition: ModelScanConditionInput
+) {
+  deleteScan(input: $input, condition: $condition) {
+    id
+    fileName
+    encounter {
+      id
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    encounterScansId
+    __typename
+  }
+}

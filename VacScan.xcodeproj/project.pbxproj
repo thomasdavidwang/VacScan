@@ -7,20 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D5350B1755857C62A88CA5C /* Encounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584AD9111C88EFD3E99FF97 /* Encounter.swift */; };
+		19D46DB77F155B956C3196F3 /* Vaccine+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FEF1E958F85BCE7DF45056 /* Vaccine+Schema.swift */; };
+		2091DF3839F5FCC00445B67E /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53C7DDB501DF15C83D0EAF5 /* Provider.swift */; };
+		25714C9A0F022A03129D1C04 /* Provider+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FAF6989F758AC2DD644302 /* Provider+Schema.swift */; };
+		3C208FA2C974086CD2628AA9 /* Vaccine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D5FDFBC804591624871636 /* Vaccine.swift */; };
+		5ED6993E60B2373518B4C924 /* Scan.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF813F8DB46D9809D08EA29 /* Scan.swift */; };
+		6E1DEF76C44729485E9B2F0B /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 5F46AD8FD780745678684920 /* amplifyconfiguration.json */; };
+		73D987435FC4A5A0A827CA03 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 7994E8C44F6CA05E61A1A2EA /* awsconfiguration.json */; };
+		8325F1DB4556D31B14788FC1 /* Scan+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA18326B08E946453FAA6DBE /* Scan+Schema.swift */; };
+		A3A1E724C57159C2FAE8016F /* Encounter+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BA7E1C3EAF1F023C6CA7C9 /* Encounter+Schema.swift */; };
+		B7A62D1D31616E8FF538BDB8 /* Patient+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9F43488C48675B551970DE /* Patient+Schema.swift */; };
 		CF2257AC2B61B56300ED8DAD /* VacScanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2257AB2B61B56300ED8DAD /* VacScanApp.swift */; };
 		CF2257AE2B61B56300ED8DAD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2257AD2B61B56300ED8DAD /* HomeView.swift */; };
 		CF2257B02B61B56400ED8DAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF2257AF2B61B56400ED8DAD /* Assets.xcassets */; };
 		CF2257B32B61B56400ED8DAD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF2257B22B61B56400ED8DAD /* Preview Assets.xcassets */; };
 		CF2257BA2B61FEF500ED8DAD /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2257B92B61FEF500ED8DAD /* ScanView.swift */; };
+		E71A75039AE336C5DAFD6AC6 /* AmplifyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98173674C79EE589A2333FEC /* AmplifyModels.swift */; };
+		F67331CE4E7342E605275801 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E61F7AF946EF3CBDCF9774 /* Patient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		23FAF6989F758AC2DD644302 /* Provider+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "Provider+Schema.swift"; path = "amplify/generated/models/Provider+Schema.swift"; sourceTree = "<group>"; };
+		29BA7E1C3EAF1F023C6CA7C9 /* Encounter+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "Encounter+Schema.swift"; path = "amplify/generated/models/Encounter+Schema.swift"; sourceTree = "<group>"; };
+		33E61F7AF946EF3CBDCF9774 /* Patient.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = Patient.swift; path = amplify/generated/models/Patient.swift; sourceTree = "<group>"; };
+		37D5FDFBC804591624871636 /* Vaccine.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = Vaccine.swift; path = amplify/generated/models/Vaccine.swift; sourceTree = "<group>"; };
+		4C9F43488C48675B551970DE /* Patient+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "Patient+Schema.swift"; path = "amplify/generated/models/Patient+Schema.swift"; sourceTree = "<group>"; };
+		5584AD9111C88EFD3E99FF97 /* Encounter.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = Encounter.swift; path = amplify/generated/models/Encounter.swift; sourceTree = "<group>"; };
+		5F46AD8FD780745678684920 /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; lastKnownFileType = text.json; name = amplifyconfiguration.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
+		7994E8C44F6CA05E61A1A2EA /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; lastKnownFileType = text.json; name = awsconfiguration.json; path = awsconfiguration.json; sourceTree = "<group>"; };
+		95FEF1E958F85BCE7DF45056 /* Vaccine+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "Vaccine+Schema.swift"; path = "amplify/generated/models/Vaccine+Schema.swift"; sourceTree = "<group>"; };
+		98173674C79EE589A2333FEC /* AmplifyModels.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = AmplifyModels.swift; path = amplify/generated/models/AmplifyModels.swift; sourceTree = "<group>"; };
+		AA18326B08E946453FAA6DBE /* Scan+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "Scan+Schema.swift"; path = "amplify/generated/models/Scan+Schema.swift"; sourceTree = "<group>"; };
 		CF2257A82B61B56300ED8DAD /* VacScan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VacScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF2257AB2B61B56300ED8DAD /* VacScanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacScanApp.swift; sourceTree = "<group>"; };
 		CF2257AD2B61B56300ED8DAD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CF2257AF2B61B56400ED8DAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF2257B22B61B56400ED8DAD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CF2257B92B61FEF500ED8DAD /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
+		DCF813F8DB46D9809D08EA29 /* Scan.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = Scan.swift; path = amplify/generated/models/Scan.swift; sourceTree = "<group>"; };
+		F53C7DDB501DF15C83D0EAF5 /* Provider.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = Provider.swift; path = amplify/generated/models/Provider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,11 +60,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F12A24980F5CC30BBB7D4B2 /* AmplifyModels */ = {
+			isa = PBXGroup;
+			children = (
+				98173674C79EE589A2333FEC /* AmplifyModels.swift */,
+				29BA7E1C3EAF1F023C6CA7C9 /* Encounter+Schema.swift */,
+				5584AD9111C88EFD3E99FF97 /* Encounter.swift */,
+				4C9F43488C48675B551970DE /* Patient+Schema.swift */,
+				33E61F7AF946EF3CBDCF9774 /* Patient.swift */,
+				23FAF6989F758AC2DD644302 /* Provider+Schema.swift */,
+				F53C7DDB501DF15C83D0EAF5 /* Provider.swift */,
+				AA18326B08E946453FAA6DBE /* Scan+Schema.swift */,
+				DCF813F8DB46D9809D08EA29 /* Scan.swift */,
+				95FEF1E958F85BCE7DF45056 /* Vaccine+Schema.swift */,
+				37D5FDFBC804591624871636 /* Vaccine.swift */,
+			);
+			name = AmplifyModels;
+			sourceTree = "<group>";
+		};
+		B9A7300C5E9FB87A1047E521 /* AmplifyConfig */ = {
+			isa = PBXGroup;
+			children = (
+				7994E8C44F6CA05E61A1A2EA /* awsconfiguration.json */,
+				5F46AD8FD780745678684920 /* amplifyconfiguration.json */,
+			);
+			name = AmplifyConfig;
+			sourceTree = "<group>";
+		};
 		CF22579F2B61B56300ED8DAD = {
 			isa = PBXGroup;
 			children = (
 				CF2257AA2B61B56300ED8DAD /* VacScan */,
 				CF2257A92B61B56300ED8DAD /* Products */,
+				B9A7300C5E9FB87A1047E521 /* AmplifyConfig */,
+				6F12A24980F5CC30BBB7D4B2 /* AmplifyModels */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,6 +185,8 @@
 			files = (
 				CF2257B32B61B56400ED8DAD /* Preview Assets.xcassets in Resources */,
 				CF2257B02B61B56400ED8DAD /* Assets.xcassets in Resources */,
+				73D987435FC4A5A0A827CA03 /* awsconfiguration.json in Resources */,
+				6E1DEF76C44729485E9B2F0B /* amplifyconfiguration.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +200,17 @@
 				CF2257AE2B61B56300ED8DAD /* HomeView.swift in Sources */,
 				CF2257AC2B61B56300ED8DAD /* VacScanApp.swift in Sources */,
 				CF2257BA2B61FEF500ED8DAD /* ScanView.swift in Sources */,
+				E71A75039AE336C5DAFD6AC6 /* AmplifyModels.swift in Sources */,
+				A3A1E724C57159C2FAE8016F /* Encounter+Schema.swift in Sources */,
+				0D5350B1755857C62A88CA5C /* Encounter.swift in Sources */,
+				B7A62D1D31616E8FF538BDB8 /* Patient+Schema.swift in Sources */,
+				F67331CE4E7342E605275801 /* Patient.swift in Sources */,
+				25714C9A0F022A03129D1C04 /* Provider+Schema.swift in Sources */,
+				2091DF3839F5FCC00445B67E /* Provider.swift in Sources */,
+				8325F1DB4556D31B14788FC1 /* Scan+Schema.swift in Sources */,
+				5ED6993E60B2373518B4C924 /* Scan.swift in Sources */,
+				19D46DB77F155B956C3196F3 /* Vaccine+Schema.swift in Sources */,
+				3C208FA2C974086CD2628AA9 /* Vaccine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

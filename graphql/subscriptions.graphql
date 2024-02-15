@@ -1,0 +1,226 @@
+# this is an auto generated file. This will be overwritten
+
+subscription OnCreatePatient($filter: ModelSubscriptionPatientFilterInput) {
+  onCreatePatient(filter: $filter) {
+    id
+    firstName
+    lastName
+    dateOfBirth
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnUpdatePatient($filter: ModelSubscriptionPatientFilterInput) {
+  onUpdatePatient(filter: $filter) {
+    id
+    firstName
+    lastName
+    dateOfBirth
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnDeletePatient($filter: ModelSubscriptionPatientFilterInput) {
+  onDeletePatient(filter: $filter) {
+    id
+    firstName
+    lastName
+    dateOfBirth
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnCreateProvider($filter: ModelSubscriptionProviderFilterInput) {
+  onCreateProvider(filter: $filter) {
+    id
+    firstName
+    lastName
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnUpdateProvider($filter: ModelSubscriptionProviderFilterInput) {
+  onUpdateProvider(filter: $filter) {
+    id
+    firstName
+    lastName
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnDeleteProvider($filter: ModelSubscriptionProviderFilterInput) {
+  onDeleteProvider(filter: $filter) {
+    id
+    firstName
+    lastName
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnCreateEncounter($filter: ModelSubscriptionEncounterFilterInput) {
+  onCreateEncounter(filter: $filter) {
+    id
+    scans {
+      nextToken
+      __typename
+    }
+    vaccines {
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnUpdateEncounter($filter: ModelSubscriptionEncounterFilterInput) {
+  onUpdateEncounter(filter: $filter) {
+    id
+    scans {
+      nextToken
+      __typename
+    }
+    vaccines {
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnDeleteEncounter($filter: ModelSubscriptionEncounterFilterInput) {
+  onDeleteEncounter(filter: $filter) {
+    id
+    scans {
+      nextToken
+      __typename
+    }
+    vaccines {
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnCreateVaccine($filter: ModelSubscriptionVaccineFilterInput) {
+  onCreateVaccine(filter: $filter) {
+    id
+    lotNumber
+    expirationDate
+    encounter {
+      id
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    encounterVaccinesId
+    __typename
+  }
+}
+
+subscription OnUpdateVaccine($filter: ModelSubscriptionVaccineFilterInput) {
+  onUpdateVaccine(filter: $filter) {
+    id
+    lotNumber
+    expirationDate
+    encounter {
+      id
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    encounterVaccinesId
+    __typename
+  }
+}
+
+subscription OnDeleteVaccine($filter: ModelSubscriptionVaccineFilterInput) {
+  onDeleteVaccine(filter: $filter) {
+    id
+    lotNumber
+    expirationDate
+    encounter {
+      id
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    encounterVaccinesId
+    __typename
+  }
+}
+
+subscription OnCreateScan($filter: ModelSubscriptionScanFilterInput) {
+  onCreateScan(filter: $filter) {
+    id
+    fileName
+    encounter {
+      id
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    encounterScansId
+    __typename
+  }
+}
+
+subscription OnUpdateScan($filter: ModelSubscriptionScanFilterInput) {
+  onUpdateScan(filter: $filter) {
+    id
+    fileName
+    encounter {
+      id
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    encounterScansId
+    __typename
+  }
+}
+
+subscription OnDeleteScan($filter: ModelSubscriptionScanFilterInput) {
+  onDeleteScan(filter: $filter) {
+    id
+    fileName
+    encounter {
+      id
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    encounterScansId
+    __typename
+  }
+}

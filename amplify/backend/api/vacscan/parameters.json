@@ -1,0 +1,12 @@
+{
+  "AppSyncApiName": "vacscan",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authvacscan8e15f32b8e15f32b",
+      "Outputs.UserPoolId"
+    ]
+  },
+  "AuthModeLastUpdated": "2024-02-09T10:27:09.625Z"
+}

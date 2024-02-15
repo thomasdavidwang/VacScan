@@ -1,0 +1,14 @@
+{
+  "resourceName": "s372cb921b",
+  "policyUUID": "72cb921b",
+  "bucketName": "vacscanca226e785aad4bd987c1c1b4949bd431",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

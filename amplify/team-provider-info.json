@@ -1,0 +1,45 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-vacscan-dev-180628-authRole",
+      "UnauthRoleArn": "arn:aws:iam::450904514466:role/amplify-vacscan-dev-180628-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::450904514466:role/amplify-vacscan-dev-180628-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-vacscan-dev-180628-deployment",
+      "UnauthRoleName": "amplify-vacscan-dev-180628-unauthRole",
+      "StackName": "amplify-vacscan-dev-180628",
+      "StackId": "arn:aws:cloudformation:us-east-1:450904514466:stack/amplify-vacscan-dev-180628/8a86dc20-bc9f-11ee-8cb3-0ab17805279f",
+      "AmplifyAppId": "d33mgb72dhv5f8",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-vacscan-dev-180628-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    },
+    "categories": {
+      "auth": {
+        "vacscan8e15f32b8e15f32b": {}
+      },
+      "function": {
+        "vacscan8e15f32b8e15f32bCreateAuthChallenge": {
+          "deploymentBucketName": "amplify-vacscan-dev-180628-deployment",
+          "s3Key": "amplify-builds/vacscan8e15f32b8e15f32bCreateAuthChallenge-2f486e6870385a534269-build.zip"
+        },
+        "vacscan8e15f32b8e15f32bDefineAuthChallenge": {
+          "deploymentBucketName": "amplify-vacscan-dev-180628-deployment",
+          "s3Key": "amplify-builds/vacscan8e15f32b8e15f32bDefineAuthChallenge-4e504b646d7939525a44-build.zip"
+        },
+        "vacscan8e15f32b8e15f32bVerifyAuthChallengeResponse": {
+          "deploymentBucketName": "amplify-vacscan-dev-180628-deployment",
+          "s3Key": "amplify-builds/vacscan8e15f32b8e15f32bVerifyAuthChallengeResponse-2b796d6f6f776d52416f-build.zip"
+        },
+        "vacscan8e15f32b8e15f32bPreSignup": {
+          "deploymentBucketName": "amplify-vacscan-dev-180628-deployment",
+          "s3Key": "amplify-builds/vacscan8e15f32b8e15f32bPreSignup-6c726c43706957414444-build.zip"
+        }
+      },
+      "api": {
+        "vacscan": {}
+      },
+      "storage": {
+        "s372cb921b": {}
+      }
+    }
+  }
+}

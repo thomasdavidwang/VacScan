@@ -1,0 +1,211 @@
+# this is an auto generated file. This will be overwritten
+
+query GetPatient($id: ID!) {
+  getPatient(id: $id) {
+    id
+    firstName
+    lastName
+    dateOfBirth
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+query ListPatients(
+  $id: ID
+  $filter: ModelPatientFilterInput
+  $limit: Int
+  $nextToken: String
+  $sortDirection: ModelSortDirection
+) {
+  listPatients(
+    id: $id
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    sortDirection: $sortDirection
+  ) {
+    items {
+      id
+      firstName
+      lastName
+      dateOfBirth
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GetProvider($id: ID!) {
+  getProvider(id: $id) {
+    id
+    firstName
+    lastName
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+query ListProviders(
+  $id: ID
+  $filter: ModelProviderFilterInput
+  $limit: Int
+  $nextToken: String
+  $sortDirection: ModelSortDirection
+) {
+  listProviders(
+    id: $id
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    sortDirection: $sortDirection
+  ) {
+    items {
+      id
+      firstName
+      lastName
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GetEncounter($id: ID!) {
+  getEncounter(id: $id) {
+    id
+    scans {
+      nextToken
+      __typename
+    }
+    vaccines {
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+query ListEncounters(
+  $id: ID
+  $filter: ModelEncounterFilterInput
+  $limit: Int
+  $nextToken: String
+  $sortDirection: ModelSortDirection
+) {
+  listEncounters(
+    id: $id
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    sortDirection: $sortDirection
+  ) {
+    items {
+      id
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GetVaccine($id: ID!) {
+  getVaccine(id: $id) {
+    id
+    lotNumber
+    expirationDate
+    encounter {
+      id
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    encounterVaccinesId
+    __typename
+  }
+}
+
+query ListVaccines(
+  $id: ID
+  $filter: ModelVaccineFilterInput
+  $limit: Int
+  $nextToken: String
+  $sortDirection: ModelSortDirection
+) {
+  listVaccines(
+    id: $id
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    sortDirection: $sortDirection
+  ) {
+    items {
+      id
+      lotNumber
+      expirationDate
+      createdAt
+      updatedAt
+      encounterVaccinesId
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GetScan($id: ID!) {
+  getScan(id: $id) {
+    id
+    fileName
+    encounter {
+      id
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    encounterScansId
+    __typename
+  }
+}
+
+query ListScans(
+  $id: ID
+  $filter: ModelScanFilterInput
+  $limit: Int
+  $nextToken: String
+  $sortDirection: ModelSortDirection
+) {
+  listScans(
+    id: $id
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    sortDirection: $sortDirection
+  ) {
+    items {
+      id
+      fileName
+      createdAt
+      updatedAt
+      encounterScansId
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
