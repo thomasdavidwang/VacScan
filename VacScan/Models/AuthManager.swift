@@ -61,7 +61,7 @@ class AuthManager: ObservableObject {
                 print("Signup Complete")
             }
         } catch let error as AuthError {
-            throw error
+            print(error)
         } catch {
             print("Unexpected error: \(error)")
         }
@@ -177,13 +177,15 @@ class AuthManager: ObservableObject {
             let request = GraphQLRequest<Provider>.list(Provider.self, where: predicate)
             let result = try await Amplify.API.query(request: request)
             switch result {
-                case .success(let users):
-                    print("Successfully retrieved user: \(users)")
-                    return users
+                case .success(let providers):
+                    print("Successfully retrieved user: \(providers)")
+                    return providers
                 case .failure(let error):
+                print(error)
                     throw error
                 }
         } catch let error as APIError {
+            print(error)
             throw error
         } catch {
             print("Unexpected error: \(error)")

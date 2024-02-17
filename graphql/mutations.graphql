@@ -53,6 +53,7 @@ mutation CreateProvider(
     id
     firstName
     lastName
+    phoneNumber
     createdAt
     updatedAt
     __typename
@@ -67,6 +68,7 @@ mutation UpdateProvider(
     id
     firstName
     lastName
+    phoneNumber
     createdAt
     updatedAt
     __typename
@@ -81,6 +83,7 @@ mutation DeleteProvider(
     id
     firstName
     lastName
+    phoneNumber
     createdAt
     updatedAt
     __typename

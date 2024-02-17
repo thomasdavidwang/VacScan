@@ -146,10 +146,10 @@
 		CF2257AA2B61B56300ED8DAD /* VacScan */ = {
 			isa = PBXGroup;
 			children = (
+				CF2257AB2B61B56300ED8DAD /* VacScanApp.swift */,
 				CFFCEE712B7ED27C0008EF7E /* Components */,
 				CF776D712B7ECBFD00A83244 /* Models */,
 				CF776D702B7ECBF100A83244 /* Views */,
-				CF2257AB2B61B56300ED8DAD /* VacScanApp.swift */,
 				CF2257AF2B61B56400ED8DAD /* Assets.xcassets */,
 				CF2257B12B61B56400ED8DAD /* Preview Content */,
 			);
@@ -185,9 +185,9 @@
 		CFFCEE632B7ED0920008EF7E /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				CFFCEE642B7ED10A0008EF7E /* OnboardingInputScreen.swift */,
-				CFFCEE652B7ED10A0008EF7E /* OnboardingInputView.swift */,
 				CFFCEE672B7ED10A0008EF7E /* OnboardingWelcomeView.swift */,
+				CFFCEE652B7ED10A0008EF7E /* OnboardingInputView.swift */,
+				CFFCEE642B7ED10A0008EF7E /* OnboardingInputScreen.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";

@@ -57,7 +57,7 @@
             "Name"
           ],
           "category": "function",
-          "resourceName": "vacscan8e15f32b8e15f32bVerifyAuthChallengeResponse",
+          "resourceName": "vacscan8e15f32b8e15f32bPreSignup",
           "triggerProvider": "Cognito"
         },
         {
@@ -66,7 +66,7 @@
             "Name"
           ],
           "category": "function",
-          "resourceName": "vacscan8e15f32b8e15f32bPreSignup",
+          "resourceName": "vacscan8e15f32b8e15f32bVerifyAuthChallengeResponse",
           "triggerProvider": "Cognito"
         }
       ],

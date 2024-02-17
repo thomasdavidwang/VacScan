@@ -13,7 +13,7 @@ struct OnboardingWelcomeView: View {
     var body: some View {
         NavigationStack(path: $path) {
             VStack {
-                Image("NerveLogo")
+                Text("VacScan")
                 
                 Spacer()
                     .frame(width: 0, height: 100)
@@ -21,22 +21,18 @@ struct OnboardingWelcomeView: View {
                 Button {
                     path.append(OnboardingInputEnum.phoneNumber)
                 } label:  {
-                    Text("Play")
+                    Text("Sign In")
                         .font(.title2)
                         .fontWeight(.semibold)
                         .padding([.leading, .trailing], 20)
                         .padding([.top, .bottom], 5)
                         .overlay(
                             RoundedRectangle(cornerRadius: 6)
-                                .stroke(.green, lineWidth: 1)
+                                .stroke(.blue, lineWidth: 1)
                             
                         )
                 }
-                .foregroundColor(.green)
                 .padding(.bottom, 17.5)
-                
-                Link("By tapping \"Play\", you’re accepting the Terms and Privacy Policy.\n Click \"Terms\" or \"Privacy Policy\" to view them.", destination: URL(string: "https://sites.google.com/view/nerve-terms-of-service/home")!)
-                    .font(.system(size: 8))
             }
             .navigationDestination(for: OnboardingInputEnum.self){ view in
                 OnboardingInputView(view: view, path: $path)
@@ -46,8 +42,6 @@ struct OnboardingWelcomeView: View {
                 maxHeight: .infinity,
                 alignment: .center
             )
-            .background(.black)
-            .foregroundColor(.white)
             .multilineTextAlignment(.center)
         }
     }

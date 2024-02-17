@@ -45,6 +45,7 @@ query GetProvider($id: ID!) {
     id
     firstName
     lastName
+    phoneNumber
     createdAt
     updatedAt
     __typename
@@ -69,6 +70,7 @@ query ListProviders(
       id
       firstName
       lastName
+      phoneNumber
       createdAt
       updatedAt
       __typename

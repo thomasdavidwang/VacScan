@@ -28,10 +28,14 @@ struct OnboardingInputView: View {
             switch view {
             case .phoneNumber:
                 let digits = "+1" + input.filter{$0.isNumber}
+                print(digits)
                 let provider = try await authManager.getProviderByPhone(phoneNumber: digits)
+                print(provider)
                 if (provider!.count == 0) {
                     try await authManager.signUp(phoneNumber: input)
+                    print("signed up")
                     try await authManager.createUserInBackend()
+                    print("creating")
                 } else {
                     await MainActor.run {
                         authManager.provider = provider![0]
@@ -76,12 +80,7 @@ struct OnboardingInputView: View {
         ZStack {
             VStack {
                 Text(view.getUserPrompt())
-                    .font(Font.custom("Inter", size: 22))
-                    .kerning(0.8)
                     .multilineTextAlignment(.center)
-                    .shadow(color: Color(red: 1, green: 0, blue: 0.9), radius: 1)
-                    .shadow(color: Color(red: 1, green: 0, blue: 0.9), radius: 1)
-                    .shadow(color: Color(red: 1, green: 0, blue: 0.9), radius: 1)
                     .padding(.bottom, 36)
                 
                 TextField("", text: $input)
@@ -118,8 +117,6 @@ struct OnboardingInputView: View {
                 maxHeight: .infinity,
                 alignment: .center
             )
-            .background(.black)
-            .foregroundColor(.white)
             .multilineTextAlignment(.center)
             
             if isLoading {

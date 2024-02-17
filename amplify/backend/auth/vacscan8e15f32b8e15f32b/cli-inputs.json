@@ -2,7 +2,7 @@
   "version": "1",
   "cognitoConfig": {
     "identityPoolName": "vacscan8e15f32b_identitypool_8e15f32b",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "vacsca8e15f32b",
     "userPoolName": "vacscan8e15f32b_userpool_8e15f32b",
     "autoVerifiedAttributes": [
@@ -94,7 +94,7 @@
       },
       {
         "category": "function",
-        "resourceName": "vacscan8e15f32b8e15f32bVerifyAuthChallengeResponse",
+        "resourceName": "vacscan8e15f32b8e15f32bPreSignup",
         "triggerProvider": "Cognito",
         "attributes": [
           "Arn",
@@ -103,7 +103,7 @@
       },
       {
         "category": "function",
-        "resourceName": "vacscan8e15f32b8e15f32bPreSignup",
+        "resourceName": "vacscan8e15f32b8e15f32bVerifyAuthChallengeResponse",
         "triggerProvider": "Cognito",
         "attributes": [
           "Arn",

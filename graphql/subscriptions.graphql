@@ -41,6 +41,7 @@ subscription OnCreateProvider($filter: ModelSubscriptionProviderFilterInput) {
     id
     firstName
     lastName
+    phoneNumber
     createdAt
     updatedAt
     __typename
@@ -52,6 +53,7 @@ subscription OnUpdateProvider($filter: ModelSubscriptionProviderFilterInput) {
     id
     firstName
     lastName
+    phoneNumber
     createdAt
     updatedAt
     __typename
@@ -63,6 +65,7 @@ subscription OnDeleteProvider($filter: ModelSubscriptionProviderFilterInput) {
     id
     firstName
     lastName
+    phoneNumber
     createdAt
     updatedAt
     __typename

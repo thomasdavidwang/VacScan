@@ -23,7 +23,7 @@
         },
         "vacscan8e15f32b8e15f32bDefineAuthChallenge": {
           "deploymentBucketName": "amplify-vacscan-dev-180628-deployment",
-          "s3Key": "amplify-builds/vacscan8e15f32b8e15f32bDefineAuthChallenge-4e504b646d7939525a44-build.zip"
+          "s3Key": "amplify-builds/vacscan8e15f32b8e15f32bDefineAuthChallenge-7a66353530722f783437-build.zip"
         },
         "vacscan8e15f32b8e15f32bVerifyAuthChallengeResponse": {
           "deploymentBucketName": "amplify-vacscan-dev-180628-deployment",
