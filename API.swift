@@ -1422,6 +1422,119 @@ public struct DeleteVaccineInput: GraphQLMapConvertible {
   }
 }
 
+public struct CreateVaccineTypeInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  public init(id: GraphQLID? = nil, name: String? = nil) {
+    graphQLMap = ["id": id, "name": name]
+  }
+
+  public var id: GraphQLID? {
+    get {
+      return graphQLMap["id"] as! GraphQLID?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "id")
+    }
+  }
+
+  public var name: String? {
+    get {
+      return graphQLMap["name"] as! String?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "name")
+    }
+  }
+}
+
+public struct ModelVaccineTypeConditionInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  public init(name: ModelStringInput? = nil, and: [ModelVaccineTypeConditionInput?]? = nil, or: [ModelVaccineTypeConditionInput?]? = nil, not: ModelVaccineTypeConditionInput? = nil) {
+    graphQLMap = ["name": name, "and": and, "or": or, "not": not]
+  }
+
+  public var name: ModelStringInput? {
+    get {
+      return graphQLMap["name"] as! ModelStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "name")
+    }
+  }
+
+  public var and: [ModelVaccineTypeConditionInput?]? {
+    get {
+      return graphQLMap["and"] as! [ModelVaccineTypeConditionInput?]?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "and")
+    }
+  }
+
+  public var or: [ModelVaccineTypeConditionInput?]? {
+    get {
+      return graphQLMap["or"] as! [ModelVaccineTypeConditionInput?]?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "or")
+    }
+  }
+
+  public var not: ModelVaccineTypeConditionInput? {
+    get {
+      return graphQLMap["not"] as! ModelVaccineTypeConditionInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "not")
+    }
+  }
+}
+
+public struct UpdateVaccineTypeInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  public init(id: GraphQLID, name: String? = nil) {
+    graphQLMap = ["id": id, "name": name]
+  }
+
+  public var id: GraphQLID {
+    get {
+      return graphQLMap["id"] as! GraphQLID
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "id")
+    }
+  }
+
+  public var name: String? {
+    get {
+      return graphQLMap["name"] as! String?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "name")
+    }
+  }
+}
+
+public struct DeleteVaccineTypeInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  public init(id: GraphQLID) {
+    graphQLMap = ["id": id]
+  }
+
+  public var id: GraphQLID {
+    get {
+      return graphQLMap["id"] as! GraphQLID
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "id")
+    }
+  }
+}
+
 public struct CreateScanInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
@@ -1857,6 +1970,59 @@ public struct ModelVaccineFilterInput: GraphQLMapConvertible {
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "encounterVaccinesId")
+    }
+  }
+}
+
+public struct ModelVaccineTypeFilterInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  public init(id: ModelIDInput? = nil, name: ModelStringInput? = nil, and: [ModelVaccineTypeFilterInput?]? = nil, or: [ModelVaccineTypeFilterInput?]? = nil, not: ModelVaccineTypeFilterInput? = nil) {
+    graphQLMap = ["id": id, "name": name, "and": and, "or": or, "not": not]
+  }
+
+  public var id: ModelIDInput? {
+    get {
+      return graphQLMap["id"] as! ModelIDInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "id")
+    }
+  }
+
+  public var name: ModelStringInput? {
+    get {
+      return graphQLMap["name"] as! ModelStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "name")
+    }
+  }
+
+  public var and: [ModelVaccineTypeFilterInput?]? {
+    get {
+      return graphQLMap["and"] as! [ModelVaccineTypeFilterInput?]?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "and")
+    }
+  }
+
+  public var or: [ModelVaccineTypeFilterInput?]? {
+    get {
+      return graphQLMap["or"] as! [ModelVaccineTypeFilterInput?]?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "or")
+    }
+  }
+
+  public var not: ModelVaccineTypeFilterInput? {
+    get {
+      return graphQLMap["not"] as! ModelVaccineTypeFilterInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "not")
     }
   }
 }
@@ -2360,6 +2526,50 @@ public struct ModelSubscriptionVaccineFilterInput: GraphQLMapConvertible {
   public var or: [ModelSubscriptionVaccineFilterInput?]? {
     get {
       return graphQLMap["or"] as! [ModelSubscriptionVaccineFilterInput?]?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "or")
+    }
+  }
+}
+
+public struct ModelSubscriptionVaccineTypeFilterInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  public init(id: ModelSubscriptionIDInput? = nil, name: ModelSubscriptionStringInput? = nil, and: [ModelSubscriptionVaccineTypeFilterInput?]? = nil, or: [ModelSubscriptionVaccineTypeFilterInput?]? = nil) {
+    graphQLMap = ["id": id, "name": name, "and": and, "or": or]
+  }
+
+  public var id: ModelSubscriptionIDInput? {
+    get {
+      return graphQLMap["id"] as! ModelSubscriptionIDInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "id")
+    }
+  }
+
+  public var name: ModelSubscriptionStringInput? {
+    get {
+      return graphQLMap["name"] as! ModelSubscriptionStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "name")
+    }
+  }
+
+  public var and: [ModelSubscriptionVaccineTypeFilterInput?]? {
+    get {
+      return graphQLMap["and"] as! [ModelSubscriptionVaccineTypeFilterInput?]?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "and")
+    }
+  }
+
+  public var or: [ModelSubscriptionVaccineTypeFilterInput?]? {
+    get {
+      return graphQLMap["or"] as! [ModelSubscriptionVaccineTypeFilterInput?]?
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "or")
@@ -4246,7 +4456,7 @@ public final class DeleteEncounterMutation: GraphQLMutation {
 
 public final class CreateVaccineMutation: GraphQLMutation {
   public static let operationString =
-    "mutation CreateVaccine($input: CreateVaccineInput!, $condition: ModelVaccineConditionInput) {\n  createVaccine(input: $input, condition: $condition) {\n    __typename\n    id\n    lotNumber\n    expirationDate\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterVaccinesId\n  }\n}"
+    "mutation CreateVaccine($input: CreateVaccineInput!, $condition: ModelVaccineConditionInput) {\n  createVaccine(input: $input, condition: $condition) {\n    __typename\n    id\n    lotNumber\n    expirationDate\n    vaccineType {\n      __typename\n      id\n      name\n      createdAt\n      updatedAt\n    }\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterVaccinesId\n  }\n}"
 
   public var input: CreateVaccineInput
   public var condition: ModelVaccineConditionInput?
@@ -4294,6 +4504,7 @@ public final class CreateVaccineMutation: GraphQLMutation {
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("lotNumber", type: .scalar(String.self)),
         GraphQLField("expirationDate", type: .scalar(String.self)),
+        GraphQLField("vaccineType", type: .object(VaccineType.selections)),
         GraphQLField("encounter", type: .object(Encounter.selections)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
@@ -4306,8 +4517,8 @@ public final class CreateVaccineMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, lotNumber: String? = nil, expirationDate: String? = nil, encounter: Encounter? = nil, createdAt: String, updatedAt: String, encounterVaccinesId: GraphQLID? = nil) {
-        self.init(snapshot: ["__typename": "Vaccine", "id": id, "lotNumber": lotNumber, "expirationDate": expirationDate, "encounter": encounter.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt, "encounterVaccinesId": encounterVaccinesId])
+      public init(id: GraphQLID, lotNumber: String? = nil, expirationDate: String? = nil, vaccineType: VaccineType? = nil, encounter: Encounter? = nil, createdAt: String, updatedAt: String, encounterVaccinesId: GraphQLID? = nil) {
+        self.init(snapshot: ["__typename": "Vaccine", "id": id, "lotNumber": lotNumber, "expirationDate": expirationDate, "vaccineType": vaccineType.flatMap { $0.snapshot }, "encounter": encounter.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt, "encounterVaccinesId": encounterVaccinesId])
       }
 
       public var __typename: String {
@@ -4346,6 +4557,15 @@ public final class CreateVaccineMutation: GraphQLMutation {
         }
       }
 
+      public var vaccineType: VaccineType? {
+        get {
+          return (snapshot["vaccineType"] as? Snapshot).flatMap { VaccineType(snapshot: $0) }
+        }
+        set {
+          snapshot.updateValue(newValue?.snapshot, forKey: "vaccineType")
+        }
+      }
+
       public var encounter: Encounter? {
         get {
           return (snapshot["encounter"] as? Snapshot).flatMap { Encounter(snapshot: $0) }
@@ -4379,6 +4599,73 @@ public final class CreateVaccineMutation: GraphQLMutation {
         }
         set {
           snapshot.updateValue(newValue, forKey: "encounterVaccinesId")
+        }
+      }
+
+      public struct VaccineType: GraphQLSelectionSet {
+        public static let possibleTypes = ["VaccineType"]
+
+        public static let selections: [GraphQLSelection] = [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+          GraphQLField("name", type: .scalar(String.self)),
+          GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
+          GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+        ]
+
+        public var snapshot: Snapshot
+
+        public init(snapshot: Snapshot) {
+          self.snapshot = snapshot
+        }
+
+        public init(id: GraphQLID, name: String? = nil, createdAt: String, updatedAt: String) {
+          self.init(snapshot: ["__typename": "VaccineType", "id": id, "name": name, "createdAt": createdAt, "updatedAt": updatedAt])
+        }
+
+        public var __typename: String {
+          get {
+            return snapshot["__typename"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: GraphQLID {
+          get {
+            return snapshot["id"]! as! GraphQLID
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        public var name: String? {
+          get {
+            return snapshot["name"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "name")
+          }
+        }
+
+        public var createdAt: String {
+          get {
+            return snapshot["createdAt"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "createdAt")
+          }
+        }
+
+        public var updatedAt: String {
+          get {
+            return snapshot["updatedAt"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "updatedAt")
+          }
         }
       }
 
@@ -4454,7 +4741,7 @@ public final class CreateVaccineMutation: GraphQLMutation {
 
 public final class UpdateVaccineMutation: GraphQLMutation {
   public static let operationString =
-    "mutation UpdateVaccine($input: UpdateVaccineInput!, $condition: ModelVaccineConditionInput) {\n  updateVaccine(input: $input, condition: $condition) {\n    __typename\n    id\n    lotNumber\n    expirationDate\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterVaccinesId\n  }\n}"
+    "mutation UpdateVaccine($input: UpdateVaccineInput!, $condition: ModelVaccineConditionInput) {\n  updateVaccine(input: $input, condition: $condition) {\n    __typename\n    id\n    lotNumber\n    expirationDate\n    vaccineType {\n      __typename\n      id\n      name\n      createdAt\n      updatedAt\n    }\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterVaccinesId\n  }\n}"
 
   public var input: UpdateVaccineInput
   public var condition: ModelVaccineConditionInput?
@@ -4502,6 +4789,7 @@ public final class UpdateVaccineMutation: GraphQLMutation {
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("lotNumber", type: .scalar(String.self)),
         GraphQLField("expirationDate", type: .scalar(String.self)),
+        GraphQLField("vaccineType", type: .object(VaccineType.selections)),
         GraphQLField("encounter", type: .object(Encounter.selections)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
@@ -4514,8 +4802,8 @@ public final class UpdateVaccineMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, lotNumber: String? = nil, expirationDate: String? = nil, encounter: Encounter? = nil, createdAt: String, updatedAt: String, encounterVaccinesId: GraphQLID? = nil) {
-        self.init(snapshot: ["__typename": "Vaccine", "id": id, "lotNumber": lotNumber, "expirationDate": expirationDate, "encounter": encounter.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt, "encounterVaccinesId": encounterVaccinesId])
+      public init(id: GraphQLID, lotNumber: String? = nil, expirationDate: String? = nil, vaccineType: VaccineType? = nil, encounter: Encounter? = nil, createdAt: String, updatedAt: String, encounterVaccinesId: GraphQLID? = nil) {
+        self.init(snapshot: ["__typename": "Vaccine", "id": id, "lotNumber": lotNumber, "expirationDate": expirationDate, "vaccineType": vaccineType.flatMap { $0.snapshot }, "encounter": encounter.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt, "encounterVaccinesId": encounterVaccinesId])
       }
 
       public var __typename: String {
@@ -4554,6 +4842,15 @@ public final class UpdateVaccineMutation: GraphQLMutation {
         }
       }
 
+      public var vaccineType: VaccineType? {
+        get {
+          return (snapshot["vaccineType"] as? Snapshot).flatMap { VaccineType(snapshot: $0) }
+        }
+        set {
+          snapshot.updateValue(newValue?.snapshot, forKey: "vaccineType")
+        }
+      }
+
       public var encounter: Encounter? {
         get {
           return (snapshot["encounter"] as? Snapshot).flatMap { Encounter(snapshot: $0) }
@@ -4587,6 +4884,73 @@ public final class UpdateVaccineMutation: GraphQLMutation {
         }
         set {
           snapshot.updateValue(newValue, forKey: "encounterVaccinesId")
+        }
+      }
+
+      public struct VaccineType: GraphQLSelectionSet {
+        public static let possibleTypes = ["VaccineType"]
+
+        public static let selections: [GraphQLSelection] = [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+          GraphQLField("name", type: .scalar(String.self)),
+          GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
+          GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+        ]
+
+        public var snapshot: Snapshot
+
+        public init(snapshot: Snapshot) {
+          self.snapshot = snapshot
+        }
+
+        public init(id: GraphQLID, name: String? = nil, createdAt: String, updatedAt: String) {
+          self.init(snapshot: ["__typename": "VaccineType", "id": id, "name": name, "createdAt": createdAt, "updatedAt": updatedAt])
+        }
+
+        public var __typename: String {
+          get {
+            return snapshot["__typename"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: GraphQLID {
+          get {
+            return snapshot["id"]! as! GraphQLID
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        public var name: String? {
+          get {
+            return snapshot["name"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "name")
+          }
+        }
+
+        public var createdAt: String {
+          get {
+            return snapshot["createdAt"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "createdAt")
+          }
+        }
+
+        public var updatedAt: String {
+          get {
+            return snapshot["updatedAt"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "updatedAt")
+          }
         }
       }
 
@@ -4662,7 +5026,7 @@ public final class UpdateVaccineMutation: GraphQLMutation {
 
 public final class DeleteVaccineMutation: GraphQLMutation {
   public static let operationString =
-    "mutation DeleteVaccine($input: DeleteVaccineInput!, $condition: ModelVaccineConditionInput) {\n  deleteVaccine(input: $input, condition: $condition) {\n    __typename\n    id\n    lotNumber\n    expirationDate\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterVaccinesId\n  }\n}"
+    "mutation DeleteVaccine($input: DeleteVaccineInput!, $condition: ModelVaccineConditionInput) {\n  deleteVaccine(input: $input, condition: $condition) {\n    __typename\n    id\n    lotNumber\n    expirationDate\n    vaccineType {\n      __typename\n      id\n      name\n      createdAt\n      updatedAt\n    }\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterVaccinesId\n  }\n}"
 
   public var input: DeleteVaccineInput
   public var condition: ModelVaccineConditionInput?
@@ -4710,6 +5074,7 @@ public final class DeleteVaccineMutation: GraphQLMutation {
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("lotNumber", type: .scalar(String.self)),
         GraphQLField("expirationDate", type: .scalar(String.self)),
+        GraphQLField("vaccineType", type: .object(VaccineType.selections)),
         GraphQLField("encounter", type: .object(Encounter.selections)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
@@ -4722,8 +5087,8 @@ public final class DeleteVaccineMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, lotNumber: String? = nil, expirationDate: String? = nil, encounter: Encounter? = nil, createdAt: String, updatedAt: String, encounterVaccinesId: GraphQLID? = nil) {
-        self.init(snapshot: ["__typename": "Vaccine", "id": id, "lotNumber": lotNumber, "expirationDate": expirationDate, "encounter": encounter.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt, "encounterVaccinesId": encounterVaccinesId])
+      public init(id: GraphQLID, lotNumber: String? = nil, expirationDate: String? = nil, vaccineType: VaccineType? = nil, encounter: Encounter? = nil, createdAt: String, updatedAt: String, encounterVaccinesId: GraphQLID? = nil) {
+        self.init(snapshot: ["__typename": "Vaccine", "id": id, "lotNumber": lotNumber, "expirationDate": expirationDate, "vaccineType": vaccineType.flatMap { $0.snapshot }, "encounter": encounter.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt, "encounterVaccinesId": encounterVaccinesId])
       }
 
       public var __typename: String {
@@ -4762,6 +5127,15 @@ public final class DeleteVaccineMutation: GraphQLMutation {
         }
       }
 
+      public var vaccineType: VaccineType? {
+        get {
+          return (snapshot["vaccineType"] as? Snapshot).flatMap { VaccineType(snapshot: $0) }
+        }
+        set {
+          snapshot.updateValue(newValue?.snapshot, forKey: "vaccineType")
+        }
+      }
+
       public var encounter: Encounter? {
         get {
           return (snapshot["encounter"] as? Snapshot).flatMap { Encounter(snapshot: $0) }
@@ -4795,6 +5169,73 @@ public final class DeleteVaccineMutation: GraphQLMutation {
         }
         set {
           snapshot.updateValue(newValue, forKey: "encounterVaccinesId")
+        }
+      }
+
+      public struct VaccineType: GraphQLSelectionSet {
+        public static let possibleTypes = ["VaccineType"]
+
+        public static let selections: [GraphQLSelection] = [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+          GraphQLField("name", type: .scalar(String.self)),
+          GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
+          GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+        ]
+
+        public var snapshot: Snapshot
+
+        public init(snapshot: Snapshot) {
+          self.snapshot = snapshot
+        }
+
+        public init(id: GraphQLID, name: String? = nil, createdAt: String, updatedAt: String) {
+          self.init(snapshot: ["__typename": "VaccineType", "id": id, "name": name, "createdAt": createdAt, "updatedAt": updatedAt])
+        }
+
+        public var __typename: String {
+          get {
+            return snapshot["__typename"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: GraphQLID {
+          get {
+            return snapshot["id"]! as! GraphQLID
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        public var name: String? {
+          get {
+            return snapshot["name"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "name")
+          }
+        }
+
+        public var createdAt: String {
+          get {
+            return snapshot["createdAt"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "createdAt")
+          }
+        }
+
+        public var updatedAt: String {
+          get {
+            return snapshot["updatedAt"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "updatedAt")
+          }
         }
       }
 
@@ -4862,6 +5303,339 @@ public final class DeleteVaccineMutation: GraphQLMutation {
           set {
             snapshot.updateValue(newValue, forKey: "providerEncountersId")
           }
+        }
+      }
+    }
+  }
+}
+
+public final class CreateVaccineTypeMutation: GraphQLMutation {
+  public static let operationString =
+    "mutation CreateVaccineType($input: CreateVaccineTypeInput!, $condition: ModelVaccineTypeConditionInput) {\n  createVaccineType(input: $input, condition: $condition) {\n    __typename\n    id\n    name\n    createdAt\n    updatedAt\n  }\n}"
+
+  public var input: CreateVaccineTypeInput
+  public var condition: ModelVaccineTypeConditionInput?
+
+  public init(input: CreateVaccineTypeInput, condition: ModelVaccineTypeConditionInput? = nil) {
+    self.input = input
+    self.condition = condition
+  }
+
+  public var variables: GraphQLMap? {
+    return ["input": input, "condition": condition]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes = ["Mutation"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("createVaccineType", arguments: ["input": GraphQLVariable("input"), "condition": GraphQLVariable("condition")], type: .object(CreateVaccineType.selections)),
+    ]
+
+    public var snapshot: Snapshot
+
+    public init(snapshot: Snapshot) {
+      self.snapshot = snapshot
+    }
+
+    public init(createVaccineType: CreateVaccineType? = nil) {
+      self.init(snapshot: ["__typename": "Mutation", "createVaccineType": createVaccineType.flatMap { $0.snapshot }])
+    }
+
+    public var createVaccineType: CreateVaccineType? {
+      get {
+        return (snapshot["createVaccineType"] as? Snapshot).flatMap { CreateVaccineType(snapshot: $0) }
+      }
+      set {
+        snapshot.updateValue(newValue?.snapshot, forKey: "createVaccineType")
+      }
+    }
+
+    public struct CreateVaccineType: GraphQLSelectionSet {
+      public static let possibleTypes = ["VaccineType"]
+
+      public static let selections: [GraphQLSelection] = [
+        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+        GraphQLField("name", type: .scalar(String.self)),
+        GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
+        GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+      ]
+
+      public var snapshot: Snapshot
+
+      public init(snapshot: Snapshot) {
+        self.snapshot = snapshot
+      }
+
+      public init(id: GraphQLID, name: String? = nil, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "VaccineType", "id": id, "name": name, "createdAt": createdAt, "updatedAt": updatedAt])
+      }
+
+      public var __typename: String {
+        get {
+          return snapshot["__typename"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var id: GraphQLID {
+        get {
+          return snapshot["id"]! as! GraphQLID
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "id")
+        }
+      }
+
+      public var name: String? {
+        get {
+          return snapshot["name"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "name")
+        }
+      }
+
+      public var createdAt: String {
+        get {
+          return snapshot["createdAt"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "createdAt")
+        }
+      }
+
+      public var updatedAt: String {
+        get {
+          return snapshot["updatedAt"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "updatedAt")
+        }
+      }
+    }
+  }
+}
+
+public final class UpdateVaccineTypeMutation: GraphQLMutation {
+  public static let operationString =
+    "mutation UpdateVaccineType($input: UpdateVaccineTypeInput!, $condition: ModelVaccineTypeConditionInput) {\n  updateVaccineType(input: $input, condition: $condition) {\n    __typename\n    id\n    name\n    createdAt\n    updatedAt\n  }\n}"
+
+  public var input: UpdateVaccineTypeInput
+  public var condition: ModelVaccineTypeConditionInput?
+
+  public init(input: UpdateVaccineTypeInput, condition: ModelVaccineTypeConditionInput? = nil) {
+    self.input = input
+    self.condition = condition
+  }
+
+  public var variables: GraphQLMap? {
+    return ["input": input, "condition": condition]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes = ["Mutation"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("updateVaccineType", arguments: ["input": GraphQLVariable("input"), "condition": GraphQLVariable("condition")], type: .object(UpdateVaccineType.selections)),
+    ]
+
+    public var snapshot: Snapshot
+
+    public init(snapshot: Snapshot) {
+      self.snapshot = snapshot
+    }
+
+    public init(updateVaccineType: UpdateVaccineType? = nil) {
+      self.init(snapshot: ["__typename": "Mutation", "updateVaccineType": updateVaccineType.flatMap { $0.snapshot }])
+    }
+
+    public var updateVaccineType: UpdateVaccineType? {
+      get {
+        return (snapshot["updateVaccineType"] as? Snapshot).flatMap { UpdateVaccineType(snapshot: $0) }
+      }
+      set {
+        snapshot.updateValue(newValue?.snapshot, forKey: "updateVaccineType")
+      }
+    }
+
+    public struct UpdateVaccineType: GraphQLSelectionSet {
+      public static let possibleTypes = ["VaccineType"]
+
+      public static let selections: [GraphQLSelection] = [
+        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+        GraphQLField("name", type: .scalar(String.self)),
+        GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
+        GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+      ]
+
+      public var snapshot: Snapshot
+
+      public init(snapshot: Snapshot) {
+        self.snapshot = snapshot
+      }
+
+      public init(id: GraphQLID, name: String? = nil, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "VaccineType", "id": id, "name": name, "createdAt": createdAt, "updatedAt": updatedAt])
+      }
+
+      public var __typename: String {
+        get {
+          return snapshot["__typename"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var id: GraphQLID {
+        get {
+          return snapshot["id"]! as! GraphQLID
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "id")
+        }
+      }
+
+      public var name: String? {
+        get {
+          return snapshot["name"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "name")
+        }
+      }
+
+      public var createdAt: String {
+        get {
+          return snapshot["createdAt"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "createdAt")
+        }
+      }
+
+      public var updatedAt: String {
+        get {
+          return snapshot["updatedAt"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "updatedAt")
+        }
+      }
+    }
+  }
+}
+
+public final class DeleteVaccineTypeMutation: GraphQLMutation {
+  public static let operationString =
+    "mutation DeleteVaccineType($input: DeleteVaccineTypeInput!, $condition: ModelVaccineTypeConditionInput) {\n  deleteVaccineType(input: $input, condition: $condition) {\n    __typename\n    id\n    name\n    createdAt\n    updatedAt\n  }\n}"
+
+  public var input: DeleteVaccineTypeInput
+  public var condition: ModelVaccineTypeConditionInput?
+
+  public init(input: DeleteVaccineTypeInput, condition: ModelVaccineTypeConditionInput? = nil) {
+    self.input = input
+    self.condition = condition
+  }
+
+  public var variables: GraphQLMap? {
+    return ["input": input, "condition": condition]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes = ["Mutation"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("deleteVaccineType", arguments: ["input": GraphQLVariable("input"), "condition": GraphQLVariable("condition")], type: .object(DeleteVaccineType.selections)),
+    ]
+
+    public var snapshot: Snapshot
+
+    public init(snapshot: Snapshot) {
+      self.snapshot = snapshot
+    }
+
+    public init(deleteVaccineType: DeleteVaccineType? = nil) {
+      self.init(snapshot: ["__typename": "Mutation", "deleteVaccineType": deleteVaccineType.flatMap { $0.snapshot }])
+    }
+
+    public var deleteVaccineType: DeleteVaccineType? {
+      get {
+        return (snapshot["deleteVaccineType"] as? Snapshot).flatMap { DeleteVaccineType(snapshot: $0) }
+      }
+      set {
+        snapshot.updateValue(newValue?.snapshot, forKey: "deleteVaccineType")
+      }
+    }
+
+    public struct DeleteVaccineType: GraphQLSelectionSet {
+      public static let possibleTypes = ["VaccineType"]
+
+      public static let selections: [GraphQLSelection] = [
+        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+        GraphQLField("name", type: .scalar(String.self)),
+        GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
+        GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+      ]
+
+      public var snapshot: Snapshot
+
+      public init(snapshot: Snapshot) {
+        self.snapshot = snapshot
+      }
+
+      public init(id: GraphQLID, name: String? = nil, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "VaccineType", "id": id, "name": name, "createdAt": createdAt, "updatedAt": updatedAt])
+      }
+
+      public var __typename: String {
+        get {
+          return snapshot["__typename"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var id: GraphQLID {
+        get {
+          return snapshot["id"]! as! GraphQLID
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "id")
+        }
+      }
+
+      public var name: String? {
+        get {
+          return snapshot["name"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "name")
+        }
+      }
+
+      public var createdAt: String {
+        get {
+          return snapshot["createdAt"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "createdAt")
+        }
+      }
+
+      public var updatedAt: String {
+        get {
+          return snapshot["updatedAt"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "updatedAt")
         }
       }
     }
@@ -6601,7 +7375,7 @@ public final class ListEncountersQuery: GraphQLQuery {
 
 public final class GetVaccineQuery: GraphQLQuery {
   public static let operationString =
-    "query GetVaccine($id: ID!) {\n  getVaccine(id: $id) {\n    __typename\n    id\n    lotNumber\n    expirationDate\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterVaccinesId\n  }\n}"
+    "query GetVaccine($id: ID!) {\n  getVaccine(id: $id) {\n    __typename\n    id\n    lotNumber\n    expirationDate\n    vaccineType {\n      __typename\n      id\n      name\n      createdAt\n      updatedAt\n    }\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterVaccinesId\n  }\n}"
 
   public var id: GraphQLID
 
@@ -6647,6 +7421,7 @@ public final class GetVaccineQuery: GraphQLQuery {
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("lotNumber", type: .scalar(String.self)),
         GraphQLField("expirationDate", type: .scalar(String.self)),
+        GraphQLField("vaccineType", type: .object(VaccineType.selections)),
         GraphQLField("encounter", type: .object(Encounter.selections)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
@@ -6659,8 +7434,8 @@ public final class GetVaccineQuery: GraphQLQuery {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, lotNumber: String? = nil, expirationDate: String? = nil, encounter: Encounter? = nil, createdAt: String, updatedAt: String, encounterVaccinesId: GraphQLID? = nil) {
-        self.init(snapshot: ["__typename": "Vaccine", "id": id, "lotNumber": lotNumber, "expirationDate": expirationDate, "encounter": encounter.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt, "encounterVaccinesId": encounterVaccinesId])
+      public init(id: GraphQLID, lotNumber: String? = nil, expirationDate: String? = nil, vaccineType: VaccineType? = nil, encounter: Encounter? = nil, createdAt: String, updatedAt: String, encounterVaccinesId: GraphQLID? = nil) {
+        self.init(snapshot: ["__typename": "Vaccine", "id": id, "lotNumber": lotNumber, "expirationDate": expirationDate, "vaccineType": vaccineType.flatMap { $0.snapshot }, "encounter": encounter.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt, "encounterVaccinesId": encounterVaccinesId])
       }
 
       public var __typename: String {
@@ -6699,6 +7474,15 @@ public final class GetVaccineQuery: GraphQLQuery {
         }
       }
 
+      public var vaccineType: VaccineType? {
+        get {
+          return (snapshot["vaccineType"] as? Snapshot).flatMap { VaccineType(snapshot: $0) }
+        }
+        set {
+          snapshot.updateValue(newValue?.snapshot, forKey: "vaccineType")
+        }
+      }
+
       public var encounter: Encounter? {
         get {
           return (snapshot["encounter"] as? Snapshot).flatMap { Encounter(snapshot: $0) }
@@ -6732,6 +7516,73 @@ public final class GetVaccineQuery: GraphQLQuery {
         }
         set {
           snapshot.updateValue(newValue, forKey: "encounterVaccinesId")
+        }
+      }
+
+      public struct VaccineType: GraphQLSelectionSet {
+        public static let possibleTypes = ["VaccineType"]
+
+        public static let selections: [GraphQLSelection] = [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+          GraphQLField("name", type: .scalar(String.self)),
+          GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
+          GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+        ]
+
+        public var snapshot: Snapshot
+
+        public init(snapshot: Snapshot) {
+          self.snapshot = snapshot
+        }
+
+        public init(id: GraphQLID, name: String? = nil, createdAt: String, updatedAt: String) {
+          self.init(snapshot: ["__typename": "VaccineType", "id": id, "name": name, "createdAt": createdAt, "updatedAt": updatedAt])
+        }
+
+        public var __typename: String {
+          get {
+            return snapshot["__typename"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: GraphQLID {
+          get {
+            return snapshot["id"]! as! GraphQLID
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        public var name: String? {
+          get {
+            return snapshot["name"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "name")
+          }
+        }
+
+        public var createdAt: String {
+          get {
+            return snapshot["createdAt"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "createdAt")
+          }
+        }
+
+        public var updatedAt: String {
+          get {
+            return snapshot["updatedAt"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "updatedAt")
+          }
         }
       }
 
@@ -6982,6 +7833,279 @@ public final class ListVaccinesQuery: GraphQLQuery {
           }
           set {
             snapshot.updateValue(newValue, forKey: "encounterVaccinesId")
+          }
+        }
+      }
+    }
+  }
+}
+
+public final class GetVaccineTypeQuery: GraphQLQuery {
+  public static let operationString =
+    "query GetVaccineType($id: ID!) {\n  getVaccineType(id: $id) {\n    __typename\n    id\n    name\n    createdAt\n    updatedAt\n  }\n}"
+
+  public var id: GraphQLID
+
+  public init(id: GraphQLID) {
+    self.id = id
+  }
+
+  public var variables: GraphQLMap? {
+    return ["id": id]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes = ["Query"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("getVaccineType", arguments: ["id": GraphQLVariable("id")], type: .object(GetVaccineType.selections)),
+    ]
+
+    public var snapshot: Snapshot
+
+    public init(snapshot: Snapshot) {
+      self.snapshot = snapshot
+    }
+
+    public init(getVaccineType: GetVaccineType? = nil) {
+      self.init(snapshot: ["__typename": "Query", "getVaccineType": getVaccineType.flatMap { $0.snapshot }])
+    }
+
+    public var getVaccineType: GetVaccineType? {
+      get {
+        return (snapshot["getVaccineType"] as? Snapshot).flatMap { GetVaccineType(snapshot: $0) }
+      }
+      set {
+        snapshot.updateValue(newValue?.snapshot, forKey: "getVaccineType")
+      }
+    }
+
+    public struct GetVaccineType: GraphQLSelectionSet {
+      public static let possibleTypes = ["VaccineType"]
+
+      public static let selections: [GraphQLSelection] = [
+        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+        GraphQLField("name", type: .scalar(String.self)),
+        GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
+        GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+      ]
+
+      public var snapshot: Snapshot
+
+      public init(snapshot: Snapshot) {
+        self.snapshot = snapshot
+      }
+
+      public init(id: GraphQLID, name: String? = nil, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "VaccineType", "id": id, "name": name, "createdAt": createdAt, "updatedAt": updatedAt])
+      }
+
+      public var __typename: String {
+        get {
+          return snapshot["__typename"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var id: GraphQLID {
+        get {
+          return snapshot["id"]! as! GraphQLID
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "id")
+        }
+      }
+
+      public var name: String? {
+        get {
+          return snapshot["name"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "name")
+        }
+      }
+
+      public var createdAt: String {
+        get {
+          return snapshot["createdAt"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "createdAt")
+        }
+      }
+
+      public var updatedAt: String {
+        get {
+          return snapshot["updatedAt"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "updatedAt")
+        }
+      }
+    }
+  }
+}
+
+public final class ListVaccineTypesQuery: GraphQLQuery {
+  public static let operationString =
+    "query ListVaccineTypes($id: ID, $filter: ModelVaccineTypeFilterInput, $limit: Int, $nextToken: String, $sortDirection: ModelSortDirection) {\n  listVaccineTypes(\n    id: $id\n    filter: $filter\n    limit: $limit\n    nextToken: $nextToken\n    sortDirection: $sortDirection\n  ) {\n    __typename\n    items {\n      __typename\n      id\n      name\n      createdAt\n      updatedAt\n    }\n    nextToken\n  }\n}"
+
+  public var id: GraphQLID?
+  public var filter: ModelVaccineTypeFilterInput?
+  public var limit: Int?
+  public var nextToken: String?
+  public var sortDirection: ModelSortDirection?
+
+  public init(id: GraphQLID? = nil, filter: ModelVaccineTypeFilterInput? = nil, limit: Int? = nil, nextToken: String? = nil, sortDirection: ModelSortDirection? = nil) {
+    self.id = id
+    self.filter = filter
+    self.limit = limit
+    self.nextToken = nextToken
+    self.sortDirection = sortDirection
+  }
+
+  public var variables: GraphQLMap? {
+    return ["id": id, "filter": filter, "limit": limit, "nextToken": nextToken, "sortDirection": sortDirection]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes = ["Query"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("listVaccineTypes", arguments: ["id": GraphQLVariable("id"), "filter": GraphQLVariable("filter"), "limit": GraphQLVariable("limit"), "nextToken": GraphQLVariable("nextToken"), "sortDirection": GraphQLVariable("sortDirection")], type: .object(ListVaccineType.selections)),
+    ]
+
+    public var snapshot: Snapshot
+
+    public init(snapshot: Snapshot) {
+      self.snapshot = snapshot
+    }
+
+    public init(listVaccineTypes: ListVaccineType? = nil) {
+      self.init(snapshot: ["__typename": "Query", "listVaccineTypes": listVaccineTypes.flatMap { $0.snapshot }])
+    }
+
+    public var listVaccineTypes: ListVaccineType? {
+      get {
+        return (snapshot["listVaccineTypes"] as? Snapshot).flatMap { ListVaccineType(snapshot: $0) }
+      }
+      set {
+        snapshot.updateValue(newValue?.snapshot, forKey: "listVaccineTypes")
+      }
+    }
+
+    public struct ListVaccineType: GraphQLSelectionSet {
+      public static let possibleTypes = ["ModelVaccineTypeConnection"]
+
+      public static let selections: [GraphQLSelection] = [
+        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("items", type: .nonNull(.list(.object(Item.selections)))),
+        GraphQLField("nextToken", type: .scalar(String.self)),
+      ]
+
+      public var snapshot: Snapshot
+
+      public init(snapshot: Snapshot) {
+        self.snapshot = snapshot
+      }
+
+      public init(items: [Item?], nextToken: String? = nil) {
+        self.init(snapshot: ["__typename": "ModelVaccineTypeConnection", "items": items.map { $0.flatMap { $0.snapshot } }, "nextToken": nextToken])
+      }
+
+      public var __typename: String {
+        get {
+          return snapshot["__typename"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var items: [Item?] {
+        get {
+          return (snapshot["items"] as! [Snapshot?]).map { $0.flatMap { Item(snapshot: $0) } }
+        }
+        set {
+          snapshot.updateValue(newValue.map { $0.flatMap { $0.snapshot } }, forKey: "items")
+        }
+      }
+
+      public var nextToken: String? {
+        get {
+          return snapshot["nextToken"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "nextToken")
+        }
+      }
+
+      public struct Item: GraphQLSelectionSet {
+        public static let possibleTypes = ["VaccineType"]
+
+        public static let selections: [GraphQLSelection] = [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+          GraphQLField("name", type: .scalar(String.self)),
+          GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
+          GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+        ]
+
+        public var snapshot: Snapshot
+
+        public init(snapshot: Snapshot) {
+          self.snapshot = snapshot
+        }
+
+        public init(id: GraphQLID, name: String? = nil, createdAt: String, updatedAt: String) {
+          self.init(snapshot: ["__typename": "VaccineType", "id": id, "name": name, "createdAt": createdAt, "updatedAt": updatedAt])
+        }
+
+        public var __typename: String {
+          get {
+            return snapshot["__typename"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: GraphQLID {
+          get {
+            return snapshot["id"]! as! GraphQLID
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        public var name: String? {
+          get {
+            return snapshot["name"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "name")
+          }
+        }
+
+        public var createdAt: String {
+          get {
+            return snapshot["createdAt"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "createdAt")
+          }
+        }
+
+        public var updatedAt: String {
+          get {
+            return snapshot["updatedAt"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "updatedAt")
           }
         }
       }
@@ -9176,7 +10300,7 @@ public final class OnDeleteEncounterSubscription: GraphQLSubscription {
 
 public final class OnCreateVaccineSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnCreateVaccine($filter: ModelSubscriptionVaccineFilterInput) {\n  onCreateVaccine(filter: $filter) {\n    __typename\n    id\n    lotNumber\n    expirationDate\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterVaccinesId\n  }\n}"
+    "subscription OnCreateVaccine($filter: ModelSubscriptionVaccineFilterInput) {\n  onCreateVaccine(filter: $filter) {\n    __typename\n    id\n    lotNumber\n    expirationDate\n    vaccineType {\n      __typename\n      id\n      name\n      createdAt\n      updatedAt\n    }\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterVaccinesId\n  }\n}"
 
   public var filter: ModelSubscriptionVaccineFilterInput?
 
@@ -9222,6 +10346,7 @@ public final class OnCreateVaccineSubscription: GraphQLSubscription {
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("lotNumber", type: .scalar(String.self)),
         GraphQLField("expirationDate", type: .scalar(String.self)),
+        GraphQLField("vaccineType", type: .object(VaccineType.selections)),
         GraphQLField("encounter", type: .object(Encounter.selections)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
@@ -9234,8 +10359,8 @@ public final class OnCreateVaccineSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, lotNumber: String? = nil, expirationDate: String? = nil, encounter: Encounter? = nil, createdAt: String, updatedAt: String, encounterVaccinesId: GraphQLID? = nil) {
-        self.init(snapshot: ["__typename": "Vaccine", "id": id, "lotNumber": lotNumber, "expirationDate": expirationDate, "encounter": encounter.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt, "encounterVaccinesId": encounterVaccinesId])
+      public init(id: GraphQLID, lotNumber: String? = nil, expirationDate: String? = nil, vaccineType: VaccineType? = nil, encounter: Encounter? = nil, createdAt: String, updatedAt: String, encounterVaccinesId: GraphQLID? = nil) {
+        self.init(snapshot: ["__typename": "Vaccine", "id": id, "lotNumber": lotNumber, "expirationDate": expirationDate, "vaccineType": vaccineType.flatMap { $0.snapshot }, "encounter": encounter.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt, "encounterVaccinesId": encounterVaccinesId])
       }
 
       public var __typename: String {
@@ -9274,6 +10399,15 @@ public final class OnCreateVaccineSubscription: GraphQLSubscription {
         }
       }
 
+      public var vaccineType: VaccineType? {
+        get {
+          return (snapshot["vaccineType"] as? Snapshot).flatMap { VaccineType(snapshot: $0) }
+        }
+        set {
+          snapshot.updateValue(newValue?.snapshot, forKey: "vaccineType")
+        }
+      }
+
       public var encounter: Encounter? {
         get {
           return (snapshot["encounter"] as? Snapshot).flatMap { Encounter(snapshot: $0) }
@@ -9307,6 +10441,73 @@ public final class OnCreateVaccineSubscription: GraphQLSubscription {
         }
         set {
           snapshot.updateValue(newValue, forKey: "encounterVaccinesId")
+        }
+      }
+
+      public struct VaccineType: GraphQLSelectionSet {
+        public static let possibleTypes = ["VaccineType"]
+
+        public static let selections: [GraphQLSelection] = [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+          GraphQLField("name", type: .scalar(String.self)),
+          GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
+          GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+        ]
+
+        public var snapshot: Snapshot
+
+        public init(snapshot: Snapshot) {
+          self.snapshot = snapshot
+        }
+
+        public init(id: GraphQLID, name: String? = nil, createdAt: String, updatedAt: String) {
+          self.init(snapshot: ["__typename": "VaccineType", "id": id, "name": name, "createdAt": createdAt, "updatedAt": updatedAt])
+        }
+
+        public var __typename: String {
+          get {
+            return snapshot["__typename"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: GraphQLID {
+          get {
+            return snapshot["id"]! as! GraphQLID
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        public var name: String? {
+          get {
+            return snapshot["name"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "name")
+          }
+        }
+
+        public var createdAt: String {
+          get {
+            return snapshot["createdAt"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "createdAt")
+          }
+        }
+
+        public var updatedAt: String {
+          get {
+            return snapshot["updatedAt"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "updatedAt")
+          }
         }
       }
 
@@ -9382,7 +10583,7 @@ public final class OnCreateVaccineSubscription: GraphQLSubscription {
 
 public final class OnUpdateVaccineSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnUpdateVaccine($filter: ModelSubscriptionVaccineFilterInput) {\n  onUpdateVaccine(filter: $filter) {\n    __typename\n    id\n    lotNumber\n    expirationDate\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterVaccinesId\n  }\n}"
+    "subscription OnUpdateVaccine($filter: ModelSubscriptionVaccineFilterInput) {\n  onUpdateVaccine(filter: $filter) {\n    __typename\n    id\n    lotNumber\n    expirationDate\n    vaccineType {\n      __typename\n      id\n      name\n      createdAt\n      updatedAt\n    }\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterVaccinesId\n  }\n}"
 
   public var filter: ModelSubscriptionVaccineFilterInput?
 
@@ -9428,6 +10629,7 @@ public final class OnUpdateVaccineSubscription: GraphQLSubscription {
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("lotNumber", type: .scalar(String.self)),
         GraphQLField("expirationDate", type: .scalar(String.self)),
+        GraphQLField("vaccineType", type: .object(VaccineType.selections)),
         GraphQLField("encounter", type: .object(Encounter.selections)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
@@ -9440,8 +10642,8 @@ public final class OnUpdateVaccineSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, lotNumber: String? = nil, expirationDate: String? = nil, encounter: Encounter? = nil, createdAt: String, updatedAt: String, encounterVaccinesId: GraphQLID? = nil) {
-        self.init(snapshot: ["__typename": "Vaccine", "id": id, "lotNumber": lotNumber, "expirationDate": expirationDate, "encounter": encounter.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt, "encounterVaccinesId": encounterVaccinesId])
+      public init(id: GraphQLID, lotNumber: String? = nil, expirationDate: String? = nil, vaccineType: VaccineType? = nil, encounter: Encounter? = nil, createdAt: String, updatedAt: String, encounterVaccinesId: GraphQLID? = nil) {
+        self.init(snapshot: ["__typename": "Vaccine", "id": id, "lotNumber": lotNumber, "expirationDate": expirationDate, "vaccineType": vaccineType.flatMap { $0.snapshot }, "encounter": encounter.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt, "encounterVaccinesId": encounterVaccinesId])
       }
 
       public var __typename: String {
@@ -9480,6 +10682,15 @@ public final class OnUpdateVaccineSubscription: GraphQLSubscription {
         }
       }
 
+      public var vaccineType: VaccineType? {
+        get {
+          return (snapshot["vaccineType"] as? Snapshot).flatMap { VaccineType(snapshot: $0) }
+        }
+        set {
+          snapshot.updateValue(newValue?.snapshot, forKey: "vaccineType")
+        }
+      }
+
       public var encounter: Encounter? {
         get {
           return (snapshot["encounter"] as? Snapshot).flatMap { Encounter(snapshot: $0) }
@@ -9513,6 +10724,73 @@ public final class OnUpdateVaccineSubscription: GraphQLSubscription {
         }
         set {
           snapshot.updateValue(newValue, forKey: "encounterVaccinesId")
+        }
+      }
+
+      public struct VaccineType: GraphQLSelectionSet {
+        public static let possibleTypes = ["VaccineType"]
+
+        public static let selections: [GraphQLSelection] = [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+          GraphQLField("name", type: .scalar(String.self)),
+          GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
+          GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+        ]
+
+        public var snapshot: Snapshot
+
+        public init(snapshot: Snapshot) {
+          self.snapshot = snapshot
+        }
+
+        public init(id: GraphQLID, name: String? = nil, createdAt: String, updatedAt: String) {
+          self.init(snapshot: ["__typename": "VaccineType", "id": id, "name": name, "createdAt": createdAt, "updatedAt": updatedAt])
+        }
+
+        public var __typename: String {
+          get {
+            return snapshot["__typename"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: GraphQLID {
+          get {
+            return snapshot["id"]! as! GraphQLID
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        public var name: String? {
+          get {
+            return snapshot["name"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "name")
+          }
+        }
+
+        public var createdAt: String {
+          get {
+            return snapshot["createdAt"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "createdAt")
+          }
+        }
+
+        public var updatedAt: String {
+          get {
+            return snapshot["updatedAt"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "updatedAt")
+          }
         }
       }
 
@@ -9588,7 +10866,7 @@ public final class OnUpdateVaccineSubscription: GraphQLSubscription {
 
 public final class OnDeleteVaccineSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnDeleteVaccine($filter: ModelSubscriptionVaccineFilterInput) {\n  onDeleteVaccine(filter: $filter) {\n    __typename\n    id\n    lotNumber\n    expirationDate\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterVaccinesId\n  }\n}"
+    "subscription OnDeleteVaccine($filter: ModelSubscriptionVaccineFilterInput) {\n  onDeleteVaccine(filter: $filter) {\n    __typename\n    id\n    lotNumber\n    expirationDate\n    vaccineType {\n      __typename\n      id\n      name\n      createdAt\n      updatedAt\n    }\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterVaccinesId\n  }\n}"
 
   public var filter: ModelSubscriptionVaccineFilterInput?
 
@@ -9634,6 +10912,7 @@ public final class OnDeleteVaccineSubscription: GraphQLSubscription {
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("lotNumber", type: .scalar(String.self)),
         GraphQLField("expirationDate", type: .scalar(String.self)),
+        GraphQLField("vaccineType", type: .object(VaccineType.selections)),
         GraphQLField("encounter", type: .object(Encounter.selections)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
@@ -9646,8 +10925,8 @@ public final class OnDeleteVaccineSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, lotNumber: String? = nil, expirationDate: String? = nil, encounter: Encounter? = nil, createdAt: String, updatedAt: String, encounterVaccinesId: GraphQLID? = nil) {
-        self.init(snapshot: ["__typename": "Vaccine", "id": id, "lotNumber": lotNumber, "expirationDate": expirationDate, "encounter": encounter.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt, "encounterVaccinesId": encounterVaccinesId])
+      public init(id: GraphQLID, lotNumber: String? = nil, expirationDate: String? = nil, vaccineType: VaccineType? = nil, encounter: Encounter? = nil, createdAt: String, updatedAt: String, encounterVaccinesId: GraphQLID? = nil) {
+        self.init(snapshot: ["__typename": "Vaccine", "id": id, "lotNumber": lotNumber, "expirationDate": expirationDate, "vaccineType": vaccineType.flatMap { $0.snapshot }, "encounter": encounter.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt, "encounterVaccinesId": encounterVaccinesId])
       }
 
       public var __typename: String {
@@ -9686,6 +10965,15 @@ public final class OnDeleteVaccineSubscription: GraphQLSubscription {
         }
       }
 
+      public var vaccineType: VaccineType? {
+        get {
+          return (snapshot["vaccineType"] as? Snapshot).flatMap { VaccineType(snapshot: $0) }
+        }
+        set {
+          snapshot.updateValue(newValue?.snapshot, forKey: "vaccineType")
+        }
+      }
+
       public var encounter: Encounter? {
         get {
           return (snapshot["encounter"] as? Snapshot).flatMap { Encounter(snapshot: $0) }
@@ -9719,6 +11007,73 @@ public final class OnDeleteVaccineSubscription: GraphQLSubscription {
         }
         set {
           snapshot.updateValue(newValue, forKey: "encounterVaccinesId")
+        }
+      }
+
+      public struct VaccineType: GraphQLSelectionSet {
+        public static let possibleTypes = ["VaccineType"]
+
+        public static let selections: [GraphQLSelection] = [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+          GraphQLField("name", type: .scalar(String.self)),
+          GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
+          GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+        ]
+
+        public var snapshot: Snapshot
+
+        public init(snapshot: Snapshot) {
+          self.snapshot = snapshot
+        }
+
+        public init(id: GraphQLID, name: String? = nil, createdAt: String, updatedAt: String) {
+          self.init(snapshot: ["__typename": "VaccineType", "id": id, "name": name, "createdAt": createdAt, "updatedAt": updatedAt])
+        }
+
+        public var __typename: String {
+          get {
+            return snapshot["__typename"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: GraphQLID {
+          get {
+            return snapshot["id"]! as! GraphQLID
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        public var name: String? {
+          get {
+            return snapshot["name"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "name")
+          }
+        }
+
+        public var createdAt: String {
+          get {
+            return snapshot["createdAt"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "createdAt")
+          }
+        }
+
+        public var updatedAt: String {
+          get {
+            return snapshot["updatedAt"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "updatedAt")
+          }
         }
       }
 
@@ -9786,6 +11141,333 @@ public final class OnDeleteVaccineSubscription: GraphQLSubscription {
           set {
             snapshot.updateValue(newValue, forKey: "providerEncountersId")
           }
+        }
+      }
+    }
+  }
+}
+
+public final class OnCreateVaccineTypeSubscription: GraphQLSubscription {
+  public static let operationString =
+    "subscription OnCreateVaccineType($filter: ModelSubscriptionVaccineTypeFilterInput) {\n  onCreateVaccineType(filter: $filter) {\n    __typename\n    id\n    name\n    createdAt\n    updatedAt\n  }\n}"
+
+  public var filter: ModelSubscriptionVaccineTypeFilterInput?
+
+  public init(filter: ModelSubscriptionVaccineTypeFilterInput? = nil) {
+    self.filter = filter
+  }
+
+  public var variables: GraphQLMap? {
+    return ["filter": filter]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes = ["Subscription"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("onCreateVaccineType", arguments: ["filter": GraphQLVariable("filter")], type: .object(OnCreateVaccineType.selections)),
+    ]
+
+    public var snapshot: Snapshot
+
+    public init(snapshot: Snapshot) {
+      self.snapshot = snapshot
+    }
+
+    public init(onCreateVaccineType: OnCreateVaccineType? = nil) {
+      self.init(snapshot: ["__typename": "Subscription", "onCreateVaccineType": onCreateVaccineType.flatMap { $0.snapshot }])
+    }
+
+    public var onCreateVaccineType: OnCreateVaccineType? {
+      get {
+        return (snapshot["onCreateVaccineType"] as? Snapshot).flatMap { OnCreateVaccineType(snapshot: $0) }
+      }
+      set {
+        snapshot.updateValue(newValue?.snapshot, forKey: "onCreateVaccineType")
+      }
+    }
+
+    public struct OnCreateVaccineType: GraphQLSelectionSet {
+      public static let possibleTypes = ["VaccineType"]
+
+      public static let selections: [GraphQLSelection] = [
+        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+        GraphQLField("name", type: .scalar(String.self)),
+        GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
+        GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+      ]
+
+      public var snapshot: Snapshot
+
+      public init(snapshot: Snapshot) {
+        self.snapshot = snapshot
+      }
+
+      public init(id: GraphQLID, name: String? = nil, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "VaccineType", "id": id, "name": name, "createdAt": createdAt, "updatedAt": updatedAt])
+      }
+
+      public var __typename: String {
+        get {
+          return snapshot["__typename"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var id: GraphQLID {
+        get {
+          return snapshot["id"]! as! GraphQLID
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "id")
+        }
+      }
+
+      public var name: String? {
+        get {
+          return snapshot["name"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "name")
+        }
+      }
+
+      public var createdAt: String {
+        get {
+          return snapshot["createdAt"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "createdAt")
+        }
+      }
+
+      public var updatedAt: String {
+        get {
+          return snapshot["updatedAt"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "updatedAt")
+        }
+      }
+    }
+  }
+}
+
+public final class OnUpdateVaccineTypeSubscription: GraphQLSubscription {
+  public static let operationString =
+    "subscription OnUpdateVaccineType($filter: ModelSubscriptionVaccineTypeFilterInput) {\n  onUpdateVaccineType(filter: $filter) {\n    __typename\n    id\n    name\n    createdAt\n    updatedAt\n  }\n}"
+
+  public var filter: ModelSubscriptionVaccineTypeFilterInput?
+
+  public init(filter: ModelSubscriptionVaccineTypeFilterInput? = nil) {
+    self.filter = filter
+  }
+
+  public var variables: GraphQLMap? {
+    return ["filter": filter]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes = ["Subscription"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("onUpdateVaccineType", arguments: ["filter": GraphQLVariable("filter")], type: .object(OnUpdateVaccineType.selections)),
+    ]
+
+    public var snapshot: Snapshot
+
+    public init(snapshot: Snapshot) {
+      self.snapshot = snapshot
+    }
+
+    public init(onUpdateVaccineType: OnUpdateVaccineType? = nil) {
+      self.init(snapshot: ["__typename": "Subscription", "onUpdateVaccineType": onUpdateVaccineType.flatMap { $0.snapshot }])
+    }
+
+    public var onUpdateVaccineType: OnUpdateVaccineType? {
+      get {
+        return (snapshot["onUpdateVaccineType"] as? Snapshot).flatMap { OnUpdateVaccineType(snapshot: $0) }
+      }
+      set {
+        snapshot.updateValue(newValue?.snapshot, forKey: "onUpdateVaccineType")
+      }
+    }
+
+    public struct OnUpdateVaccineType: GraphQLSelectionSet {
+      public static let possibleTypes = ["VaccineType"]
+
+      public static let selections: [GraphQLSelection] = [
+        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+        GraphQLField("name", type: .scalar(String.self)),
+        GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
+        GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+      ]
+
+      public var snapshot: Snapshot
+
+      public init(snapshot: Snapshot) {
+        self.snapshot = snapshot
+      }
+
+      public init(id: GraphQLID, name: String? = nil, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "VaccineType", "id": id, "name": name, "createdAt": createdAt, "updatedAt": updatedAt])
+      }
+
+      public var __typename: String {
+        get {
+          return snapshot["__typename"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var id: GraphQLID {
+        get {
+          return snapshot["id"]! as! GraphQLID
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "id")
+        }
+      }
+
+      public var name: String? {
+        get {
+          return snapshot["name"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "name")
+        }
+      }
+
+      public var createdAt: String {
+        get {
+          return snapshot["createdAt"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "createdAt")
+        }
+      }
+
+      public var updatedAt: String {
+        get {
+          return snapshot["updatedAt"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "updatedAt")
+        }
+      }
+    }
+  }
+}
+
+public final class OnDeleteVaccineTypeSubscription: GraphQLSubscription {
+  public static let operationString =
+    "subscription OnDeleteVaccineType($filter: ModelSubscriptionVaccineTypeFilterInput) {\n  onDeleteVaccineType(filter: $filter) {\n    __typename\n    id\n    name\n    createdAt\n    updatedAt\n  }\n}"
+
+  public var filter: ModelSubscriptionVaccineTypeFilterInput?
+
+  public init(filter: ModelSubscriptionVaccineTypeFilterInput? = nil) {
+    self.filter = filter
+  }
+
+  public var variables: GraphQLMap? {
+    return ["filter": filter]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes = ["Subscription"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("onDeleteVaccineType", arguments: ["filter": GraphQLVariable("filter")], type: .object(OnDeleteVaccineType.selections)),
+    ]
+
+    public var snapshot: Snapshot
+
+    public init(snapshot: Snapshot) {
+      self.snapshot = snapshot
+    }
+
+    public init(onDeleteVaccineType: OnDeleteVaccineType? = nil) {
+      self.init(snapshot: ["__typename": "Subscription", "onDeleteVaccineType": onDeleteVaccineType.flatMap { $0.snapshot }])
+    }
+
+    public var onDeleteVaccineType: OnDeleteVaccineType? {
+      get {
+        return (snapshot["onDeleteVaccineType"] as? Snapshot).flatMap { OnDeleteVaccineType(snapshot: $0) }
+      }
+      set {
+        snapshot.updateValue(newValue?.snapshot, forKey: "onDeleteVaccineType")
+      }
+    }
+
+    public struct OnDeleteVaccineType: GraphQLSelectionSet {
+      public static let possibleTypes = ["VaccineType"]
+
+      public static let selections: [GraphQLSelection] = [
+        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+        GraphQLField("name", type: .scalar(String.self)),
+        GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
+        GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+      ]
+
+      public var snapshot: Snapshot
+
+      public init(snapshot: Snapshot) {
+        self.snapshot = snapshot
+      }
+
+      public init(id: GraphQLID, name: String? = nil, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "VaccineType", "id": id, "name": name, "createdAt": createdAt, "updatedAt": updatedAt])
+      }
+
+      public var __typename: String {
+        get {
+          return snapshot["__typename"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var id: GraphQLID {
+        get {
+          return snapshot["id"]! as! GraphQLID
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "id")
+        }
+      }
+
+      public var name: String? {
+        get {
+          return snapshot["name"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "name")
+        }
+      }
+
+      public var createdAt: String {
+        get {
+          return snapshot["createdAt"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "createdAt")
+        }
+      }
+
+      public var updatedAt: String {
+        get {
+          return snapshot["updatedAt"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "updatedAt")
         }
       }
     }

@@ -24,7 +24,13 @@ type Vaccine @model @auth(rules: [{allow: private}]) {
 	id: ID! @primaryKey
 	lotNumber: String
 	expirationDate: String
+	vaccineType: VaccineType
 	encounter: Encounter @belongsTo
+}
+
+type VaccineType @model @auth(rules: [{allow: private}]) {
+	id: ID! @primaryKey
+	name: String
 }
 
 type Scan @model @auth(rules: [{allow: private}]) {

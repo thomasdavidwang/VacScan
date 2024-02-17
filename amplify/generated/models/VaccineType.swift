@@ -2,35 +2,25 @@
 import Amplify
 import Foundation
 
-public struct Encounter: Model {
+public struct VaccineType: Model {
   public let id: String
-  public var scans: List<Scan>?
-  public var vaccines: List<Vaccine>?
-  public var provider: Provider?
+  public var name: String?
   public var createdAt: Temporal.DateTime?
   public var updatedAt: Temporal.DateTime?
   
   public init(id: String = UUID().uuidString,
-      scans: List<Scan>? = [],
-      vaccines: List<Vaccine>? = [],
-      provider: Provider? = nil) {
+      name: String? = nil) {
     self.init(id: id,
-      scans: scans,
-      vaccines: vaccines,
-      provider: provider,
+      name: name,
       createdAt: nil,
       updatedAt: nil)
   }
   internal init(id: String = UUID().uuidString,
-      scans: List<Scan>? = [],
-      vaccines: List<Vaccine>? = [],
-      provider: Provider? = nil,
+      name: String? = nil,
       createdAt: Temporal.DateTime? = nil,
       updatedAt: Temporal.DateTime? = nil) {
       self.id = id
-      self.scans = scans
-      self.vaccines = vaccines
-      self.provider = provider
+      self.name = name
       self.createdAt = createdAt
       self.updatedAt = updatedAt
   }

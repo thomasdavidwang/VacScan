@@ -11,10 +11,11 @@ import Vision
 
 struct ScanView: UIViewControllerRepresentable {
     @Environment(\.presentationMode) var presentationMode
+    @Binding var scans: [UIImage]
     @Binding var recognizedText: String
         
     func makeCoordinator() -> Coordinator {
-        Coordinator(recognizedText: $recognizedText, parent: self)
+        Coordinator(recognizedText: $recognizedText, scans: $scans, parent: self)
     }
         
     func makeUIViewController(context: Context) -> VNDocumentCameraViewController {
@@ -29,16 +30,27 @@ struct ScanView: UIViewControllerRepresentable {
         
     class Coordinator: NSObject, VNDocumentCameraViewControllerDelegate {
         var recognizedText: Binding<String>
+        var scans: Binding<[UIImage]>
         var parent: ScanView
             
-        init(recognizedText: Binding<String>, parent: ScanView) {
+        init(recognizedText: Binding<String>, scans: Binding<[UIImage]>, parent: ScanView) {
             self.recognizedText = recognizedText
+            self.scans = scans
             self.parent = parent
         }
             
         func documentCameraViewController(_ controller: VNDocumentCameraViewController, didFinishWith scan: VNDocumentCameraScan) {
             let extractedImages = extractImages(from: scan)
             let processedText = recognizeText(from: extractedImages)
+            
+            var tempScans = [UIImage]()
+            
+            for scan in extractedImages {
+                tempScans.append(UIImage(cgImage: scan))
+            }
+            
+            scans.wrappedValue = tempScans
+            
             recognizedText.wrappedValue = processedText
             
             parent.presentationMode.wrappedValue.dismiss()

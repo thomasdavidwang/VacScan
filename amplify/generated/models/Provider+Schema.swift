@@ -9,6 +9,7 @@ extension Provider {
     case firstName
     case lastName
     case phoneNumber
+    case encounters
     case createdAt
     case updatedAt
   }
@@ -20,6 +21,7 @@ extension Provider {
     let provider = Provider.keys
     
     model.authRules = [
+      rule(allow: .public, provider: .iam, operations: [.read, .create]),
       rule(allow: .private, operations: [.create, .update, .delete, .read])
     ]
     
@@ -36,6 +38,7 @@ extension Provider {
       .field(provider.firstName, is: .optional, ofType: .string),
       .field(provider.lastName, is: .optional, ofType: .string),
       .field(provider.phoneNumber, is: .optional, ofType: .string),
+      .hasMany(provider.encounters, is: .optional, ofType: Encounter.self, associatedWith: Encounter.keys.provider),
       .field(provider.createdAt, is: .optional, isReadOnly: true, ofType: .dateTime),
       .field(provider.updatedAt, is: .optional, isReadOnly: true, ofType: .dateTime)
     )

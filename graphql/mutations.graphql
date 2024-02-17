@@ -200,6 +200,13 @@ mutation CreateVaccine(
     id
     lotNumber
     expirationDate
+    vaccineType {
+      id
+      name
+      createdAt
+      updatedAt
+      __typename
+    }
     encounter {
       id
       createdAt
@@ -222,6 +229,13 @@ mutation UpdateVaccine(
     id
     lotNumber
     expirationDate
+    vaccineType {
+      id
+      name
+      createdAt
+      updatedAt
+      __typename
+    }
     encounter {
       id
       createdAt
@@ -244,6 +258,13 @@ mutation DeleteVaccine(
     id
     lotNumber
     expirationDate
+    vaccineType {
+      id
+      name
+      createdAt
+      updatedAt
+      __typename
+    }
     encounter {
       id
       createdAt
@@ -254,6 +275,45 @@ mutation DeleteVaccine(
     createdAt
     updatedAt
     encounterVaccinesId
+    __typename
+  }
+}
+
+mutation CreateVaccineType(
+  $input: CreateVaccineTypeInput!
+  $condition: ModelVaccineTypeConditionInput
+) {
+  createVaccineType(input: $input, condition: $condition) {
+    id
+    name
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation UpdateVaccineType(
+  $input: UpdateVaccineTypeInput!
+  $condition: ModelVaccineTypeConditionInput
+) {
+  updateVaccineType(input: $input, condition: $condition) {
+    id
+    name
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation DeleteVaccineType(
+  $input: DeleteVaccineTypeInput!
+  $condition: ModelVaccineTypeConditionInput
+) {
+  deleteVaccineType(input: $input, condition: $condition) {
+    id
+    name
+    createdAt
+    updatedAt
     __typename
   }
 }

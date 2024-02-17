@@ -16,6 +16,8 @@
 		6E1DEF76C44729485E9B2F0B /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 5F46AD8FD780745678684920 /* amplifyconfiguration.json */; };
 		73D987435FC4A5A0A827CA03 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 7994E8C44F6CA05E61A1A2EA /* awsconfiguration.json */; };
 		8325F1DB4556D31B14788FC1 /* Scan+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA18326B08E946453FAA6DBE /* Scan+Schema.swift */; };
+		85FFCEB6E8482F444492214A /* VaccineType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09336A4626FBC55B1CE784F1 /* VaccineType.swift */; };
+		98371DEDA6319092292FE911 /* VaccineType+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F88B9F066855A1D55C635A0 /* VaccineType+Schema.swift */; };
 		A3A1E724C57159C2FAE8016F /* Encounter+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BA7E1C3EAF1F023C6CA7C9 /* Encounter+Schema.swift */; };
 		B7A62D1D31616E8FF538BDB8 /* Patient+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9F43488C48675B551970DE /* Patient+Schema.swift */; };
 		CF2257AC2B61B56300ED8DAD /* VacScanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2257AB2B61B56300ED8DAD /* VacScanApp.swift */; };
@@ -49,6 +51,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09336A4626FBC55B1CE784F1 /* VaccineType.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = VaccineType.swift; path = amplify/generated/models/VaccineType.swift; sourceTree = "<group>"; };
 		23FAF6989F758AC2DD644302 /* Provider+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = "Provider+Schema.swift"; path = "amplify/generated/models/Provider+Schema.swift"; sourceTree = "<group>"; };
 		29BA7E1C3EAF1F023C6CA7C9 /* Encounter+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = "Encounter+Schema.swift"; path = "amplify/generated/models/Encounter+Schema.swift"; sourceTree = "<group>"; };
 		33E61F7AF946EF3CBDCF9774 /* Patient.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Patient.swift; path = amplify/generated/models/Patient.swift; sourceTree = "<group>"; };
@@ -56,6 +59,7 @@
 		4C9F43488C48675B551970DE /* Patient+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = "Patient+Schema.swift"; path = "amplify/generated/models/Patient+Schema.swift"; sourceTree = "<group>"; };
 		5584AD9111C88EFD3E99FF97 /* Encounter.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Encounter.swift; path = amplify/generated/models/Encounter.swift; sourceTree = "<group>"; };
 		5F46AD8FD780745678684920 /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
+		6F88B9F066855A1D55C635A0 /* VaccineType+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "VaccineType+Schema.swift"; path = "amplify/generated/models/VaccineType+Schema.swift"; sourceTree = "<group>"; };
 		7994E8C44F6CA05E61A1A2EA /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		95FEF1E958F85BCE7DF45056 /* Vaccine+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = "Vaccine+Schema.swift"; path = "amplify/generated/models/Vaccine+Schema.swift"; sourceTree = "<group>"; };
 		98173674C79EE589A2333FEC /* AmplifyModels.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = AmplifyModels.swift; path = amplify/generated/models/AmplifyModels.swift; sourceTree = "<group>"; };
@@ -116,6 +120,8 @@
 				DCF813F8DB46D9809D08EA29 /* Scan.swift */,
 				95FEF1E958F85BCE7DF45056 /* Vaccine+Schema.swift */,
 				37D5FDFBC804591624871636 /* Vaccine.swift */,
+				6F88B9F066855A1D55C635A0 /* VaccineType+Schema.swift */,
+				09336A4626FBC55B1CE784F1 /* VaccineType.swift */,
 			);
 			name = AmplifyModels;
 			sourceTree = "<group>";
@@ -328,6 +334,8 @@
 				19D46DB77F155B956C3196F3 /* Vaccine+Schema.swift in Sources */,
 				3C208FA2C974086CD2628AA9 /* Vaccine.swift in Sources */,
 				CFFCEE772B803A650008EF7E /* SettingsView.swift in Sources */,
+				98371DEDA6319092292FE911 /* VaccineType+Schema.swift in Sources */,
+				85FFCEB6E8482F444492214A /* VaccineType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

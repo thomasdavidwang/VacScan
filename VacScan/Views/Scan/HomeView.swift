@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject var scanManager: ScanManager
+    @EnvironmentObject var authManager: AuthManager
+    
     @State private var recognizedText = "Tap button to start scanning."
+    @State private var scans = [UIImage]()
     @State private var showingScanningView = false
     @State private var showSettings = false
     
@@ -38,6 +42,14 @@ struct HomeView: View {
                     .padding()
                 }
                 
+                Button(action: {
+                    Task {
+                        await scanManager.saveScansToBackend(scans: scans, provider: authManager.provider)
+                    }
+                }) {
+                    Text("Upload")
+                }
+                
                 Spacer()
                 
                 HStack {
@@ -58,7 +70,7 @@ struct HomeView: View {
                 SettingsView(showSettings: self.$showSettings)
             }
             .sheet(isPresented: $showingScanningView) {
-                ScanView(recognizedText: self.$recognizedText)
+                ScanView(scans: self.$scans, recognizedText: self.$recognizedText)
             }
         }
     }

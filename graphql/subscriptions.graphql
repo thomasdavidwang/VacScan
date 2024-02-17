@@ -170,6 +170,13 @@ subscription OnCreateVaccine($filter: ModelSubscriptionVaccineFilterInput) {
     id
     lotNumber
     expirationDate
+    vaccineType {
+      id
+      name
+      createdAt
+      updatedAt
+      __typename
+    }
     encounter {
       id
       createdAt
@@ -189,6 +196,13 @@ subscription OnUpdateVaccine($filter: ModelSubscriptionVaccineFilterInput) {
     id
     lotNumber
     expirationDate
+    vaccineType {
+      id
+      name
+      createdAt
+      updatedAt
+      __typename
+    }
     encounter {
       id
       createdAt
@@ -208,6 +222,13 @@ subscription OnDeleteVaccine($filter: ModelSubscriptionVaccineFilterInput) {
     id
     lotNumber
     expirationDate
+    vaccineType {
+      id
+      name
+      createdAt
+      updatedAt
+      __typename
+    }
     encounter {
       id
       createdAt
@@ -218,6 +239,42 @@ subscription OnDeleteVaccine($filter: ModelSubscriptionVaccineFilterInput) {
     createdAt
     updatedAt
     encounterVaccinesId
+    __typename
+  }
+}
+
+subscription OnCreateVaccineType(
+  $filter: ModelSubscriptionVaccineTypeFilterInput
+) {
+  onCreateVaccineType(filter: $filter) {
+    id
+    name
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnUpdateVaccineType(
+  $filter: ModelSubscriptionVaccineTypeFilterInput
+) {
+  onUpdateVaccineType(filter: $filter) {
+    id
+    name
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnDeleteVaccineType(
+  $filter: ModelSubscriptionVaccineTypeFilterInput
+) {
+  onDeleteVaccineType(filter: $filter) {
+    id
+    name
+    createdAt
+    updatedAt
     __typename
   }
 }

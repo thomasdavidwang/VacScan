@@ -8,6 +8,7 @@ extension Encounter {
     case id
     case scans
     case vaccines
+    case provider
     case createdAt
     case updatedAt
   }
@@ -34,6 +35,7 @@ extension Encounter {
       .field(encounter.id, is: .required, ofType: .string),
       .hasMany(encounter.scans, is: .optional, ofType: Scan.self, associatedWith: Scan.keys.encounter),
       .hasMany(encounter.vaccines, is: .optional, ofType: Vaccine.self, associatedWith: Vaccine.keys.encounter),
+      .belongsTo(encounter.provider, is: .optional, ofType: Provider.self, targetNames: ["providerEncountersId"]),
       .field(encounter.createdAt, is: .optional, isReadOnly: true, ofType: .dateTime),
       .field(encounter.updatedAt, is: .optional, isReadOnly: true, ofType: .dateTime)
     )

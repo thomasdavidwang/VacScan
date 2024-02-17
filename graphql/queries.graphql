@@ -142,6 +142,13 @@ query GetVaccine($id: ID!) {
     id
     lotNumber
     expirationDate
+    vaccineType {
+      id
+      name
+      createdAt
+      updatedAt
+      __typename
+    }
     encounter {
       id
       createdAt
@@ -177,6 +184,42 @@ query ListVaccines(
       createdAt
       updatedAt
       encounterVaccinesId
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GetVaccineType($id: ID!) {
+  getVaccineType(id: $id) {
+    id
+    name
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+query ListVaccineTypes(
+  $id: ID
+  $filter: ModelVaccineTypeFilterInput
+  $limit: Int
+  $nextToken: String
+  $sortDirection: ModelSortDirection
+) {
+  listVaccineTypes(
+    id: $id
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    sortDirection: $sortDirection
+  ) {
+    items {
+      id
+      name
+      createdAt
+      updatedAt
       __typename
     }
     nextToken
