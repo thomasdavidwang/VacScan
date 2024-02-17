@@ -10,10 +10,23 @@ import SwiftUI
 struct HomeView: View {
     @State private var recognizedText = "Tap button to start scanning."
     @State private var showingScanningView = false
+    @State private var showSettings = false
     
     var body: some View {
         NavigationView {
             VStack {
+                HStack {
+                    Text("VacScan")
+                    
+                    Spacer()
+                    
+                    Button(action: {
+                        showSettings = true
+                    }) {
+                        Image(systemName: "person.circle")
+                    }
+                }.padding()
+                
                 ScrollView {
                     ZStack {
                         RoundedRectangle(cornerRadius: 20, style: .continuous)
@@ -41,10 +54,12 @@ struct HomeView: View {
                 }
                 .padding()
             }
-            .navigationBarTitle("Text Recognition")
+            .sheet(isPresented: $showSettings) {
+                SettingsView(showSettings: self.$showSettings)
+            }
             .sheet(isPresented: $showingScanningView) {
-                        ScanView(recognizedText: self.$recognizedText)
-                    }
+                ScanView(recognizedText: self.$recognizedText)
+            }
         }
     }
 }

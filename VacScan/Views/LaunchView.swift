@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LaunchView: View {
     @EnvironmentObject var authManager: AuthManager
+    @EnvironmentObject var scanManager: ScanManager
     
     var body: some View {
         if authManager.isSignedIn == nil {
