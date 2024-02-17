@@ -231,6 +231,7 @@ query GetScan($id: ID!) {
   getScan(id: $id) {
     id
     fileName
+    recognizedText
     encounter {
       id
       createdAt
@@ -262,6 +263,7 @@ query ListScans(
     items {
       id
       fileName
+      recognizedText
       createdAt
       updatedAt
       encounterScansId

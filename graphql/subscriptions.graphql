@@ -283,6 +283,7 @@ subscription OnCreateScan($filter: ModelSubscriptionScanFilterInput) {
   onCreateScan(filter: $filter) {
     id
     fileName
+    recognizedText
     encounter {
       id
       createdAt
@@ -301,6 +302,7 @@ subscription OnUpdateScan($filter: ModelSubscriptionScanFilterInput) {
   onUpdateScan(filter: $filter) {
     id
     fileName
+    recognizedText
     encounter {
       id
       createdAt
@@ -319,6 +321,7 @@ subscription OnDeleteScan($filter: ModelSubscriptionScanFilterInput) {
   onDeleteScan(filter: $filter) {
     id
     fileName
+    recognizedText
     encounter {
       id
       createdAt

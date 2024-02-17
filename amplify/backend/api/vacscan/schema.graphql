@@ -1,11 +1,11 @@
-type Patient @model @auth(rules: [{allow: private}]) {
+type Patient @model @auth(rules: [{allow: private, provider: iam}]) {
   	id: ID! @primaryKey
   	firstName: String
   	lastName: String
   	dateOfBirth: AWSDate
 }
 
-type Provider @model @auth(rules: [{allow: public, operations: [read, create], provider: iam}, {allow: private}]) {
+type Provider @model @auth(rules: [{allow: public, operations: [read, create], provider: iam}, {allow: private, provider: iam}]) {
 	id: ID! @primaryKey
 	firstName: String
 	lastName: String
@@ -13,14 +13,14 @@ type Provider @model @auth(rules: [{allow: public, operations: [read, create], p
 	encounters: [Encounter] @hasMany
 }
 
-type Encounter @model @auth(rules: [{allow: private}]){
+type Encounter @model @auth(rules: [{allow: private, provider: iam}]){
 	id: ID! @primaryKey
 	scans: [Scan] @hasMany
 	vaccines: [Vaccine] @hasMany
 	provider: Provider @belongsTo
 }
 
-type Vaccine @model @auth(rules: [{allow: private}]) {
+type Vaccine @model @auth(rules: [{allow: private, provider: iam}]) {
 	id: ID! @primaryKey
 	lotNumber: String
 	expirationDate: String
@@ -28,14 +28,15 @@ type Vaccine @model @auth(rules: [{allow: private}]) {
 	encounter: Encounter @belongsTo
 }
 
-type VaccineType @model @auth(rules: [{allow: private}]) {
+type VaccineType @model @auth(rules: [{allow: private, provider: iam}]) {
 	id: ID! @primaryKey
 	name: String
 }
 
-type Scan @model @auth(rules: [{allow: private}]) {
+type Scan @model @auth(rules: [{allow: private, provider: iam}]) {
 	id: ID! @primaryKey
 	fileName: String
+	recognizedText: String
 	encounter: Encounter @belongsTo
 }
 

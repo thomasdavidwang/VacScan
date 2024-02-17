@@ -325,6 +325,7 @@ mutation CreateScan(
   createScan(input: $input, condition: $condition) {
     id
     fileName
+    recognizedText
     encounter {
       id
       createdAt
@@ -346,6 +347,7 @@ mutation UpdateScan(
   updateScan(input: $input, condition: $condition) {
     id
     fileName
+    recognizedText
     encounter {
       id
       createdAt
@@ -367,6 +369,7 @@ mutation DeleteScan(
   deleteScan(input: $input, condition: $condition) {
     id
     fileName
+    recognizedText
     encounter {
       id
       createdAt

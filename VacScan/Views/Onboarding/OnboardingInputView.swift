@@ -28,9 +28,7 @@ struct OnboardingInputView: View {
             switch view {
             case .phoneNumber:
                 let digits = "+1" + input.filter{$0.isNumber}
-                print(digits)
                 let provider = try await authManager.getProviderByPhone(phoneNumber: digits)
-                print(provider)
                 if (provider!.count == 0) {
                     try await authManager.signUp(phoneNumber: input)
                     print("signed up")
@@ -121,7 +119,6 @@ struct OnboardingInputView: View {
             
             if isLoading {
                 ProgressView()
-                    .tint(.white)
             }
         }
         .task{

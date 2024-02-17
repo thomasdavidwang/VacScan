@@ -11,7 +11,6 @@ import Amplify
 
 class ScanManager: ObservableObject {
     init() {
-        
     }
     
     func getDocumentsDirectory() -> URL {
@@ -25,12 +24,12 @@ class ScanManager: ObservableObject {
             let result = try await Amplify.API.mutate(request: .create(encounter))
             switch result {
             case .success(let encounter):
-                print("Successfully created todo: \(encounter)")
+                print("Successfully created encounter: \(encounter)")
             case .failure(let error):
                 print("Got failed result with \(error.errorDescription)")
             }
         } catch let error as APIError {
-            print("Failed to create todo: ", error)
+            print("Failed to create encounter: ", error)
         } catch {
             print("Unexpected error: \(error)")
         }
@@ -63,7 +62,7 @@ class ScanManager: ObservableObject {
                     let result = try await Amplify.API.mutate(request: .create(scan))
                     switch result {
                     case .success(let encounter):
-                        print("Successfully created todo: \(encounter)")
+                        print("Successfully created scan: \(encounter)")
                     case .failure(let error):
                         print("Got failed result with \(error.errorDescription)")
                     }

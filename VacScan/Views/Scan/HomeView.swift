@@ -15,56 +15,68 @@ struct HomeView: View {
     @State private var scans = [UIImage]()
     @State private var showingScanningView = false
     @State private var showSettings = false
+    @State private var isLoading = false
     
     var body: some View {
         NavigationView {
-            VStack {
-                HStack {
-                    Text("VacScan")
-                    
-                    Spacer()
-                    
-                    Button(action: {
-                        showSettings = true
-                    }) {
-                        Image(systemName: "person.circle")
-                    }
-                }.padding()
-                
-                ScrollView {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 20, style: .continuous)
-                            .fill(Color.gray.opacity(0.2))
+            ZStack{
+                if isLoading {
+                    ProgressView()
+                }
+                VStack {
+                    HStack {
+                        Text("VacScan")
                         
-                        Text(recognizedText)
-                            .padding()
+                        Spacer()
+                        
+                        Button(action: {
+                            showSettings = true
+                        }) {
+                            Image(systemName: "person.circle")
+                        }
+                    }.padding()
+                    
+                    ScrollView {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 20, style: .continuous)
+                                .fill(Color.gray.opacity(0.2))
+                            
+                            Text(recognizedText)
+                                .padding()
+                        }
+                        .padding()
                     }
-                    .padding()
-                }
-                
-                Button(action: {
-                    Task {
-                        await scanManager.saveScansToBackend(scans: scans, provider: authManager.provider)
-                    }
-                }) {
-                    Text("Upload")
-                }
-                
-                Spacer()
-                
-                HStack {
-                    Spacer()
+                    
+                    Text("\(scans.count) scans added")
                     
                     Button(action: {
-                        self.showingScanningView = true
+                        Task {
+                            isLoading = true
+                            await scanManager.saveScansToBackend(scans: scans, provider: authManager.provider)
+                            recognizedText = "Tap button to start scanning."
+                            scans = [UIImage]()
+                            isLoading = false
+                        }
                     }) {
-                        Text("Start Scanning")
+                        Text("Confirm + Upload")
+                    }
+                    
+                    Spacer()
+                    
+                    HStack {
+                        Spacer()
+                        
+                        Button(action: {
+                            self.showingScanningView = true
+                        }) {
+                            Text("Start Scanning")
+                        }
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(Capsule().fill(Color.blue))
                     }
                     .padding()
-                    .foregroundColor(.white)
-                    .background(Capsule().fill(Color.blue))
                 }
-                .padding()
             }
             .sheet(isPresented: $showSettings) {
                 SettingsView(showSettings: self.$showSettings)

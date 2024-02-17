@@ -1538,8 +1538,8 @@ public struct DeleteVaccineTypeInput: GraphQLMapConvertible {
 public struct CreateScanInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(id: GraphQLID? = nil, fileName: String? = nil, encounterScansId: GraphQLID? = nil) {
-    graphQLMap = ["id": id, "fileName": fileName, "encounterScansId": encounterScansId]
+  public init(id: GraphQLID? = nil, fileName: String? = nil, recognizedText: String? = nil, encounterScansId: GraphQLID? = nil) {
+    graphQLMap = ["id": id, "fileName": fileName, "recognizedText": recognizedText, "encounterScansId": encounterScansId]
   }
 
   public var id: GraphQLID? {
@@ -1560,6 +1560,15 @@ public struct CreateScanInput: GraphQLMapConvertible {
     }
   }
 
+  public var recognizedText: String? {
+    get {
+      return graphQLMap["recognizedText"] as! String?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "recognizedText")
+    }
+  }
+
   public var encounterScansId: GraphQLID? {
     get {
       return graphQLMap["encounterScansId"] as! GraphQLID?
@@ -1573,8 +1582,8 @@ public struct CreateScanInput: GraphQLMapConvertible {
 public struct ModelScanConditionInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(fileName: ModelStringInput? = nil, and: [ModelScanConditionInput?]? = nil, or: [ModelScanConditionInput?]? = nil, not: ModelScanConditionInput? = nil, encounterScansId: ModelIDInput? = nil) {
-    graphQLMap = ["fileName": fileName, "and": and, "or": or, "not": not, "encounterScansId": encounterScansId]
+  public init(fileName: ModelStringInput? = nil, recognizedText: ModelStringInput? = nil, and: [ModelScanConditionInput?]? = nil, or: [ModelScanConditionInput?]? = nil, not: ModelScanConditionInput? = nil, encounterScansId: ModelIDInput? = nil) {
+    graphQLMap = ["fileName": fileName, "recognizedText": recognizedText, "and": and, "or": or, "not": not, "encounterScansId": encounterScansId]
   }
 
   public var fileName: ModelStringInput? {
@@ -1583,6 +1592,15 @@ public struct ModelScanConditionInput: GraphQLMapConvertible {
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "fileName")
+    }
+  }
+
+  public var recognizedText: ModelStringInput? {
+    get {
+      return graphQLMap["recognizedText"] as! ModelStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "recognizedText")
     }
   }
 
@@ -1626,8 +1644,8 @@ public struct ModelScanConditionInput: GraphQLMapConvertible {
 public struct UpdateScanInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(id: GraphQLID, fileName: String? = nil, encounterScansId: GraphQLID? = nil) {
-    graphQLMap = ["id": id, "fileName": fileName, "encounterScansId": encounterScansId]
+  public init(id: GraphQLID, fileName: String? = nil, recognizedText: String? = nil, encounterScansId: GraphQLID? = nil) {
+    graphQLMap = ["id": id, "fileName": fileName, "recognizedText": recognizedText, "encounterScansId": encounterScansId]
   }
 
   public var id: GraphQLID {
@@ -1645,6 +1663,15 @@ public struct UpdateScanInput: GraphQLMapConvertible {
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "fileName")
+    }
+  }
+
+  public var recognizedText: String? {
+    get {
+      return graphQLMap["recognizedText"] as! String?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "recognizedText")
     }
   }
 
@@ -2030,8 +2057,8 @@ public struct ModelVaccineTypeFilterInput: GraphQLMapConvertible {
 public struct ModelScanFilterInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(id: ModelIDInput? = nil, fileName: ModelStringInput? = nil, and: [ModelScanFilterInput?]? = nil, or: [ModelScanFilterInput?]? = nil, not: ModelScanFilterInput? = nil, encounterScansId: ModelIDInput? = nil) {
-    graphQLMap = ["id": id, "fileName": fileName, "and": and, "or": or, "not": not, "encounterScansId": encounterScansId]
+  public init(id: ModelIDInput? = nil, fileName: ModelStringInput? = nil, recognizedText: ModelStringInput? = nil, and: [ModelScanFilterInput?]? = nil, or: [ModelScanFilterInput?]? = nil, not: ModelScanFilterInput? = nil, encounterScansId: ModelIDInput? = nil) {
+    graphQLMap = ["id": id, "fileName": fileName, "recognizedText": recognizedText, "and": and, "or": or, "not": not, "encounterScansId": encounterScansId]
   }
 
   public var id: ModelIDInput? {
@@ -2049,6 +2076,15 @@ public struct ModelScanFilterInput: GraphQLMapConvertible {
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "fileName")
+    }
+  }
+
+  public var recognizedText: ModelStringInput? {
+    get {
+      return graphQLMap["recognizedText"] as! ModelStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "recognizedText")
     }
   }
 
@@ -2580,8 +2616,8 @@ public struct ModelSubscriptionVaccineTypeFilterInput: GraphQLMapConvertible {
 public struct ModelSubscriptionScanFilterInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(id: ModelSubscriptionIDInput? = nil, fileName: ModelSubscriptionStringInput? = nil, and: [ModelSubscriptionScanFilterInput?]? = nil, or: [ModelSubscriptionScanFilterInput?]? = nil) {
-    graphQLMap = ["id": id, "fileName": fileName, "and": and, "or": or]
+  public init(id: ModelSubscriptionIDInput? = nil, fileName: ModelSubscriptionStringInput? = nil, recognizedText: ModelSubscriptionStringInput? = nil, and: [ModelSubscriptionScanFilterInput?]? = nil, or: [ModelSubscriptionScanFilterInput?]? = nil) {
+    graphQLMap = ["id": id, "fileName": fileName, "recognizedText": recognizedText, "and": and, "or": or]
   }
 
   public var id: ModelSubscriptionIDInput? {
@@ -2599,6 +2635,15 @@ public struct ModelSubscriptionScanFilterInput: GraphQLMapConvertible {
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "fileName")
+    }
+  }
+
+  public var recognizedText: ModelSubscriptionStringInput? {
+    get {
+      return graphQLMap["recognizedText"] as! ModelSubscriptionStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "recognizedText")
     }
   }
 
@@ -5644,7 +5689,7 @@ public final class DeleteVaccineTypeMutation: GraphQLMutation {
 
 public final class CreateScanMutation: GraphQLMutation {
   public static let operationString =
-    "mutation CreateScan($input: CreateScanInput!, $condition: ModelScanConditionInput) {\n  createScan(input: $input, condition: $condition) {\n    __typename\n    id\n    fileName\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterScansId\n  }\n}"
+    "mutation CreateScan($input: CreateScanInput!, $condition: ModelScanConditionInput) {\n  createScan(input: $input, condition: $condition) {\n    __typename\n    id\n    fileName\n    recognizedText\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterScansId\n  }\n}"
 
   public var input: CreateScanInput
   public var condition: ModelScanConditionInput?
@@ -5691,6 +5736,7 @@ public final class CreateScanMutation: GraphQLMutation {
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("fileName", type: .scalar(String.self)),
+        GraphQLField("recognizedText", type: .scalar(String.self)),
         GraphQLField("encounter", type: .object(Encounter.selections)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
@@ -5703,8 +5749,8 @@ public final class CreateScanMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, fileName: String? = nil, encounter: Encounter? = nil, createdAt: String, updatedAt: String, encounterScansId: GraphQLID? = nil) {
-        self.init(snapshot: ["__typename": "Scan", "id": id, "fileName": fileName, "encounter": encounter.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt, "encounterScansId": encounterScansId])
+      public init(id: GraphQLID, fileName: String? = nil, recognizedText: String? = nil, encounter: Encounter? = nil, createdAt: String, updatedAt: String, encounterScansId: GraphQLID? = nil) {
+        self.init(snapshot: ["__typename": "Scan", "id": id, "fileName": fileName, "recognizedText": recognizedText, "encounter": encounter.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt, "encounterScansId": encounterScansId])
       }
 
       public var __typename: String {
@@ -5731,6 +5777,15 @@ public final class CreateScanMutation: GraphQLMutation {
         }
         set {
           snapshot.updateValue(newValue, forKey: "fileName")
+        }
+      }
+
+      public var recognizedText: String? {
+        get {
+          return snapshot["recognizedText"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "recognizedText")
         }
       }
 
@@ -5842,7 +5897,7 @@ public final class CreateScanMutation: GraphQLMutation {
 
 public final class UpdateScanMutation: GraphQLMutation {
   public static let operationString =
-    "mutation UpdateScan($input: UpdateScanInput!, $condition: ModelScanConditionInput) {\n  updateScan(input: $input, condition: $condition) {\n    __typename\n    id\n    fileName\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterScansId\n  }\n}"
+    "mutation UpdateScan($input: UpdateScanInput!, $condition: ModelScanConditionInput) {\n  updateScan(input: $input, condition: $condition) {\n    __typename\n    id\n    fileName\n    recognizedText\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterScansId\n  }\n}"
 
   public var input: UpdateScanInput
   public var condition: ModelScanConditionInput?
@@ -5889,6 +5944,7 @@ public final class UpdateScanMutation: GraphQLMutation {
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("fileName", type: .scalar(String.self)),
+        GraphQLField("recognizedText", type: .scalar(String.self)),
         GraphQLField("encounter", type: .object(Encounter.selections)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
@@ -5901,8 +5957,8 @@ public final class UpdateScanMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, fileName: String? = nil, encounter: Encounter? = nil, createdAt: String, updatedAt: String, encounterScansId: GraphQLID? = nil) {
-        self.init(snapshot: ["__typename": "Scan", "id": id, "fileName": fileName, "encounter": encounter.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt, "encounterScansId": encounterScansId])
+      public init(id: GraphQLID, fileName: String? = nil, recognizedText: String? = nil, encounter: Encounter? = nil, createdAt: String, updatedAt: String, encounterScansId: GraphQLID? = nil) {
+        self.init(snapshot: ["__typename": "Scan", "id": id, "fileName": fileName, "recognizedText": recognizedText, "encounter": encounter.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt, "encounterScansId": encounterScansId])
       }
 
       public var __typename: String {
@@ -5929,6 +5985,15 @@ public final class UpdateScanMutation: GraphQLMutation {
         }
         set {
           snapshot.updateValue(newValue, forKey: "fileName")
+        }
+      }
+
+      public var recognizedText: String? {
+        get {
+          return snapshot["recognizedText"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "recognizedText")
         }
       }
 
@@ -6040,7 +6105,7 @@ public final class UpdateScanMutation: GraphQLMutation {
 
 public final class DeleteScanMutation: GraphQLMutation {
   public static let operationString =
-    "mutation DeleteScan($input: DeleteScanInput!, $condition: ModelScanConditionInput) {\n  deleteScan(input: $input, condition: $condition) {\n    __typename\n    id\n    fileName\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterScansId\n  }\n}"
+    "mutation DeleteScan($input: DeleteScanInput!, $condition: ModelScanConditionInput) {\n  deleteScan(input: $input, condition: $condition) {\n    __typename\n    id\n    fileName\n    recognizedText\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterScansId\n  }\n}"
 
   public var input: DeleteScanInput
   public var condition: ModelScanConditionInput?
@@ -6087,6 +6152,7 @@ public final class DeleteScanMutation: GraphQLMutation {
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("fileName", type: .scalar(String.self)),
+        GraphQLField("recognizedText", type: .scalar(String.self)),
         GraphQLField("encounter", type: .object(Encounter.selections)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
@@ -6099,8 +6165,8 @@ public final class DeleteScanMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, fileName: String? = nil, encounter: Encounter? = nil, createdAt: String, updatedAt: String, encounterScansId: GraphQLID? = nil) {
-        self.init(snapshot: ["__typename": "Scan", "id": id, "fileName": fileName, "encounter": encounter.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt, "encounterScansId": encounterScansId])
+      public init(id: GraphQLID, fileName: String? = nil, recognizedText: String? = nil, encounter: Encounter? = nil, createdAt: String, updatedAt: String, encounterScansId: GraphQLID? = nil) {
+        self.init(snapshot: ["__typename": "Scan", "id": id, "fileName": fileName, "recognizedText": recognizedText, "encounter": encounter.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt, "encounterScansId": encounterScansId])
       }
 
       public var __typename: String {
@@ -6127,6 +6193,15 @@ public final class DeleteScanMutation: GraphQLMutation {
         }
         set {
           snapshot.updateValue(newValue, forKey: "fileName")
+        }
+      }
+
+      public var recognizedText: String? {
+        get {
+          return snapshot["recognizedText"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "recognizedText")
         }
       }
 
@@ -8115,7 +8190,7 @@ public final class ListVaccineTypesQuery: GraphQLQuery {
 
 public final class GetScanQuery: GraphQLQuery {
   public static let operationString =
-    "query GetScan($id: ID!) {\n  getScan(id: $id) {\n    __typename\n    id\n    fileName\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterScansId\n  }\n}"
+    "query GetScan($id: ID!) {\n  getScan(id: $id) {\n    __typename\n    id\n    fileName\n    recognizedText\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterScansId\n  }\n}"
 
   public var id: GraphQLID
 
@@ -8160,6 +8235,7 @@ public final class GetScanQuery: GraphQLQuery {
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("fileName", type: .scalar(String.self)),
+        GraphQLField("recognizedText", type: .scalar(String.self)),
         GraphQLField("encounter", type: .object(Encounter.selections)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
@@ -8172,8 +8248,8 @@ public final class GetScanQuery: GraphQLQuery {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, fileName: String? = nil, encounter: Encounter? = nil, createdAt: String, updatedAt: String, encounterScansId: GraphQLID? = nil) {
-        self.init(snapshot: ["__typename": "Scan", "id": id, "fileName": fileName, "encounter": encounter.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt, "encounterScansId": encounterScansId])
+      public init(id: GraphQLID, fileName: String? = nil, recognizedText: String? = nil, encounter: Encounter? = nil, createdAt: String, updatedAt: String, encounterScansId: GraphQLID? = nil) {
+        self.init(snapshot: ["__typename": "Scan", "id": id, "fileName": fileName, "recognizedText": recognizedText, "encounter": encounter.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt, "encounterScansId": encounterScansId])
       }
 
       public var __typename: String {
@@ -8200,6 +8276,15 @@ public final class GetScanQuery: GraphQLQuery {
         }
         set {
           snapshot.updateValue(newValue, forKey: "fileName")
+        }
+      }
+
+      public var recognizedText: String? {
+        get {
+          return snapshot["recognizedText"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "recognizedText")
         }
       }
 
@@ -8311,7 +8396,7 @@ public final class GetScanQuery: GraphQLQuery {
 
 public final class ListScansQuery: GraphQLQuery {
   public static let operationString =
-    "query ListScans($id: ID, $filter: ModelScanFilterInput, $limit: Int, $nextToken: String, $sortDirection: ModelSortDirection) {\n  listScans(\n    id: $id\n    filter: $filter\n    limit: $limit\n    nextToken: $nextToken\n    sortDirection: $sortDirection\n  ) {\n    __typename\n    items {\n      __typename\n      id\n      fileName\n      createdAt\n      updatedAt\n      encounterScansId\n    }\n    nextToken\n  }\n}"
+    "query ListScans($id: ID, $filter: ModelScanFilterInput, $limit: Int, $nextToken: String, $sortDirection: ModelSortDirection) {\n  listScans(\n    id: $id\n    filter: $filter\n    limit: $limit\n    nextToken: $nextToken\n    sortDirection: $sortDirection\n  ) {\n    __typename\n    items {\n      __typename\n      id\n      fileName\n      recognizedText\n      createdAt\n      updatedAt\n      encounterScansId\n    }\n    nextToken\n  }\n}"
 
   public var id: GraphQLID?
   public var filter: ModelScanFilterInput?
@@ -8410,6 +8495,7 @@ public final class ListScansQuery: GraphQLQuery {
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
           GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
           GraphQLField("fileName", type: .scalar(String.self)),
+          GraphQLField("recognizedText", type: .scalar(String.self)),
           GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
           GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
           GraphQLField("encounterScansId", type: .scalar(GraphQLID.self)),
@@ -8421,8 +8507,8 @@ public final class ListScansQuery: GraphQLQuery {
           self.snapshot = snapshot
         }
 
-        public init(id: GraphQLID, fileName: String? = nil, createdAt: String, updatedAt: String, encounterScansId: GraphQLID? = nil) {
-          self.init(snapshot: ["__typename": "Scan", "id": id, "fileName": fileName, "createdAt": createdAt, "updatedAt": updatedAt, "encounterScansId": encounterScansId])
+        public init(id: GraphQLID, fileName: String? = nil, recognizedText: String? = nil, createdAt: String, updatedAt: String, encounterScansId: GraphQLID? = nil) {
+          self.init(snapshot: ["__typename": "Scan", "id": id, "fileName": fileName, "recognizedText": recognizedText, "createdAt": createdAt, "updatedAt": updatedAt, "encounterScansId": encounterScansId])
         }
 
         public var __typename: String {
@@ -8449,6 +8535,15 @@ public final class ListScansQuery: GraphQLQuery {
           }
           set {
             snapshot.updateValue(newValue, forKey: "fileName")
+          }
+        }
+
+        public var recognizedText: String? {
+          get {
+            return snapshot["recognizedText"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "recognizedText")
           }
         }
 
@@ -11476,7 +11571,7 @@ public final class OnDeleteVaccineTypeSubscription: GraphQLSubscription {
 
 public final class OnCreateScanSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnCreateScan($filter: ModelSubscriptionScanFilterInput) {\n  onCreateScan(filter: $filter) {\n    __typename\n    id\n    fileName\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterScansId\n  }\n}"
+    "subscription OnCreateScan($filter: ModelSubscriptionScanFilterInput) {\n  onCreateScan(filter: $filter) {\n    __typename\n    id\n    fileName\n    recognizedText\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterScansId\n  }\n}"
 
   public var filter: ModelSubscriptionScanFilterInput?
 
@@ -11521,6 +11616,7 @@ public final class OnCreateScanSubscription: GraphQLSubscription {
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("fileName", type: .scalar(String.self)),
+        GraphQLField("recognizedText", type: .scalar(String.self)),
         GraphQLField("encounter", type: .object(Encounter.selections)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
@@ -11533,8 +11629,8 @@ public final class OnCreateScanSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, fileName: String? = nil, encounter: Encounter? = nil, createdAt: String, updatedAt: String, encounterScansId: GraphQLID? = nil) {
-        self.init(snapshot: ["__typename": "Scan", "id": id, "fileName": fileName, "encounter": encounter.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt, "encounterScansId": encounterScansId])
+      public init(id: GraphQLID, fileName: String? = nil, recognizedText: String? = nil, encounter: Encounter? = nil, createdAt: String, updatedAt: String, encounterScansId: GraphQLID? = nil) {
+        self.init(snapshot: ["__typename": "Scan", "id": id, "fileName": fileName, "recognizedText": recognizedText, "encounter": encounter.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt, "encounterScansId": encounterScansId])
       }
 
       public var __typename: String {
@@ -11561,6 +11657,15 @@ public final class OnCreateScanSubscription: GraphQLSubscription {
         }
         set {
           snapshot.updateValue(newValue, forKey: "fileName")
+        }
+      }
+
+      public var recognizedText: String? {
+        get {
+          return snapshot["recognizedText"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "recognizedText")
         }
       }
 
@@ -11672,7 +11777,7 @@ public final class OnCreateScanSubscription: GraphQLSubscription {
 
 public final class OnUpdateScanSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnUpdateScan($filter: ModelSubscriptionScanFilterInput) {\n  onUpdateScan(filter: $filter) {\n    __typename\n    id\n    fileName\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterScansId\n  }\n}"
+    "subscription OnUpdateScan($filter: ModelSubscriptionScanFilterInput) {\n  onUpdateScan(filter: $filter) {\n    __typename\n    id\n    fileName\n    recognizedText\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterScansId\n  }\n}"
 
   public var filter: ModelSubscriptionScanFilterInput?
 
@@ -11717,6 +11822,7 @@ public final class OnUpdateScanSubscription: GraphQLSubscription {
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("fileName", type: .scalar(String.self)),
+        GraphQLField("recognizedText", type: .scalar(String.self)),
         GraphQLField("encounter", type: .object(Encounter.selections)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
@@ -11729,8 +11835,8 @@ public final class OnUpdateScanSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, fileName: String? = nil, encounter: Encounter? = nil, createdAt: String, updatedAt: String, encounterScansId: GraphQLID? = nil) {
-        self.init(snapshot: ["__typename": "Scan", "id": id, "fileName": fileName, "encounter": encounter.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt, "encounterScansId": encounterScansId])
+      public init(id: GraphQLID, fileName: String? = nil, recognizedText: String? = nil, encounter: Encounter? = nil, createdAt: String, updatedAt: String, encounterScansId: GraphQLID? = nil) {
+        self.init(snapshot: ["__typename": "Scan", "id": id, "fileName": fileName, "recognizedText": recognizedText, "encounter": encounter.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt, "encounterScansId": encounterScansId])
       }
 
       public var __typename: String {
@@ -11757,6 +11863,15 @@ public final class OnUpdateScanSubscription: GraphQLSubscription {
         }
         set {
           snapshot.updateValue(newValue, forKey: "fileName")
+        }
+      }
+
+      public var recognizedText: String? {
+        get {
+          return snapshot["recognizedText"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "recognizedText")
         }
       }
 
@@ -11868,7 +11983,7 @@ public final class OnUpdateScanSubscription: GraphQLSubscription {
 
 public final class OnDeleteScanSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnDeleteScan($filter: ModelSubscriptionScanFilterInput) {\n  onDeleteScan(filter: $filter) {\n    __typename\n    id\n    fileName\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterScansId\n  }\n}"
+    "subscription OnDeleteScan($filter: ModelSubscriptionScanFilterInput) {\n  onDeleteScan(filter: $filter) {\n    __typename\n    id\n    fileName\n    recognizedText\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterScansId\n  }\n}"
 
   public var filter: ModelSubscriptionScanFilterInput?
 
@@ -11913,6 +12028,7 @@ public final class OnDeleteScanSubscription: GraphQLSubscription {
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("fileName", type: .scalar(String.self)),
+        GraphQLField("recognizedText", type: .scalar(String.self)),
         GraphQLField("encounter", type: .object(Encounter.selections)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
@@ -11925,8 +12041,8 @@ public final class OnDeleteScanSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, fileName: String? = nil, encounter: Encounter? = nil, createdAt: String, updatedAt: String, encounterScansId: GraphQLID? = nil) {
-        self.init(snapshot: ["__typename": "Scan", "id": id, "fileName": fileName, "encounter": encounter.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt, "encounterScansId": encounterScansId])
+      public init(id: GraphQLID, fileName: String? = nil, recognizedText: String? = nil, encounter: Encounter? = nil, createdAt: String, updatedAt: String, encounterScansId: GraphQLID? = nil) {
+        self.init(snapshot: ["__typename": "Scan", "id": id, "fileName": fileName, "recognizedText": recognizedText, "encounter": encounter.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt, "encounterScansId": encounterScansId])
       }
 
       public var __typename: String {
@@ -11953,6 +12069,15 @@ public final class OnDeleteScanSubscription: GraphQLSubscription {
         }
         set {
           snapshot.updateValue(newValue, forKey: "fileName")
+        }
+      }
+
+      public var recognizedText: String? {
+        get {
+          return snapshot["recognizedText"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "recognizedText")
         }
       }
 
