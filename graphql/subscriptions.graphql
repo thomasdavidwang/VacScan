@@ -42,6 +42,10 @@ subscription OnCreateProvider($filter: ModelSubscriptionProviderFilterInput) {
     firstName
     lastName
     phoneNumber
+    encounters {
+      nextToken
+      __typename
+    }
     createdAt
     updatedAt
     __typename
@@ -54,6 +58,10 @@ subscription OnUpdateProvider($filter: ModelSubscriptionProviderFilterInput) {
     firstName
     lastName
     phoneNumber
+    encounters {
+      nextToken
+      __typename
+    }
     createdAt
     updatedAt
     __typename
@@ -66,6 +74,10 @@ subscription OnDeleteProvider($filter: ModelSubscriptionProviderFilterInput) {
     firstName
     lastName
     phoneNumber
+    encounters {
+      nextToken
+      __typename
+    }
     createdAt
     updatedAt
     __typename
@@ -83,8 +95,18 @@ subscription OnCreateEncounter($filter: ModelSubscriptionEncounterFilterInput) {
       nextToken
       __typename
     }
+    provider {
+      id
+      firstName
+      lastName
+      phoneNumber
+      createdAt
+      updatedAt
+      __typename
+    }
     createdAt
     updatedAt
+    providerEncountersId
     __typename
   }
 }
@@ -100,8 +122,18 @@ subscription OnUpdateEncounter($filter: ModelSubscriptionEncounterFilterInput) {
       nextToken
       __typename
     }
+    provider {
+      id
+      firstName
+      lastName
+      phoneNumber
+      createdAt
+      updatedAt
+      __typename
+    }
     createdAt
     updatedAt
+    providerEncountersId
     __typename
   }
 }
@@ -117,8 +149,18 @@ subscription OnDeleteEncounter($filter: ModelSubscriptionEncounterFilterInput) {
       nextToken
       __typename
     }
+    provider {
+      id
+      firstName
+      lastName
+      phoneNumber
+      createdAt
+      updatedAt
+      __typename
+    }
     createdAt
     updatedAt
+    providerEncountersId
     __typename
   }
 }
@@ -132,6 +174,7 @@ subscription OnCreateVaccine($filter: ModelSubscriptionVaccineFilterInput) {
       id
       createdAt
       updatedAt
+      providerEncountersId
       __typename
     }
     createdAt
@@ -150,6 +193,7 @@ subscription OnUpdateVaccine($filter: ModelSubscriptionVaccineFilterInput) {
       id
       createdAt
       updatedAt
+      providerEncountersId
       __typename
     }
     createdAt
@@ -168,6 +212,7 @@ subscription OnDeleteVaccine($filter: ModelSubscriptionVaccineFilterInput) {
       id
       createdAt
       updatedAt
+      providerEncountersId
       __typename
     }
     createdAt
@@ -185,6 +230,7 @@ subscription OnCreateScan($filter: ModelSubscriptionScanFilterInput) {
       id
       createdAt
       updatedAt
+      providerEncountersId
       __typename
     }
     createdAt
@@ -202,6 +248,7 @@ subscription OnUpdateScan($filter: ModelSubscriptionScanFilterInput) {
       id
       createdAt
       updatedAt
+      providerEncountersId
       __typename
     }
     createdAt
@@ -219,6 +266,7 @@ subscription OnDeleteScan($filter: ModelSubscriptionScanFilterInput) {
       id
       createdAt
       updatedAt
+      providerEncountersId
       __typename
     }
     createdAt

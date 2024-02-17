@@ -54,6 +54,10 @@ mutation CreateProvider(
     firstName
     lastName
     phoneNumber
+    encounters {
+      nextToken
+      __typename
+    }
     createdAt
     updatedAt
     __typename
@@ -69,6 +73,10 @@ mutation UpdateProvider(
     firstName
     lastName
     phoneNumber
+    encounters {
+      nextToken
+      __typename
+    }
     createdAt
     updatedAt
     __typename
@@ -84,6 +92,10 @@ mutation DeleteProvider(
     firstName
     lastName
     phoneNumber
+    encounters {
+      nextToken
+      __typename
+    }
     createdAt
     updatedAt
     __typename
@@ -104,8 +116,18 @@ mutation CreateEncounter(
       nextToken
       __typename
     }
+    provider {
+      id
+      firstName
+      lastName
+      phoneNumber
+      createdAt
+      updatedAt
+      __typename
+    }
     createdAt
     updatedAt
+    providerEncountersId
     __typename
   }
 }
@@ -124,8 +146,18 @@ mutation UpdateEncounter(
       nextToken
       __typename
     }
+    provider {
+      id
+      firstName
+      lastName
+      phoneNumber
+      createdAt
+      updatedAt
+      __typename
+    }
     createdAt
     updatedAt
+    providerEncountersId
     __typename
   }
 }
@@ -144,8 +176,18 @@ mutation DeleteEncounter(
       nextToken
       __typename
     }
+    provider {
+      id
+      firstName
+      lastName
+      phoneNumber
+      createdAt
+      updatedAt
+      __typename
+    }
     createdAt
     updatedAt
+    providerEncountersId
     __typename
   }
 }
@@ -162,6 +204,7 @@ mutation CreateVaccine(
       id
       createdAt
       updatedAt
+      providerEncountersId
       __typename
     }
     createdAt
@@ -183,6 +226,7 @@ mutation UpdateVaccine(
       id
       createdAt
       updatedAt
+      providerEncountersId
       __typename
     }
     createdAt
@@ -204,6 +248,7 @@ mutation DeleteVaccine(
       id
       createdAt
       updatedAt
+      providerEncountersId
       __typename
     }
     createdAt
@@ -224,6 +269,7 @@ mutation CreateScan(
       id
       createdAt
       updatedAt
+      providerEncountersId
       __typename
     }
     createdAt
@@ -244,6 +290,7 @@ mutation UpdateScan(
       id
       createdAt
       updatedAt
+      providerEncountersId
       __typename
     }
     createdAt
@@ -264,6 +311,7 @@ mutation DeleteScan(
       id
       createdAt
       updatedAt
+      providerEncountersId
       __typename
     }
     createdAt

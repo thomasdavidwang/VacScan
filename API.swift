@@ -1020,8 +1020,8 @@ public struct DeleteProviderInput: GraphQLMapConvertible {
 public struct CreateEncounterInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(id: GraphQLID? = nil) {
-    graphQLMap = ["id": id]
+  public init(id: GraphQLID? = nil, providerEncountersId: GraphQLID? = nil) {
+    graphQLMap = ["id": id, "providerEncountersId": providerEncountersId]
   }
 
   public var id: GraphQLID? {
@@ -1032,13 +1032,22 @@ public struct CreateEncounterInput: GraphQLMapConvertible {
       graphQLMap.updateValue(newValue, forKey: "id")
     }
   }
+
+  public var providerEncountersId: GraphQLID? {
+    get {
+      return graphQLMap["providerEncountersId"] as! GraphQLID?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "providerEncountersId")
+    }
+  }
 }
 
 public struct ModelEncounterConditionInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(and: [ModelEncounterConditionInput?]? = nil, or: [ModelEncounterConditionInput?]? = nil, not: ModelEncounterConditionInput? = nil) {
-    graphQLMap = ["and": and, "or": or, "not": not]
+  public init(and: [ModelEncounterConditionInput?]? = nil, or: [ModelEncounterConditionInput?]? = nil, not: ModelEncounterConditionInput? = nil, providerEncountersId: ModelIDInput? = nil) {
+    graphQLMap = ["and": and, "or": or, "not": not, "providerEncountersId": providerEncountersId]
   }
 
   public var and: [ModelEncounterConditionInput?]? {
@@ -1067,144 +1076,13 @@ public struct ModelEncounterConditionInput: GraphQLMapConvertible {
       graphQLMap.updateValue(newValue, forKey: "not")
     }
   }
-}
 
-public struct UpdateEncounterInput: GraphQLMapConvertible {
-  public var graphQLMap: GraphQLMap
-
-  public init(id: GraphQLID) {
-    graphQLMap = ["id": id]
-  }
-
-  public var id: GraphQLID {
+  public var providerEncountersId: ModelIDInput? {
     get {
-      return graphQLMap["id"] as! GraphQLID
+      return graphQLMap["providerEncountersId"] as! ModelIDInput?
     }
     set {
-      graphQLMap.updateValue(newValue, forKey: "id")
-    }
-  }
-}
-
-public struct DeleteEncounterInput: GraphQLMapConvertible {
-  public var graphQLMap: GraphQLMap
-
-  public init(id: GraphQLID) {
-    graphQLMap = ["id": id]
-  }
-
-  public var id: GraphQLID {
-    get {
-      return graphQLMap["id"] as! GraphQLID
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "id")
-    }
-  }
-}
-
-public struct CreateVaccineInput: GraphQLMapConvertible {
-  public var graphQLMap: GraphQLMap
-
-  public init(id: GraphQLID? = nil, lotNumber: String? = nil, expirationDate: String? = nil, encounterVaccinesId: GraphQLID? = nil) {
-    graphQLMap = ["id": id, "lotNumber": lotNumber, "expirationDate": expirationDate, "encounterVaccinesId": encounterVaccinesId]
-  }
-
-  public var id: GraphQLID? {
-    get {
-      return graphQLMap["id"] as! GraphQLID?
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "id")
-    }
-  }
-
-  public var lotNumber: String? {
-    get {
-      return graphQLMap["lotNumber"] as! String?
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "lotNumber")
-    }
-  }
-
-  public var expirationDate: String? {
-    get {
-      return graphQLMap["expirationDate"] as! String?
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "expirationDate")
-    }
-  }
-
-  public var encounterVaccinesId: GraphQLID? {
-    get {
-      return graphQLMap["encounterVaccinesId"] as! GraphQLID?
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "encounterVaccinesId")
-    }
-  }
-}
-
-public struct ModelVaccineConditionInput: GraphQLMapConvertible {
-  public var graphQLMap: GraphQLMap
-
-  public init(lotNumber: ModelStringInput? = nil, expirationDate: ModelStringInput? = nil, and: [ModelVaccineConditionInput?]? = nil, or: [ModelVaccineConditionInput?]? = nil, not: ModelVaccineConditionInput? = nil, encounterVaccinesId: ModelIDInput? = nil) {
-    graphQLMap = ["lotNumber": lotNumber, "expirationDate": expirationDate, "and": and, "or": or, "not": not, "encounterVaccinesId": encounterVaccinesId]
-  }
-
-  public var lotNumber: ModelStringInput? {
-    get {
-      return graphQLMap["lotNumber"] as! ModelStringInput?
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "lotNumber")
-    }
-  }
-
-  public var expirationDate: ModelStringInput? {
-    get {
-      return graphQLMap["expirationDate"] as! ModelStringInput?
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "expirationDate")
-    }
-  }
-
-  public var and: [ModelVaccineConditionInput?]? {
-    get {
-      return graphQLMap["and"] as! [ModelVaccineConditionInput?]?
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "and")
-    }
-  }
-
-  public var or: [ModelVaccineConditionInput?]? {
-    get {
-      return graphQLMap["or"] as! [ModelVaccineConditionInput?]?
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "or")
-    }
-  }
-
-  public var not: ModelVaccineConditionInput? {
-    get {
-      return graphQLMap["not"] as! ModelVaccineConditionInput?
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "not")
-    }
-  }
-
-  public var encounterVaccinesId: ModelIDInput? {
-    get {
-      return graphQLMap["encounterVaccinesId"] as! ModelIDInput?
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "encounterVaccinesId")
+      graphQLMap.updateValue(newValue, forKey: "providerEncountersId")
     }
   }
 }
@@ -1330,6 +1208,155 @@ public struct ModelIDInput: GraphQLMapConvertible {
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "size")
+    }
+  }
+}
+
+public struct UpdateEncounterInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  public init(id: GraphQLID, providerEncountersId: GraphQLID? = nil) {
+    graphQLMap = ["id": id, "providerEncountersId": providerEncountersId]
+  }
+
+  public var id: GraphQLID {
+    get {
+      return graphQLMap["id"] as! GraphQLID
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "id")
+    }
+  }
+
+  public var providerEncountersId: GraphQLID? {
+    get {
+      return graphQLMap["providerEncountersId"] as! GraphQLID?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "providerEncountersId")
+    }
+  }
+}
+
+public struct DeleteEncounterInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  public init(id: GraphQLID) {
+    graphQLMap = ["id": id]
+  }
+
+  public var id: GraphQLID {
+    get {
+      return graphQLMap["id"] as! GraphQLID
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "id")
+    }
+  }
+}
+
+public struct CreateVaccineInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  public init(id: GraphQLID? = nil, lotNumber: String? = nil, expirationDate: String? = nil, encounterVaccinesId: GraphQLID? = nil) {
+    graphQLMap = ["id": id, "lotNumber": lotNumber, "expirationDate": expirationDate, "encounterVaccinesId": encounterVaccinesId]
+  }
+
+  public var id: GraphQLID? {
+    get {
+      return graphQLMap["id"] as! GraphQLID?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "id")
+    }
+  }
+
+  public var lotNumber: String? {
+    get {
+      return graphQLMap["lotNumber"] as! String?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "lotNumber")
+    }
+  }
+
+  public var expirationDate: String? {
+    get {
+      return graphQLMap["expirationDate"] as! String?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "expirationDate")
+    }
+  }
+
+  public var encounterVaccinesId: GraphQLID? {
+    get {
+      return graphQLMap["encounterVaccinesId"] as! GraphQLID?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "encounterVaccinesId")
+    }
+  }
+}
+
+public struct ModelVaccineConditionInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  public init(lotNumber: ModelStringInput? = nil, expirationDate: ModelStringInput? = nil, and: [ModelVaccineConditionInput?]? = nil, or: [ModelVaccineConditionInput?]? = nil, not: ModelVaccineConditionInput? = nil, encounterVaccinesId: ModelIDInput? = nil) {
+    graphQLMap = ["lotNumber": lotNumber, "expirationDate": expirationDate, "and": and, "or": or, "not": not, "encounterVaccinesId": encounterVaccinesId]
+  }
+
+  public var lotNumber: ModelStringInput? {
+    get {
+      return graphQLMap["lotNumber"] as! ModelStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "lotNumber")
+    }
+  }
+
+  public var expirationDate: ModelStringInput? {
+    get {
+      return graphQLMap["expirationDate"] as! ModelStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "expirationDate")
+    }
+  }
+
+  public var and: [ModelVaccineConditionInput?]? {
+    get {
+      return graphQLMap["and"] as! [ModelVaccineConditionInput?]?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "and")
+    }
+  }
+
+  public var or: [ModelVaccineConditionInput?]? {
+    get {
+      return graphQLMap["or"] as! [ModelVaccineConditionInput?]?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "or")
+    }
+  }
+
+  public var not: ModelVaccineConditionInput? {
+    get {
+      return graphQLMap["not"] as! ModelVaccineConditionInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "not")
+    }
+  }
+
+  public var encounterVaccinesId: ModelIDInput? {
+    get {
+      return graphQLMap["encounterVaccinesId"] as! ModelIDInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "encounterVaccinesId")
     }
   }
 }
@@ -1713,8 +1740,8 @@ public struct ModelProviderFilterInput: GraphQLMapConvertible {
 public struct ModelEncounterFilterInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(id: ModelIDInput? = nil, and: [ModelEncounterFilterInput?]? = nil, or: [ModelEncounterFilterInput?]? = nil, not: ModelEncounterFilterInput? = nil) {
-    graphQLMap = ["id": id, "and": and, "or": or, "not": not]
+  public init(id: ModelIDInput? = nil, and: [ModelEncounterFilterInput?]? = nil, or: [ModelEncounterFilterInput?]? = nil, not: ModelEncounterFilterInput? = nil, providerEncountersId: ModelIDInput? = nil) {
+    graphQLMap = ["id": id, "and": and, "or": or, "not": not, "providerEncountersId": providerEncountersId]
   }
 
   public var id: ModelIDInput? {
@@ -1750,6 +1777,15 @@ public struct ModelEncounterFilterInput: GraphQLMapConvertible {
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "not")
+    }
+  }
+
+  public var providerEncountersId: ModelIDInput? {
+    get {
+      return graphQLMap["providerEncountersId"] as! ModelIDInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "providerEncountersId")
     }
   }
 }
@@ -2770,7 +2806,7 @@ public final class DeletePatientMutation: GraphQLMutation {
 
 public final class CreateProviderMutation: GraphQLMutation {
   public static let operationString =
-    "mutation CreateProvider($input: CreateProviderInput!, $condition: ModelProviderConditionInput) {\n  createProvider(input: $input, condition: $condition) {\n    __typename\n    id\n    firstName\n    lastName\n    phoneNumber\n    createdAt\n    updatedAt\n  }\n}"
+    "mutation CreateProvider($input: CreateProviderInput!, $condition: ModelProviderConditionInput) {\n  createProvider(input: $input, condition: $condition) {\n    __typename\n    id\n    firstName\n    lastName\n    phoneNumber\n    encounters {\n      __typename\n      nextToken\n    }\n    createdAt\n    updatedAt\n  }\n}"
 
   public var input: CreateProviderInput
   public var condition: ModelProviderConditionInput?
@@ -2819,6 +2855,7 @@ public final class CreateProviderMutation: GraphQLMutation {
         GraphQLField("firstName", type: .scalar(String.self)),
         GraphQLField("lastName", type: .scalar(String.self)),
         GraphQLField("phoneNumber", type: .scalar(String.self)),
+        GraphQLField("encounters", type: .object(Encounter.selections)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
       ]
@@ -2829,8 +2866,8 @@ public final class CreateProviderMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, firstName: String? = nil, lastName: String? = nil, phoneNumber: String? = nil, createdAt: String, updatedAt: String) {
-        self.init(snapshot: ["__typename": "Provider", "id": id, "firstName": firstName, "lastName": lastName, "phoneNumber": phoneNumber, "createdAt": createdAt, "updatedAt": updatedAt])
+      public init(id: GraphQLID, firstName: String? = nil, lastName: String? = nil, phoneNumber: String? = nil, encounters: Encounter? = nil, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "Provider", "id": id, "firstName": firstName, "lastName": lastName, "phoneNumber": phoneNumber, "encounters": encounters.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt])
       }
 
       public var __typename: String {
@@ -2878,6 +2915,15 @@ public final class CreateProviderMutation: GraphQLMutation {
         }
       }
 
+      public var encounters: Encounter? {
+        get {
+          return (snapshot["encounters"] as? Snapshot).flatMap { Encounter(snapshot: $0) }
+        }
+        set {
+          snapshot.updateValue(newValue?.snapshot, forKey: "encounters")
+        }
+      }
+
       public var createdAt: String {
         get {
           return snapshot["createdAt"]! as! String
@@ -2895,13 +2941,50 @@ public final class CreateProviderMutation: GraphQLMutation {
           snapshot.updateValue(newValue, forKey: "updatedAt")
         }
       }
+
+      public struct Encounter: GraphQLSelectionSet {
+        public static let possibleTypes = ["ModelEncounterConnection"]
+
+        public static let selections: [GraphQLSelection] = [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("nextToken", type: .scalar(String.self)),
+        ]
+
+        public var snapshot: Snapshot
+
+        public init(snapshot: Snapshot) {
+          self.snapshot = snapshot
+        }
+
+        public init(nextToken: String? = nil) {
+          self.init(snapshot: ["__typename": "ModelEncounterConnection", "nextToken": nextToken])
+        }
+
+        public var __typename: String {
+          get {
+            return snapshot["__typename"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var nextToken: String? {
+          get {
+            return snapshot["nextToken"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "nextToken")
+          }
+        }
+      }
     }
   }
 }
 
 public final class UpdateProviderMutation: GraphQLMutation {
   public static let operationString =
-    "mutation UpdateProvider($input: UpdateProviderInput!, $condition: ModelProviderConditionInput) {\n  updateProvider(input: $input, condition: $condition) {\n    __typename\n    id\n    firstName\n    lastName\n    phoneNumber\n    createdAt\n    updatedAt\n  }\n}"
+    "mutation UpdateProvider($input: UpdateProviderInput!, $condition: ModelProviderConditionInput) {\n  updateProvider(input: $input, condition: $condition) {\n    __typename\n    id\n    firstName\n    lastName\n    phoneNumber\n    encounters {\n      __typename\n      nextToken\n    }\n    createdAt\n    updatedAt\n  }\n}"
 
   public var input: UpdateProviderInput
   public var condition: ModelProviderConditionInput?
@@ -2950,6 +3033,7 @@ public final class UpdateProviderMutation: GraphQLMutation {
         GraphQLField("firstName", type: .scalar(String.self)),
         GraphQLField("lastName", type: .scalar(String.self)),
         GraphQLField("phoneNumber", type: .scalar(String.self)),
+        GraphQLField("encounters", type: .object(Encounter.selections)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
       ]
@@ -2960,8 +3044,8 @@ public final class UpdateProviderMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, firstName: String? = nil, lastName: String? = nil, phoneNumber: String? = nil, createdAt: String, updatedAt: String) {
-        self.init(snapshot: ["__typename": "Provider", "id": id, "firstName": firstName, "lastName": lastName, "phoneNumber": phoneNumber, "createdAt": createdAt, "updatedAt": updatedAt])
+      public init(id: GraphQLID, firstName: String? = nil, lastName: String? = nil, phoneNumber: String? = nil, encounters: Encounter? = nil, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "Provider", "id": id, "firstName": firstName, "lastName": lastName, "phoneNumber": phoneNumber, "encounters": encounters.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt])
       }
 
       public var __typename: String {
@@ -3009,6 +3093,15 @@ public final class UpdateProviderMutation: GraphQLMutation {
         }
       }
 
+      public var encounters: Encounter? {
+        get {
+          return (snapshot["encounters"] as? Snapshot).flatMap { Encounter(snapshot: $0) }
+        }
+        set {
+          snapshot.updateValue(newValue?.snapshot, forKey: "encounters")
+        }
+      }
+
       public var createdAt: String {
         get {
           return snapshot["createdAt"]! as! String
@@ -3026,13 +3119,50 @@ public final class UpdateProviderMutation: GraphQLMutation {
           snapshot.updateValue(newValue, forKey: "updatedAt")
         }
       }
+
+      public struct Encounter: GraphQLSelectionSet {
+        public static let possibleTypes = ["ModelEncounterConnection"]
+
+        public static let selections: [GraphQLSelection] = [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("nextToken", type: .scalar(String.self)),
+        ]
+
+        public var snapshot: Snapshot
+
+        public init(snapshot: Snapshot) {
+          self.snapshot = snapshot
+        }
+
+        public init(nextToken: String? = nil) {
+          self.init(snapshot: ["__typename": "ModelEncounterConnection", "nextToken": nextToken])
+        }
+
+        public var __typename: String {
+          get {
+            return snapshot["__typename"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var nextToken: String? {
+          get {
+            return snapshot["nextToken"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "nextToken")
+          }
+        }
+      }
     }
   }
 }
 
 public final class DeleteProviderMutation: GraphQLMutation {
   public static let operationString =
-    "mutation DeleteProvider($input: DeleteProviderInput!, $condition: ModelProviderConditionInput) {\n  deleteProvider(input: $input, condition: $condition) {\n    __typename\n    id\n    firstName\n    lastName\n    phoneNumber\n    createdAt\n    updatedAt\n  }\n}"
+    "mutation DeleteProvider($input: DeleteProviderInput!, $condition: ModelProviderConditionInput) {\n  deleteProvider(input: $input, condition: $condition) {\n    __typename\n    id\n    firstName\n    lastName\n    phoneNumber\n    encounters {\n      __typename\n      nextToken\n    }\n    createdAt\n    updatedAt\n  }\n}"
 
   public var input: DeleteProviderInput
   public var condition: ModelProviderConditionInput?
@@ -3081,6 +3211,7 @@ public final class DeleteProviderMutation: GraphQLMutation {
         GraphQLField("firstName", type: .scalar(String.self)),
         GraphQLField("lastName", type: .scalar(String.self)),
         GraphQLField("phoneNumber", type: .scalar(String.self)),
+        GraphQLField("encounters", type: .object(Encounter.selections)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
       ]
@@ -3091,8 +3222,8 @@ public final class DeleteProviderMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, firstName: String? = nil, lastName: String? = nil, phoneNumber: String? = nil, createdAt: String, updatedAt: String) {
-        self.init(snapshot: ["__typename": "Provider", "id": id, "firstName": firstName, "lastName": lastName, "phoneNumber": phoneNumber, "createdAt": createdAt, "updatedAt": updatedAt])
+      public init(id: GraphQLID, firstName: String? = nil, lastName: String? = nil, phoneNumber: String? = nil, encounters: Encounter? = nil, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "Provider", "id": id, "firstName": firstName, "lastName": lastName, "phoneNumber": phoneNumber, "encounters": encounters.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt])
       }
 
       public var __typename: String {
@@ -3140,6 +3271,15 @@ public final class DeleteProviderMutation: GraphQLMutation {
         }
       }
 
+      public var encounters: Encounter? {
+        get {
+          return (snapshot["encounters"] as? Snapshot).flatMap { Encounter(snapshot: $0) }
+        }
+        set {
+          snapshot.updateValue(newValue?.snapshot, forKey: "encounters")
+        }
+      }
+
       public var createdAt: String {
         get {
           return snapshot["createdAt"]! as! String
@@ -3157,13 +3297,50 @@ public final class DeleteProviderMutation: GraphQLMutation {
           snapshot.updateValue(newValue, forKey: "updatedAt")
         }
       }
+
+      public struct Encounter: GraphQLSelectionSet {
+        public static let possibleTypes = ["ModelEncounterConnection"]
+
+        public static let selections: [GraphQLSelection] = [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("nextToken", type: .scalar(String.self)),
+        ]
+
+        public var snapshot: Snapshot
+
+        public init(snapshot: Snapshot) {
+          self.snapshot = snapshot
+        }
+
+        public init(nextToken: String? = nil) {
+          self.init(snapshot: ["__typename": "ModelEncounterConnection", "nextToken": nextToken])
+        }
+
+        public var __typename: String {
+          get {
+            return snapshot["__typename"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var nextToken: String? {
+          get {
+            return snapshot["nextToken"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "nextToken")
+          }
+        }
+      }
     }
   }
 }
 
 public final class CreateEncounterMutation: GraphQLMutation {
   public static let operationString =
-    "mutation CreateEncounter($input: CreateEncounterInput!, $condition: ModelEncounterConditionInput) {\n  createEncounter(input: $input, condition: $condition) {\n    __typename\n    id\n    scans {\n      __typename\n      nextToken\n    }\n    vaccines {\n      __typename\n      nextToken\n    }\n    createdAt\n    updatedAt\n  }\n}"
+    "mutation CreateEncounter($input: CreateEncounterInput!, $condition: ModelEncounterConditionInput) {\n  createEncounter(input: $input, condition: $condition) {\n    __typename\n    id\n    scans {\n      __typename\n      nextToken\n    }\n    vaccines {\n      __typename\n      nextToken\n    }\n    provider {\n      __typename\n      id\n      firstName\n      lastName\n      phoneNumber\n      createdAt\n      updatedAt\n    }\n    createdAt\n    updatedAt\n    providerEncountersId\n  }\n}"
 
   public var input: CreateEncounterInput
   public var condition: ModelEncounterConditionInput?
@@ -3211,8 +3388,10 @@ public final class CreateEncounterMutation: GraphQLMutation {
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("scans", type: .object(Scan.selections)),
         GraphQLField("vaccines", type: .object(Vaccine.selections)),
+        GraphQLField("provider", type: .object(Provider.selections)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+        GraphQLField("providerEncountersId", type: .scalar(GraphQLID.self)),
       ]
 
       public var snapshot: Snapshot
@@ -3221,8 +3400,8 @@ public final class CreateEncounterMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, scans: Scan? = nil, vaccines: Vaccine? = nil, createdAt: String, updatedAt: String) {
-        self.init(snapshot: ["__typename": "Encounter", "id": id, "scans": scans.flatMap { $0.snapshot }, "vaccines": vaccines.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt])
+      public init(id: GraphQLID, scans: Scan? = nil, vaccines: Vaccine? = nil, provider: Provider? = nil, createdAt: String, updatedAt: String, providerEncountersId: GraphQLID? = nil) {
+        self.init(snapshot: ["__typename": "Encounter", "id": id, "scans": scans.flatMap { $0.snapshot }, "vaccines": vaccines.flatMap { $0.snapshot }, "provider": provider.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt, "providerEncountersId": providerEncountersId])
       }
 
       public var __typename: String {
@@ -3261,6 +3440,15 @@ public final class CreateEncounterMutation: GraphQLMutation {
         }
       }
 
+      public var provider: Provider? {
+        get {
+          return (snapshot["provider"] as? Snapshot).flatMap { Provider(snapshot: $0) }
+        }
+        set {
+          snapshot.updateValue(newValue?.snapshot, forKey: "provider")
+        }
+      }
+
       public var createdAt: String {
         get {
           return snapshot["createdAt"]! as! String
@@ -3276,6 +3464,15 @@ public final class CreateEncounterMutation: GraphQLMutation {
         }
         set {
           snapshot.updateValue(newValue, forKey: "updatedAt")
+        }
+      }
+
+      public var providerEncountersId: GraphQLID? {
+        get {
+          return snapshot["providerEncountersId"] as? GraphQLID
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "providerEncountersId")
         }
       }
 
@@ -3352,13 +3549,100 @@ public final class CreateEncounterMutation: GraphQLMutation {
           }
         }
       }
+
+      public struct Provider: GraphQLSelectionSet {
+        public static let possibleTypes = ["Provider"]
+
+        public static let selections: [GraphQLSelection] = [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+          GraphQLField("firstName", type: .scalar(String.self)),
+          GraphQLField("lastName", type: .scalar(String.self)),
+          GraphQLField("phoneNumber", type: .scalar(String.self)),
+          GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
+          GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+        ]
+
+        public var snapshot: Snapshot
+
+        public init(snapshot: Snapshot) {
+          self.snapshot = snapshot
+        }
+
+        public init(id: GraphQLID, firstName: String? = nil, lastName: String? = nil, phoneNumber: String? = nil, createdAt: String, updatedAt: String) {
+          self.init(snapshot: ["__typename": "Provider", "id": id, "firstName": firstName, "lastName": lastName, "phoneNumber": phoneNumber, "createdAt": createdAt, "updatedAt": updatedAt])
+        }
+
+        public var __typename: String {
+          get {
+            return snapshot["__typename"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: GraphQLID {
+          get {
+            return snapshot["id"]! as! GraphQLID
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        public var firstName: String? {
+          get {
+            return snapshot["firstName"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "firstName")
+          }
+        }
+
+        public var lastName: String? {
+          get {
+            return snapshot["lastName"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "lastName")
+          }
+        }
+
+        public var phoneNumber: String? {
+          get {
+            return snapshot["phoneNumber"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "phoneNumber")
+          }
+        }
+
+        public var createdAt: String {
+          get {
+            return snapshot["createdAt"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "createdAt")
+          }
+        }
+
+        public var updatedAt: String {
+          get {
+            return snapshot["updatedAt"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "updatedAt")
+          }
+        }
+      }
     }
   }
 }
 
 public final class UpdateEncounterMutation: GraphQLMutation {
   public static let operationString =
-    "mutation UpdateEncounter($input: UpdateEncounterInput!, $condition: ModelEncounterConditionInput) {\n  updateEncounter(input: $input, condition: $condition) {\n    __typename\n    id\n    scans {\n      __typename\n      nextToken\n    }\n    vaccines {\n      __typename\n      nextToken\n    }\n    createdAt\n    updatedAt\n  }\n}"
+    "mutation UpdateEncounter($input: UpdateEncounterInput!, $condition: ModelEncounterConditionInput) {\n  updateEncounter(input: $input, condition: $condition) {\n    __typename\n    id\n    scans {\n      __typename\n      nextToken\n    }\n    vaccines {\n      __typename\n      nextToken\n    }\n    provider {\n      __typename\n      id\n      firstName\n      lastName\n      phoneNumber\n      createdAt\n      updatedAt\n    }\n    createdAt\n    updatedAt\n    providerEncountersId\n  }\n}"
 
   public var input: UpdateEncounterInput
   public var condition: ModelEncounterConditionInput?
@@ -3406,8 +3690,10 @@ public final class UpdateEncounterMutation: GraphQLMutation {
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("scans", type: .object(Scan.selections)),
         GraphQLField("vaccines", type: .object(Vaccine.selections)),
+        GraphQLField("provider", type: .object(Provider.selections)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+        GraphQLField("providerEncountersId", type: .scalar(GraphQLID.self)),
       ]
 
       public var snapshot: Snapshot
@@ -3416,8 +3702,8 @@ public final class UpdateEncounterMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, scans: Scan? = nil, vaccines: Vaccine? = nil, createdAt: String, updatedAt: String) {
-        self.init(snapshot: ["__typename": "Encounter", "id": id, "scans": scans.flatMap { $0.snapshot }, "vaccines": vaccines.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt])
+      public init(id: GraphQLID, scans: Scan? = nil, vaccines: Vaccine? = nil, provider: Provider? = nil, createdAt: String, updatedAt: String, providerEncountersId: GraphQLID? = nil) {
+        self.init(snapshot: ["__typename": "Encounter", "id": id, "scans": scans.flatMap { $0.snapshot }, "vaccines": vaccines.flatMap { $0.snapshot }, "provider": provider.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt, "providerEncountersId": providerEncountersId])
       }
 
       public var __typename: String {
@@ -3456,6 +3742,15 @@ public final class UpdateEncounterMutation: GraphQLMutation {
         }
       }
 
+      public var provider: Provider? {
+        get {
+          return (snapshot["provider"] as? Snapshot).flatMap { Provider(snapshot: $0) }
+        }
+        set {
+          snapshot.updateValue(newValue?.snapshot, forKey: "provider")
+        }
+      }
+
       public var createdAt: String {
         get {
           return snapshot["createdAt"]! as! String
@@ -3471,6 +3766,15 @@ public final class UpdateEncounterMutation: GraphQLMutation {
         }
         set {
           snapshot.updateValue(newValue, forKey: "updatedAt")
+        }
+      }
+
+      public var providerEncountersId: GraphQLID? {
+        get {
+          return snapshot["providerEncountersId"] as? GraphQLID
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "providerEncountersId")
         }
       }
 
@@ -3547,13 +3851,100 @@ public final class UpdateEncounterMutation: GraphQLMutation {
           }
         }
       }
+
+      public struct Provider: GraphQLSelectionSet {
+        public static let possibleTypes = ["Provider"]
+
+        public static let selections: [GraphQLSelection] = [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+          GraphQLField("firstName", type: .scalar(String.self)),
+          GraphQLField("lastName", type: .scalar(String.self)),
+          GraphQLField("phoneNumber", type: .scalar(String.self)),
+          GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
+          GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+        ]
+
+        public var snapshot: Snapshot
+
+        public init(snapshot: Snapshot) {
+          self.snapshot = snapshot
+        }
+
+        public init(id: GraphQLID, firstName: String? = nil, lastName: String? = nil, phoneNumber: String? = nil, createdAt: String, updatedAt: String) {
+          self.init(snapshot: ["__typename": "Provider", "id": id, "firstName": firstName, "lastName": lastName, "phoneNumber": phoneNumber, "createdAt": createdAt, "updatedAt": updatedAt])
+        }
+
+        public var __typename: String {
+          get {
+            return snapshot["__typename"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: GraphQLID {
+          get {
+            return snapshot["id"]! as! GraphQLID
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        public var firstName: String? {
+          get {
+            return snapshot["firstName"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "firstName")
+          }
+        }
+
+        public var lastName: String? {
+          get {
+            return snapshot["lastName"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "lastName")
+          }
+        }
+
+        public var phoneNumber: String? {
+          get {
+            return snapshot["phoneNumber"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "phoneNumber")
+          }
+        }
+
+        public var createdAt: String {
+          get {
+            return snapshot["createdAt"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "createdAt")
+          }
+        }
+
+        public var updatedAt: String {
+          get {
+            return snapshot["updatedAt"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "updatedAt")
+          }
+        }
+      }
     }
   }
 }
 
 public final class DeleteEncounterMutation: GraphQLMutation {
   public static let operationString =
-    "mutation DeleteEncounter($input: DeleteEncounterInput!, $condition: ModelEncounterConditionInput) {\n  deleteEncounter(input: $input, condition: $condition) {\n    __typename\n    id\n    scans {\n      __typename\n      nextToken\n    }\n    vaccines {\n      __typename\n      nextToken\n    }\n    createdAt\n    updatedAt\n  }\n}"
+    "mutation DeleteEncounter($input: DeleteEncounterInput!, $condition: ModelEncounterConditionInput) {\n  deleteEncounter(input: $input, condition: $condition) {\n    __typename\n    id\n    scans {\n      __typename\n      nextToken\n    }\n    vaccines {\n      __typename\n      nextToken\n    }\n    provider {\n      __typename\n      id\n      firstName\n      lastName\n      phoneNumber\n      createdAt\n      updatedAt\n    }\n    createdAt\n    updatedAt\n    providerEncountersId\n  }\n}"
 
   public var input: DeleteEncounterInput
   public var condition: ModelEncounterConditionInput?
@@ -3601,8 +3992,10 @@ public final class DeleteEncounterMutation: GraphQLMutation {
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("scans", type: .object(Scan.selections)),
         GraphQLField("vaccines", type: .object(Vaccine.selections)),
+        GraphQLField("provider", type: .object(Provider.selections)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+        GraphQLField("providerEncountersId", type: .scalar(GraphQLID.self)),
       ]
 
       public var snapshot: Snapshot
@@ -3611,8 +4004,8 @@ public final class DeleteEncounterMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, scans: Scan? = nil, vaccines: Vaccine? = nil, createdAt: String, updatedAt: String) {
-        self.init(snapshot: ["__typename": "Encounter", "id": id, "scans": scans.flatMap { $0.snapshot }, "vaccines": vaccines.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt])
+      public init(id: GraphQLID, scans: Scan? = nil, vaccines: Vaccine? = nil, provider: Provider? = nil, createdAt: String, updatedAt: String, providerEncountersId: GraphQLID? = nil) {
+        self.init(snapshot: ["__typename": "Encounter", "id": id, "scans": scans.flatMap { $0.snapshot }, "vaccines": vaccines.flatMap { $0.snapshot }, "provider": provider.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt, "providerEncountersId": providerEncountersId])
       }
 
       public var __typename: String {
@@ -3651,6 +4044,15 @@ public final class DeleteEncounterMutation: GraphQLMutation {
         }
       }
 
+      public var provider: Provider? {
+        get {
+          return (snapshot["provider"] as? Snapshot).flatMap { Provider(snapshot: $0) }
+        }
+        set {
+          snapshot.updateValue(newValue?.snapshot, forKey: "provider")
+        }
+      }
+
       public var createdAt: String {
         get {
           return snapshot["createdAt"]! as! String
@@ -3666,6 +4068,15 @@ public final class DeleteEncounterMutation: GraphQLMutation {
         }
         set {
           snapshot.updateValue(newValue, forKey: "updatedAt")
+        }
+      }
+
+      public var providerEncountersId: GraphQLID? {
+        get {
+          return snapshot["providerEncountersId"] as? GraphQLID
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "providerEncountersId")
         }
       }
 
@@ -3742,13 +4153,100 @@ public final class DeleteEncounterMutation: GraphQLMutation {
           }
         }
       }
+
+      public struct Provider: GraphQLSelectionSet {
+        public static let possibleTypes = ["Provider"]
+
+        public static let selections: [GraphQLSelection] = [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+          GraphQLField("firstName", type: .scalar(String.self)),
+          GraphQLField("lastName", type: .scalar(String.self)),
+          GraphQLField("phoneNumber", type: .scalar(String.self)),
+          GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
+          GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+        ]
+
+        public var snapshot: Snapshot
+
+        public init(snapshot: Snapshot) {
+          self.snapshot = snapshot
+        }
+
+        public init(id: GraphQLID, firstName: String? = nil, lastName: String? = nil, phoneNumber: String? = nil, createdAt: String, updatedAt: String) {
+          self.init(snapshot: ["__typename": "Provider", "id": id, "firstName": firstName, "lastName": lastName, "phoneNumber": phoneNumber, "createdAt": createdAt, "updatedAt": updatedAt])
+        }
+
+        public var __typename: String {
+          get {
+            return snapshot["__typename"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: GraphQLID {
+          get {
+            return snapshot["id"]! as! GraphQLID
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        public var firstName: String? {
+          get {
+            return snapshot["firstName"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "firstName")
+          }
+        }
+
+        public var lastName: String? {
+          get {
+            return snapshot["lastName"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "lastName")
+          }
+        }
+
+        public var phoneNumber: String? {
+          get {
+            return snapshot["phoneNumber"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "phoneNumber")
+          }
+        }
+
+        public var createdAt: String {
+          get {
+            return snapshot["createdAt"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "createdAt")
+          }
+        }
+
+        public var updatedAt: String {
+          get {
+            return snapshot["updatedAt"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "updatedAt")
+          }
+        }
+      }
     }
   }
 }
 
 public final class CreateVaccineMutation: GraphQLMutation {
   public static let operationString =
-    "mutation CreateVaccine($input: CreateVaccineInput!, $condition: ModelVaccineConditionInput) {\n  createVaccine(input: $input, condition: $condition) {\n    __typename\n    id\n    lotNumber\n    expirationDate\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n    }\n    createdAt\n    updatedAt\n    encounterVaccinesId\n  }\n}"
+    "mutation CreateVaccine($input: CreateVaccineInput!, $condition: ModelVaccineConditionInput) {\n  createVaccine(input: $input, condition: $condition) {\n    __typename\n    id\n    lotNumber\n    expirationDate\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterVaccinesId\n  }\n}"
 
   public var input: CreateVaccineInput
   public var condition: ModelVaccineConditionInput?
@@ -3892,6 +4390,7 @@ public final class CreateVaccineMutation: GraphQLMutation {
           GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
           GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
           GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+          GraphQLField("providerEncountersId", type: .scalar(GraphQLID.self)),
         ]
 
         public var snapshot: Snapshot
@@ -3900,8 +4399,8 @@ public final class CreateVaccineMutation: GraphQLMutation {
           self.snapshot = snapshot
         }
 
-        public init(id: GraphQLID, createdAt: String, updatedAt: String) {
-          self.init(snapshot: ["__typename": "Encounter", "id": id, "createdAt": createdAt, "updatedAt": updatedAt])
+        public init(id: GraphQLID, createdAt: String, updatedAt: String, providerEncountersId: GraphQLID? = nil) {
+          self.init(snapshot: ["__typename": "Encounter", "id": id, "createdAt": createdAt, "updatedAt": updatedAt, "providerEncountersId": providerEncountersId])
         }
 
         public var __typename: String {
@@ -3939,6 +4438,15 @@ public final class CreateVaccineMutation: GraphQLMutation {
             snapshot.updateValue(newValue, forKey: "updatedAt")
           }
         }
+
+        public var providerEncountersId: GraphQLID? {
+          get {
+            return snapshot["providerEncountersId"] as? GraphQLID
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "providerEncountersId")
+          }
+        }
       }
     }
   }
@@ -3946,7 +4454,7 @@ public final class CreateVaccineMutation: GraphQLMutation {
 
 public final class UpdateVaccineMutation: GraphQLMutation {
   public static let operationString =
-    "mutation UpdateVaccine($input: UpdateVaccineInput!, $condition: ModelVaccineConditionInput) {\n  updateVaccine(input: $input, condition: $condition) {\n    __typename\n    id\n    lotNumber\n    expirationDate\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n    }\n    createdAt\n    updatedAt\n    encounterVaccinesId\n  }\n}"
+    "mutation UpdateVaccine($input: UpdateVaccineInput!, $condition: ModelVaccineConditionInput) {\n  updateVaccine(input: $input, condition: $condition) {\n    __typename\n    id\n    lotNumber\n    expirationDate\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterVaccinesId\n  }\n}"
 
   public var input: UpdateVaccineInput
   public var condition: ModelVaccineConditionInput?
@@ -4090,6 +4598,7 @@ public final class UpdateVaccineMutation: GraphQLMutation {
           GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
           GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
           GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+          GraphQLField("providerEncountersId", type: .scalar(GraphQLID.self)),
         ]
 
         public var snapshot: Snapshot
@@ -4098,8 +4607,8 @@ public final class UpdateVaccineMutation: GraphQLMutation {
           self.snapshot = snapshot
         }
 
-        public init(id: GraphQLID, createdAt: String, updatedAt: String) {
-          self.init(snapshot: ["__typename": "Encounter", "id": id, "createdAt": createdAt, "updatedAt": updatedAt])
+        public init(id: GraphQLID, createdAt: String, updatedAt: String, providerEncountersId: GraphQLID? = nil) {
+          self.init(snapshot: ["__typename": "Encounter", "id": id, "createdAt": createdAt, "updatedAt": updatedAt, "providerEncountersId": providerEncountersId])
         }
 
         public var __typename: String {
@@ -4137,6 +4646,15 @@ public final class UpdateVaccineMutation: GraphQLMutation {
             snapshot.updateValue(newValue, forKey: "updatedAt")
           }
         }
+
+        public var providerEncountersId: GraphQLID? {
+          get {
+            return snapshot["providerEncountersId"] as? GraphQLID
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "providerEncountersId")
+          }
+        }
       }
     }
   }
@@ -4144,7 +4662,7 @@ public final class UpdateVaccineMutation: GraphQLMutation {
 
 public final class DeleteVaccineMutation: GraphQLMutation {
   public static let operationString =
-    "mutation DeleteVaccine($input: DeleteVaccineInput!, $condition: ModelVaccineConditionInput) {\n  deleteVaccine(input: $input, condition: $condition) {\n    __typename\n    id\n    lotNumber\n    expirationDate\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n    }\n    createdAt\n    updatedAt\n    encounterVaccinesId\n  }\n}"
+    "mutation DeleteVaccine($input: DeleteVaccineInput!, $condition: ModelVaccineConditionInput) {\n  deleteVaccine(input: $input, condition: $condition) {\n    __typename\n    id\n    lotNumber\n    expirationDate\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterVaccinesId\n  }\n}"
 
   public var input: DeleteVaccineInput
   public var condition: ModelVaccineConditionInput?
@@ -4288,6 +4806,7 @@ public final class DeleteVaccineMutation: GraphQLMutation {
           GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
           GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
           GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+          GraphQLField("providerEncountersId", type: .scalar(GraphQLID.self)),
         ]
 
         public var snapshot: Snapshot
@@ -4296,8 +4815,8 @@ public final class DeleteVaccineMutation: GraphQLMutation {
           self.snapshot = snapshot
         }
 
-        public init(id: GraphQLID, createdAt: String, updatedAt: String) {
-          self.init(snapshot: ["__typename": "Encounter", "id": id, "createdAt": createdAt, "updatedAt": updatedAt])
+        public init(id: GraphQLID, createdAt: String, updatedAt: String, providerEncountersId: GraphQLID? = nil) {
+          self.init(snapshot: ["__typename": "Encounter", "id": id, "createdAt": createdAt, "updatedAt": updatedAt, "providerEncountersId": providerEncountersId])
         }
 
         public var __typename: String {
@@ -4335,6 +4854,15 @@ public final class DeleteVaccineMutation: GraphQLMutation {
             snapshot.updateValue(newValue, forKey: "updatedAt")
           }
         }
+
+        public var providerEncountersId: GraphQLID? {
+          get {
+            return snapshot["providerEncountersId"] as? GraphQLID
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "providerEncountersId")
+          }
+        }
       }
     }
   }
@@ -4342,7 +4870,7 @@ public final class DeleteVaccineMutation: GraphQLMutation {
 
 public final class CreateScanMutation: GraphQLMutation {
   public static let operationString =
-    "mutation CreateScan($input: CreateScanInput!, $condition: ModelScanConditionInput) {\n  createScan(input: $input, condition: $condition) {\n    __typename\n    id\n    fileName\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n    }\n    createdAt\n    updatedAt\n    encounterScansId\n  }\n}"
+    "mutation CreateScan($input: CreateScanInput!, $condition: ModelScanConditionInput) {\n  createScan(input: $input, condition: $condition) {\n    __typename\n    id\n    fileName\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterScansId\n  }\n}"
 
   public var input: CreateScanInput
   public var condition: ModelScanConditionInput?
@@ -4476,6 +5004,7 @@ public final class CreateScanMutation: GraphQLMutation {
           GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
           GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
           GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+          GraphQLField("providerEncountersId", type: .scalar(GraphQLID.self)),
         ]
 
         public var snapshot: Snapshot
@@ -4484,8 +5013,8 @@ public final class CreateScanMutation: GraphQLMutation {
           self.snapshot = snapshot
         }
 
-        public init(id: GraphQLID, createdAt: String, updatedAt: String) {
-          self.init(snapshot: ["__typename": "Encounter", "id": id, "createdAt": createdAt, "updatedAt": updatedAt])
+        public init(id: GraphQLID, createdAt: String, updatedAt: String, providerEncountersId: GraphQLID? = nil) {
+          self.init(snapshot: ["__typename": "Encounter", "id": id, "createdAt": createdAt, "updatedAt": updatedAt, "providerEncountersId": providerEncountersId])
         }
 
         public var __typename: String {
@@ -4523,6 +5052,15 @@ public final class CreateScanMutation: GraphQLMutation {
             snapshot.updateValue(newValue, forKey: "updatedAt")
           }
         }
+
+        public var providerEncountersId: GraphQLID? {
+          get {
+            return snapshot["providerEncountersId"] as? GraphQLID
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "providerEncountersId")
+          }
+        }
       }
     }
   }
@@ -4530,7 +5068,7 @@ public final class CreateScanMutation: GraphQLMutation {
 
 public final class UpdateScanMutation: GraphQLMutation {
   public static let operationString =
-    "mutation UpdateScan($input: UpdateScanInput!, $condition: ModelScanConditionInput) {\n  updateScan(input: $input, condition: $condition) {\n    __typename\n    id\n    fileName\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n    }\n    createdAt\n    updatedAt\n    encounterScansId\n  }\n}"
+    "mutation UpdateScan($input: UpdateScanInput!, $condition: ModelScanConditionInput) {\n  updateScan(input: $input, condition: $condition) {\n    __typename\n    id\n    fileName\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterScansId\n  }\n}"
 
   public var input: UpdateScanInput
   public var condition: ModelScanConditionInput?
@@ -4664,6 +5202,7 @@ public final class UpdateScanMutation: GraphQLMutation {
           GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
           GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
           GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+          GraphQLField("providerEncountersId", type: .scalar(GraphQLID.self)),
         ]
 
         public var snapshot: Snapshot
@@ -4672,8 +5211,8 @@ public final class UpdateScanMutation: GraphQLMutation {
           self.snapshot = snapshot
         }
 
-        public init(id: GraphQLID, createdAt: String, updatedAt: String) {
-          self.init(snapshot: ["__typename": "Encounter", "id": id, "createdAt": createdAt, "updatedAt": updatedAt])
+        public init(id: GraphQLID, createdAt: String, updatedAt: String, providerEncountersId: GraphQLID? = nil) {
+          self.init(snapshot: ["__typename": "Encounter", "id": id, "createdAt": createdAt, "updatedAt": updatedAt, "providerEncountersId": providerEncountersId])
         }
 
         public var __typename: String {
@@ -4711,6 +5250,15 @@ public final class UpdateScanMutation: GraphQLMutation {
             snapshot.updateValue(newValue, forKey: "updatedAt")
           }
         }
+
+        public var providerEncountersId: GraphQLID? {
+          get {
+            return snapshot["providerEncountersId"] as? GraphQLID
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "providerEncountersId")
+          }
+        }
       }
     }
   }
@@ -4718,7 +5266,7 @@ public final class UpdateScanMutation: GraphQLMutation {
 
 public final class DeleteScanMutation: GraphQLMutation {
   public static let operationString =
-    "mutation DeleteScan($input: DeleteScanInput!, $condition: ModelScanConditionInput) {\n  deleteScan(input: $input, condition: $condition) {\n    __typename\n    id\n    fileName\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n    }\n    createdAt\n    updatedAt\n    encounterScansId\n  }\n}"
+    "mutation DeleteScan($input: DeleteScanInput!, $condition: ModelScanConditionInput) {\n  deleteScan(input: $input, condition: $condition) {\n    __typename\n    id\n    fileName\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterScansId\n  }\n}"
 
   public var input: DeleteScanInput
   public var condition: ModelScanConditionInput?
@@ -4852,6 +5400,7 @@ public final class DeleteScanMutation: GraphQLMutation {
           GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
           GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
           GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+          GraphQLField("providerEncountersId", type: .scalar(GraphQLID.self)),
         ]
 
         public var snapshot: Snapshot
@@ -4860,8 +5409,8 @@ public final class DeleteScanMutation: GraphQLMutation {
           self.snapshot = snapshot
         }
 
-        public init(id: GraphQLID, createdAt: String, updatedAt: String) {
-          self.init(snapshot: ["__typename": "Encounter", "id": id, "createdAt": createdAt, "updatedAt": updatedAt])
+        public init(id: GraphQLID, createdAt: String, updatedAt: String, providerEncountersId: GraphQLID? = nil) {
+          self.init(snapshot: ["__typename": "Encounter", "id": id, "createdAt": createdAt, "updatedAt": updatedAt, "providerEncountersId": providerEncountersId])
         }
 
         public var __typename: String {
@@ -4897,6 +5446,15 @@ public final class DeleteScanMutation: GraphQLMutation {
           }
           set {
             snapshot.updateValue(newValue, forKey: "updatedAt")
+          }
+        }
+
+        public var providerEncountersId: GraphQLID? {
+          get {
+            return snapshot["providerEncountersId"] as? GraphQLID
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "providerEncountersId")
           }
         }
       }
@@ -5219,7 +5777,7 @@ public final class ListPatientsQuery: GraphQLQuery {
 
 public final class GetProviderQuery: GraphQLQuery {
   public static let operationString =
-    "query GetProvider($id: ID!) {\n  getProvider(id: $id) {\n    __typename\n    id\n    firstName\n    lastName\n    phoneNumber\n    createdAt\n    updatedAt\n  }\n}"
+    "query GetProvider($id: ID!) {\n  getProvider(id: $id) {\n    __typename\n    id\n    firstName\n    lastName\n    phoneNumber\n    encounters {\n      __typename\n      nextToken\n    }\n    createdAt\n    updatedAt\n  }\n}"
 
   public var id: GraphQLID
 
@@ -5266,6 +5824,7 @@ public final class GetProviderQuery: GraphQLQuery {
         GraphQLField("firstName", type: .scalar(String.self)),
         GraphQLField("lastName", type: .scalar(String.self)),
         GraphQLField("phoneNumber", type: .scalar(String.self)),
+        GraphQLField("encounters", type: .object(Encounter.selections)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
       ]
@@ -5276,8 +5835,8 @@ public final class GetProviderQuery: GraphQLQuery {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, firstName: String? = nil, lastName: String? = nil, phoneNumber: String? = nil, createdAt: String, updatedAt: String) {
-        self.init(snapshot: ["__typename": "Provider", "id": id, "firstName": firstName, "lastName": lastName, "phoneNumber": phoneNumber, "createdAt": createdAt, "updatedAt": updatedAt])
+      public init(id: GraphQLID, firstName: String? = nil, lastName: String? = nil, phoneNumber: String? = nil, encounters: Encounter? = nil, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "Provider", "id": id, "firstName": firstName, "lastName": lastName, "phoneNumber": phoneNumber, "encounters": encounters.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt])
       }
 
       public var __typename: String {
@@ -5325,6 +5884,15 @@ public final class GetProviderQuery: GraphQLQuery {
         }
       }
 
+      public var encounters: Encounter? {
+        get {
+          return (snapshot["encounters"] as? Snapshot).flatMap { Encounter(snapshot: $0) }
+        }
+        set {
+          snapshot.updateValue(newValue?.snapshot, forKey: "encounters")
+        }
+      }
+
       public var createdAt: String {
         get {
           return snapshot["createdAt"]! as! String
@@ -5340,6 +5908,43 @@ public final class GetProviderQuery: GraphQLQuery {
         }
         set {
           snapshot.updateValue(newValue, forKey: "updatedAt")
+        }
+      }
+
+      public struct Encounter: GraphQLSelectionSet {
+        public static let possibleTypes = ["ModelEncounterConnection"]
+
+        public static let selections: [GraphQLSelection] = [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("nextToken", type: .scalar(String.self)),
+        ]
+
+        public var snapshot: Snapshot
+
+        public init(snapshot: Snapshot) {
+          self.snapshot = snapshot
+        }
+
+        public init(nextToken: String? = nil) {
+          self.init(snapshot: ["__typename": "ModelEncounterConnection", "nextToken": nextToken])
+        }
+
+        public var __typename: String {
+          get {
+            return snapshot["__typename"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var nextToken: String? {
+          get {
+            return snapshot["nextToken"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "nextToken")
+          }
         }
       }
     }
@@ -5532,7 +6137,7 @@ public final class ListProvidersQuery: GraphQLQuery {
 
 public final class GetEncounterQuery: GraphQLQuery {
   public static let operationString =
-    "query GetEncounter($id: ID!) {\n  getEncounter(id: $id) {\n    __typename\n    id\n    scans {\n      __typename\n      nextToken\n    }\n    vaccines {\n      __typename\n      nextToken\n    }\n    createdAt\n    updatedAt\n  }\n}"
+    "query GetEncounter($id: ID!) {\n  getEncounter(id: $id) {\n    __typename\n    id\n    scans {\n      __typename\n      nextToken\n    }\n    vaccines {\n      __typename\n      nextToken\n    }\n    provider {\n      __typename\n      id\n      firstName\n      lastName\n      phoneNumber\n      createdAt\n      updatedAt\n    }\n    createdAt\n    updatedAt\n    providerEncountersId\n  }\n}"
 
   public var id: GraphQLID
 
@@ -5578,8 +6183,10 @@ public final class GetEncounterQuery: GraphQLQuery {
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("scans", type: .object(Scan.selections)),
         GraphQLField("vaccines", type: .object(Vaccine.selections)),
+        GraphQLField("provider", type: .object(Provider.selections)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+        GraphQLField("providerEncountersId", type: .scalar(GraphQLID.self)),
       ]
 
       public var snapshot: Snapshot
@@ -5588,8 +6195,8 @@ public final class GetEncounterQuery: GraphQLQuery {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, scans: Scan? = nil, vaccines: Vaccine? = nil, createdAt: String, updatedAt: String) {
-        self.init(snapshot: ["__typename": "Encounter", "id": id, "scans": scans.flatMap { $0.snapshot }, "vaccines": vaccines.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt])
+      public init(id: GraphQLID, scans: Scan? = nil, vaccines: Vaccine? = nil, provider: Provider? = nil, createdAt: String, updatedAt: String, providerEncountersId: GraphQLID? = nil) {
+        self.init(snapshot: ["__typename": "Encounter", "id": id, "scans": scans.flatMap { $0.snapshot }, "vaccines": vaccines.flatMap { $0.snapshot }, "provider": provider.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt, "providerEncountersId": providerEncountersId])
       }
 
       public var __typename: String {
@@ -5628,6 +6235,15 @@ public final class GetEncounterQuery: GraphQLQuery {
         }
       }
 
+      public var provider: Provider? {
+        get {
+          return (snapshot["provider"] as? Snapshot).flatMap { Provider(snapshot: $0) }
+        }
+        set {
+          snapshot.updateValue(newValue?.snapshot, forKey: "provider")
+        }
+      }
+
       public var createdAt: String {
         get {
           return snapshot["createdAt"]! as! String
@@ -5643,6 +6259,15 @@ public final class GetEncounterQuery: GraphQLQuery {
         }
         set {
           snapshot.updateValue(newValue, forKey: "updatedAt")
+        }
+      }
+
+      public var providerEncountersId: GraphQLID? {
+        get {
+          return snapshot["providerEncountersId"] as? GraphQLID
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "providerEncountersId")
         }
       }
 
@@ -5719,13 +6344,100 @@ public final class GetEncounterQuery: GraphQLQuery {
           }
         }
       }
+
+      public struct Provider: GraphQLSelectionSet {
+        public static let possibleTypes = ["Provider"]
+
+        public static let selections: [GraphQLSelection] = [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+          GraphQLField("firstName", type: .scalar(String.self)),
+          GraphQLField("lastName", type: .scalar(String.self)),
+          GraphQLField("phoneNumber", type: .scalar(String.self)),
+          GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
+          GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+        ]
+
+        public var snapshot: Snapshot
+
+        public init(snapshot: Snapshot) {
+          self.snapshot = snapshot
+        }
+
+        public init(id: GraphQLID, firstName: String? = nil, lastName: String? = nil, phoneNumber: String? = nil, createdAt: String, updatedAt: String) {
+          self.init(snapshot: ["__typename": "Provider", "id": id, "firstName": firstName, "lastName": lastName, "phoneNumber": phoneNumber, "createdAt": createdAt, "updatedAt": updatedAt])
+        }
+
+        public var __typename: String {
+          get {
+            return snapshot["__typename"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: GraphQLID {
+          get {
+            return snapshot["id"]! as! GraphQLID
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        public var firstName: String? {
+          get {
+            return snapshot["firstName"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "firstName")
+          }
+        }
+
+        public var lastName: String? {
+          get {
+            return snapshot["lastName"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "lastName")
+          }
+        }
+
+        public var phoneNumber: String? {
+          get {
+            return snapshot["phoneNumber"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "phoneNumber")
+          }
+        }
+
+        public var createdAt: String {
+          get {
+            return snapshot["createdAt"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "createdAt")
+          }
+        }
+
+        public var updatedAt: String {
+          get {
+            return snapshot["updatedAt"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "updatedAt")
+          }
+        }
+      }
     }
   }
 }
 
 public final class ListEncountersQuery: GraphQLQuery {
   public static let operationString =
-    "query ListEncounters($id: ID, $filter: ModelEncounterFilterInput, $limit: Int, $nextToken: String, $sortDirection: ModelSortDirection) {\n  listEncounters(\n    id: $id\n    filter: $filter\n    limit: $limit\n    nextToken: $nextToken\n    sortDirection: $sortDirection\n  ) {\n    __typename\n    items {\n      __typename\n      id\n      createdAt\n      updatedAt\n    }\n    nextToken\n  }\n}"
+    "query ListEncounters($id: ID, $filter: ModelEncounterFilterInput, $limit: Int, $nextToken: String, $sortDirection: ModelSortDirection) {\n  listEncounters(\n    id: $id\n    filter: $filter\n    limit: $limit\n    nextToken: $nextToken\n    sortDirection: $sortDirection\n  ) {\n    __typename\n    items {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    nextToken\n  }\n}"
 
   public var id: GraphQLID?
   public var filter: ModelEncounterFilterInput?
@@ -5825,6 +6537,7 @@ public final class ListEncountersQuery: GraphQLQuery {
           GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
           GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
           GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+          GraphQLField("providerEncountersId", type: .scalar(GraphQLID.self)),
         ]
 
         public var snapshot: Snapshot
@@ -5833,8 +6546,8 @@ public final class ListEncountersQuery: GraphQLQuery {
           self.snapshot = snapshot
         }
 
-        public init(id: GraphQLID, createdAt: String, updatedAt: String) {
-          self.init(snapshot: ["__typename": "Encounter", "id": id, "createdAt": createdAt, "updatedAt": updatedAt])
+        public init(id: GraphQLID, createdAt: String, updatedAt: String, providerEncountersId: GraphQLID? = nil) {
+          self.init(snapshot: ["__typename": "Encounter", "id": id, "createdAt": createdAt, "updatedAt": updatedAt, "providerEncountersId": providerEncountersId])
         }
 
         public var __typename: String {
@@ -5872,6 +6585,15 @@ public final class ListEncountersQuery: GraphQLQuery {
             snapshot.updateValue(newValue, forKey: "updatedAt")
           }
         }
+
+        public var providerEncountersId: GraphQLID? {
+          get {
+            return snapshot["providerEncountersId"] as? GraphQLID
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "providerEncountersId")
+          }
+        }
       }
     }
   }
@@ -5879,7 +6601,7 @@ public final class ListEncountersQuery: GraphQLQuery {
 
 public final class GetVaccineQuery: GraphQLQuery {
   public static let operationString =
-    "query GetVaccine($id: ID!) {\n  getVaccine(id: $id) {\n    __typename\n    id\n    lotNumber\n    expirationDate\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n    }\n    createdAt\n    updatedAt\n    encounterVaccinesId\n  }\n}"
+    "query GetVaccine($id: ID!) {\n  getVaccine(id: $id) {\n    __typename\n    id\n    lotNumber\n    expirationDate\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterVaccinesId\n  }\n}"
 
   public var id: GraphQLID
 
@@ -6021,6 +6743,7 @@ public final class GetVaccineQuery: GraphQLQuery {
           GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
           GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
           GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+          GraphQLField("providerEncountersId", type: .scalar(GraphQLID.self)),
         ]
 
         public var snapshot: Snapshot
@@ -6029,8 +6752,8 @@ public final class GetVaccineQuery: GraphQLQuery {
           self.snapshot = snapshot
         }
 
-        public init(id: GraphQLID, createdAt: String, updatedAt: String) {
-          self.init(snapshot: ["__typename": "Encounter", "id": id, "createdAt": createdAt, "updatedAt": updatedAt])
+        public init(id: GraphQLID, createdAt: String, updatedAt: String, providerEncountersId: GraphQLID? = nil) {
+          self.init(snapshot: ["__typename": "Encounter", "id": id, "createdAt": createdAt, "updatedAt": updatedAt, "providerEncountersId": providerEncountersId])
         }
 
         public var __typename: String {
@@ -6066,6 +6789,15 @@ public final class GetVaccineQuery: GraphQLQuery {
           }
           set {
             snapshot.updateValue(newValue, forKey: "updatedAt")
+          }
+        }
+
+        public var providerEncountersId: GraphQLID? {
+          get {
+            return snapshot["providerEncountersId"] as? GraphQLID
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "providerEncountersId")
           }
         }
       }
@@ -6259,7 +6991,7 @@ public final class ListVaccinesQuery: GraphQLQuery {
 
 public final class GetScanQuery: GraphQLQuery {
   public static let operationString =
-    "query GetScan($id: ID!) {\n  getScan(id: $id) {\n    __typename\n    id\n    fileName\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n    }\n    createdAt\n    updatedAt\n    encounterScansId\n  }\n}"
+    "query GetScan($id: ID!) {\n  getScan(id: $id) {\n    __typename\n    id\n    fileName\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterScansId\n  }\n}"
 
   public var id: GraphQLID
 
@@ -6391,6 +7123,7 @@ public final class GetScanQuery: GraphQLQuery {
           GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
           GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
           GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+          GraphQLField("providerEncountersId", type: .scalar(GraphQLID.self)),
         ]
 
         public var snapshot: Snapshot
@@ -6399,8 +7132,8 @@ public final class GetScanQuery: GraphQLQuery {
           self.snapshot = snapshot
         }
 
-        public init(id: GraphQLID, createdAt: String, updatedAt: String) {
-          self.init(snapshot: ["__typename": "Encounter", "id": id, "createdAt": createdAt, "updatedAt": updatedAt])
+        public init(id: GraphQLID, createdAt: String, updatedAt: String, providerEncountersId: GraphQLID? = nil) {
+          self.init(snapshot: ["__typename": "Encounter", "id": id, "createdAt": createdAt, "updatedAt": updatedAt, "providerEncountersId": providerEncountersId])
         }
 
         public var __typename: String {
@@ -6436,6 +7169,15 @@ public final class GetScanQuery: GraphQLQuery {
           }
           set {
             snapshot.updateValue(newValue, forKey: "updatedAt")
+          }
+        }
+
+        public var providerEncountersId: GraphQLID? {
+          get {
+            return snapshot["providerEncountersId"] as? GraphQLID
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "providerEncountersId")
           }
         }
       }
@@ -7006,7 +7748,7 @@ public final class OnDeletePatientSubscription: GraphQLSubscription {
 
 public final class OnCreateProviderSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnCreateProvider($filter: ModelSubscriptionProviderFilterInput) {\n  onCreateProvider(filter: $filter) {\n    __typename\n    id\n    firstName\n    lastName\n    phoneNumber\n    createdAt\n    updatedAt\n  }\n}"
+    "subscription OnCreateProvider($filter: ModelSubscriptionProviderFilterInput) {\n  onCreateProvider(filter: $filter) {\n    __typename\n    id\n    firstName\n    lastName\n    phoneNumber\n    encounters {\n      __typename\n      nextToken\n    }\n    createdAt\n    updatedAt\n  }\n}"
 
   public var filter: ModelSubscriptionProviderFilterInput?
 
@@ -7053,6 +7795,7 @@ public final class OnCreateProviderSubscription: GraphQLSubscription {
         GraphQLField("firstName", type: .scalar(String.self)),
         GraphQLField("lastName", type: .scalar(String.self)),
         GraphQLField("phoneNumber", type: .scalar(String.self)),
+        GraphQLField("encounters", type: .object(Encounter.selections)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
       ]
@@ -7063,8 +7806,8 @@ public final class OnCreateProviderSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, firstName: String? = nil, lastName: String? = nil, phoneNumber: String? = nil, createdAt: String, updatedAt: String) {
-        self.init(snapshot: ["__typename": "Provider", "id": id, "firstName": firstName, "lastName": lastName, "phoneNumber": phoneNumber, "createdAt": createdAt, "updatedAt": updatedAt])
+      public init(id: GraphQLID, firstName: String? = nil, lastName: String? = nil, phoneNumber: String? = nil, encounters: Encounter? = nil, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "Provider", "id": id, "firstName": firstName, "lastName": lastName, "phoneNumber": phoneNumber, "encounters": encounters.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt])
       }
 
       public var __typename: String {
@@ -7112,6 +7855,15 @@ public final class OnCreateProviderSubscription: GraphQLSubscription {
         }
       }
 
+      public var encounters: Encounter? {
+        get {
+          return (snapshot["encounters"] as? Snapshot).flatMap { Encounter(snapshot: $0) }
+        }
+        set {
+          snapshot.updateValue(newValue?.snapshot, forKey: "encounters")
+        }
+      }
+
       public var createdAt: String {
         get {
           return snapshot["createdAt"]! as! String
@@ -7129,13 +7881,50 @@ public final class OnCreateProviderSubscription: GraphQLSubscription {
           snapshot.updateValue(newValue, forKey: "updatedAt")
         }
       }
+
+      public struct Encounter: GraphQLSelectionSet {
+        public static let possibleTypes = ["ModelEncounterConnection"]
+
+        public static let selections: [GraphQLSelection] = [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("nextToken", type: .scalar(String.self)),
+        ]
+
+        public var snapshot: Snapshot
+
+        public init(snapshot: Snapshot) {
+          self.snapshot = snapshot
+        }
+
+        public init(nextToken: String? = nil) {
+          self.init(snapshot: ["__typename": "ModelEncounterConnection", "nextToken": nextToken])
+        }
+
+        public var __typename: String {
+          get {
+            return snapshot["__typename"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var nextToken: String? {
+          get {
+            return snapshot["nextToken"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "nextToken")
+          }
+        }
+      }
     }
   }
 }
 
 public final class OnUpdateProviderSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnUpdateProvider($filter: ModelSubscriptionProviderFilterInput) {\n  onUpdateProvider(filter: $filter) {\n    __typename\n    id\n    firstName\n    lastName\n    phoneNumber\n    createdAt\n    updatedAt\n  }\n}"
+    "subscription OnUpdateProvider($filter: ModelSubscriptionProviderFilterInput) {\n  onUpdateProvider(filter: $filter) {\n    __typename\n    id\n    firstName\n    lastName\n    phoneNumber\n    encounters {\n      __typename\n      nextToken\n    }\n    createdAt\n    updatedAt\n  }\n}"
 
   public var filter: ModelSubscriptionProviderFilterInput?
 
@@ -7182,6 +7971,7 @@ public final class OnUpdateProviderSubscription: GraphQLSubscription {
         GraphQLField("firstName", type: .scalar(String.self)),
         GraphQLField("lastName", type: .scalar(String.self)),
         GraphQLField("phoneNumber", type: .scalar(String.self)),
+        GraphQLField("encounters", type: .object(Encounter.selections)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
       ]
@@ -7192,8 +7982,8 @@ public final class OnUpdateProviderSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, firstName: String? = nil, lastName: String? = nil, phoneNumber: String? = nil, createdAt: String, updatedAt: String) {
-        self.init(snapshot: ["__typename": "Provider", "id": id, "firstName": firstName, "lastName": lastName, "phoneNumber": phoneNumber, "createdAt": createdAt, "updatedAt": updatedAt])
+      public init(id: GraphQLID, firstName: String? = nil, lastName: String? = nil, phoneNumber: String? = nil, encounters: Encounter? = nil, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "Provider", "id": id, "firstName": firstName, "lastName": lastName, "phoneNumber": phoneNumber, "encounters": encounters.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt])
       }
 
       public var __typename: String {
@@ -7241,6 +8031,15 @@ public final class OnUpdateProviderSubscription: GraphQLSubscription {
         }
       }
 
+      public var encounters: Encounter? {
+        get {
+          return (snapshot["encounters"] as? Snapshot).flatMap { Encounter(snapshot: $0) }
+        }
+        set {
+          snapshot.updateValue(newValue?.snapshot, forKey: "encounters")
+        }
+      }
+
       public var createdAt: String {
         get {
           return snapshot["createdAt"]! as! String
@@ -7258,13 +8057,50 @@ public final class OnUpdateProviderSubscription: GraphQLSubscription {
           snapshot.updateValue(newValue, forKey: "updatedAt")
         }
       }
+
+      public struct Encounter: GraphQLSelectionSet {
+        public static let possibleTypes = ["ModelEncounterConnection"]
+
+        public static let selections: [GraphQLSelection] = [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("nextToken", type: .scalar(String.self)),
+        ]
+
+        public var snapshot: Snapshot
+
+        public init(snapshot: Snapshot) {
+          self.snapshot = snapshot
+        }
+
+        public init(nextToken: String? = nil) {
+          self.init(snapshot: ["__typename": "ModelEncounterConnection", "nextToken": nextToken])
+        }
+
+        public var __typename: String {
+          get {
+            return snapshot["__typename"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var nextToken: String? {
+          get {
+            return snapshot["nextToken"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "nextToken")
+          }
+        }
+      }
     }
   }
 }
 
 public final class OnDeleteProviderSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnDeleteProvider($filter: ModelSubscriptionProviderFilterInput) {\n  onDeleteProvider(filter: $filter) {\n    __typename\n    id\n    firstName\n    lastName\n    phoneNumber\n    createdAt\n    updatedAt\n  }\n}"
+    "subscription OnDeleteProvider($filter: ModelSubscriptionProviderFilterInput) {\n  onDeleteProvider(filter: $filter) {\n    __typename\n    id\n    firstName\n    lastName\n    phoneNumber\n    encounters {\n      __typename\n      nextToken\n    }\n    createdAt\n    updatedAt\n  }\n}"
 
   public var filter: ModelSubscriptionProviderFilterInput?
 
@@ -7311,6 +8147,7 @@ public final class OnDeleteProviderSubscription: GraphQLSubscription {
         GraphQLField("firstName", type: .scalar(String.self)),
         GraphQLField("lastName", type: .scalar(String.self)),
         GraphQLField("phoneNumber", type: .scalar(String.self)),
+        GraphQLField("encounters", type: .object(Encounter.selections)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
       ]
@@ -7321,8 +8158,8 @@ public final class OnDeleteProviderSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, firstName: String? = nil, lastName: String? = nil, phoneNumber: String? = nil, createdAt: String, updatedAt: String) {
-        self.init(snapshot: ["__typename": "Provider", "id": id, "firstName": firstName, "lastName": lastName, "phoneNumber": phoneNumber, "createdAt": createdAt, "updatedAt": updatedAt])
+      public init(id: GraphQLID, firstName: String? = nil, lastName: String? = nil, phoneNumber: String? = nil, encounters: Encounter? = nil, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "Provider", "id": id, "firstName": firstName, "lastName": lastName, "phoneNumber": phoneNumber, "encounters": encounters.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt])
       }
 
       public var __typename: String {
@@ -7370,6 +8207,15 @@ public final class OnDeleteProviderSubscription: GraphQLSubscription {
         }
       }
 
+      public var encounters: Encounter? {
+        get {
+          return (snapshot["encounters"] as? Snapshot).flatMap { Encounter(snapshot: $0) }
+        }
+        set {
+          snapshot.updateValue(newValue?.snapshot, forKey: "encounters")
+        }
+      }
+
       public var createdAt: String {
         get {
           return snapshot["createdAt"]! as! String
@@ -7387,13 +8233,50 @@ public final class OnDeleteProviderSubscription: GraphQLSubscription {
           snapshot.updateValue(newValue, forKey: "updatedAt")
         }
       }
+
+      public struct Encounter: GraphQLSelectionSet {
+        public static let possibleTypes = ["ModelEncounterConnection"]
+
+        public static let selections: [GraphQLSelection] = [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("nextToken", type: .scalar(String.self)),
+        ]
+
+        public var snapshot: Snapshot
+
+        public init(snapshot: Snapshot) {
+          self.snapshot = snapshot
+        }
+
+        public init(nextToken: String? = nil) {
+          self.init(snapshot: ["__typename": "ModelEncounterConnection", "nextToken": nextToken])
+        }
+
+        public var __typename: String {
+          get {
+            return snapshot["__typename"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var nextToken: String? {
+          get {
+            return snapshot["nextToken"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "nextToken")
+          }
+        }
+      }
     }
   }
 }
 
 public final class OnCreateEncounterSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnCreateEncounter($filter: ModelSubscriptionEncounterFilterInput) {\n  onCreateEncounter(filter: $filter) {\n    __typename\n    id\n    scans {\n      __typename\n      nextToken\n    }\n    vaccines {\n      __typename\n      nextToken\n    }\n    createdAt\n    updatedAt\n  }\n}"
+    "subscription OnCreateEncounter($filter: ModelSubscriptionEncounterFilterInput) {\n  onCreateEncounter(filter: $filter) {\n    __typename\n    id\n    scans {\n      __typename\n      nextToken\n    }\n    vaccines {\n      __typename\n      nextToken\n    }\n    provider {\n      __typename\n      id\n      firstName\n      lastName\n      phoneNumber\n      createdAt\n      updatedAt\n    }\n    createdAt\n    updatedAt\n    providerEncountersId\n  }\n}"
 
   public var filter: ModelSubscriptionEncounterFilterInput?
 
@@ -7439,8 +8322,10 @@ public final class OnCreateEncounterSubscription: GraphQLSubscription {
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("scans", type: .object(Scan.selections)),
         GraphQLField("vaccines", type: .object(Vaccine.selections)),
+        GraphQLField("provider", type: .object(Provider.selections)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+        GraphQLField("providerEncountersId", type: .scalar(GraphQLID.self)),
       ]
 
       public var snapshot: Snapshot
@@ -7449,8 +8334,8 @@ public final class OnCreateEncounterSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, scans: Scan? = nil, vaccines: Vaccine? = nil, createdAt: String, updatedAt: String) {
-        self.init(snapshot: ["__typename": "Encounter", "id": id, "scans": scans.flatMap { $0.snapshot }, "vaccines": vaccines.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt])
+      public init(id: GraphQLID, scans: Scan? = nil, vaccines: Vaccine? = nil, provider: Provider? = nil, createdAt: String, updatedAt: String, providerEncountersId: GraphQLID? = nil) {
+        self.init(snapshot: ["__typename": "Encounter", "id": id, "scans": scans.flatMap { $0.snapshot }, "vaccines": vaccines.flatMap { $0.snapshot }, "provider": provider.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt, "providerEncountersId": providerEncountersId])
       }
 
       public var __typename: String {
@@ -7489,6 +8374,15 @@ public final class OnCreateEncounterSubscription: GraphQLSubscription {
         }
       }
 
+      public var provider: Provider? {
+        get {
+          return (snapshot["provider"] as? Snapshot).flatMap { Provider(snapshot: $0) }
+        }
+        set {
+          snapshot.updateValue(newValue?.snapshot, forKey: "provider")
+        }
+      }
+
       public var createdAt: String {
         get {
           return snapshot["createdAt"]! as! String
@@ -7504,6 +8398,15 @@ public final class OnCreateEncounterSubscription: GraphQLSubscription {
         }
         set {
           snapshot.updateValue(newValue, forKey: "updatedAt")
+        }
+      }
+
+      public var providerEncountersId: GraphQLID? {
+        get {
+          return snapshot["providerEncountersId"] as? GraphQLID
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "providerEncountersId")
         }
       }
 
@@ -7580,13 +8483,100 @@ public final class OnCreateEncounterSubscription: GraphQLSubscription {
           }
         }
       }
+
+      public struct Provider: GraphQLSelectionSet {
+        public static let possibleTypes = ["Provider"]
+
+        public static let selections: [GraphQLSelection] = [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+          GraphQLField("firstName", type: .scalar(String.self)),
+          GraphQLField("lastName", type: .scalar(String.self)),
+          GraphQLField("phoneNumber", type: .scalar(String.self)),
+          GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
+          GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+        ]
+
+        public var snapshot: Snapshot
+
+        public init(snapshot: Snapshot) {
+          self.snapshot = snapshot
+        }
+
+        public init(id: GraphQLID, firstName: String? = nil, lastName: String? = nil, phoneNumber: String? = nil, createdAt: String, updatedAt: String) {
+          self.init(snapshot: ["__typename": "Provider", "id": id, "firstName": firstName, "lastName": lastName, "phoneNumber": phoneNumber, "createdAt": createdAt, "updatedAt": updatedAt])
+        }
+
+        public var __typename: String {
+          get {
+            return snapshot["__typename"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: GraphQLID {
+          get {
+            return snapshot["id"]! as! GraphQLID
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        public var firstName: String? {
+          get {
+            return snapshot["firstName"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "firstName")
+          }
+        }
+
+        public var lastName: String? {
+          get {
+            return snapshot["lastName"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "lastName")
+          }
+        }
+
+        public var phoneNumber: String? {
+          get {
+            return snapshot["phoneNumber"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "phoneNumber")
+          }
+        }
+
+        public var createdAt: String {
+          get {
+            return snapshot["createdAt"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "createdAt")
+          }
+        }
+
+        public var updatedAt: String {
+          get {
+            return snapshot["updatedAt"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "updatedAt")
+          }
+        }
+      }
     }
   }
 }
 
 public final class OnUpdateEncounterSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnUpdateEncounter($filter: ModelSubscriptionEncounterFilterInput) {\n  onUpdateEncounter(filter: $filter) {\n    __typename\n    id\n    scans {\n      __typename\n      nextToken\n    }\n    vaccines {\n      __typename\n      nextToken\n    }\n    createdAt\n    updatedAt\n  }\n}"
+    "subscription OnUpdateEncounter($filter: ModelSubscriptionEncounterFilterInput) {\n  onUpdateEncounter(filter: $filter) {\n    __typename\n    id\n    scans {\n      __typename\n      nextToken\n    }\n    vaccines {\n      __typename\n      nextToken\n    }\n    provider {\n      __typename\n      id\n      firstName\n      lastName\n      phoneNumber\n      createdAt\n      updatedAt\n    }\n    createdAt\n    updatedAt\n    providerEncountersId\n  }\n}"
 
   public var filter: ModelSubscriptionEncounterFilterInput?
 
@@ -7632,8 +8622,10 @@ public final class OnUpdateEncounterSubscription: GraphQLSubscription {
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("scans", type: .object(Scan.selections)),
         GraphQLField("vaccines", type: .object(Vaccine.selections)),
+        GraphQLField("provider", type: .object(Provider.selections)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+        GraphQLField("providerEncountersId", type: .scalar(GraphQLID.self)),
       ]
 
       public var snapshot: Snapshot
@@ -7642,8 +8634,8 @@ public final class OnUpdateEncounterSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, scans: Scan? = nil, vaccines: Vaccine? = nil, createdAt: String, updatedAt: String) {
-        self.init(snapshot: ["__typename": "Encounter", "id": id, "scans": scans.flatMap { $0.snapshot }, "vaccines": vaccines.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt])
+      public init(id: GraphQLID, scans: Scan? = nil, vaccines: Vaccine? = nil, provider: Provider? = nil, createdAt: String, updatedAt: String, providerEncountersId: GraphQLID? = nil) {
+        self.init(snapshot: ["__typename": "Encounter", "id": id, "scans": scans.flatMap { $0.snapshot }, "vaccines": vaccines.flatMap { $0.snapshot }, "provider": provider.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt, "providerEncountersId": providerEncountersId])
       }
 
       public var __typename: String {
@@ -7682,6 +8674,15 @@ public final class OnUpdateEncounterSubscription: GraphQLSubscription {
         }
       }
 
+      public var provider: Provider? {
+        get {
+          return (snapshot["provider"] as? Snapshot).flatMap { Provider(snapshot: $0) }
+        }
+        set {
+          snapshot.updateValue(newValue?.snapshot, forKey: "provider")
+        }
+      }
+
       public var createdAt: String {
         get {
           return snapshot["createdAt"]! as! String
@@ -7697,6 +8698,15 @@ public final class OnUpdateEncounterSubscription: GraphQLSubscription {
         }
         set {
           snapshot.updateValue(newValue, forKey: "updatedAt")
+        }
+      }
+
+      public var providerEncountersId: GraphQLID? {
+        get {
+          return snapshot["providerEncountersId"] as? GraphQLID
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "providerEncountersId")
         }
       }
 
@@ -7773,13 +8783,100 @@ public final class OnUpdateEncounterSubscription: GraphQLSubscription {
           }
         }
       }
+
+      public struct Provider: GraphQLSelectionSet {
+        public static let possibleTypes = ["Provider"]
+
+        public static let selections: [GraphQLSelection] = [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+          GraphQLField("firstName", type: .scalar(String.self)),
+          GraphQLField("lastName", type: .scalar(String.self)),
+          GraphQLField("phoneNumber", type: .scalar(String.self)),
+          GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
+          GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+        ]
+
+        public var snapshot: Snapshot
+
+        public init(snapshot: Snapshot) {
+          self.snapshot = snapshot
+        }
+
+        public init(id: GraphQLID, firstName: String? = nil, lastName: String? = nil, phoneNumber: String? = nil, createdAt: String, updatedAt: String) {
+          self.init(snapshot: ["__typename": "Provider", "id": id, "firstName": firstName, "lastName": lastName, "phoneNumber": phoneNumber, "createdAt": createdAt, "updatedAt": updatedAt])
+        }
+
+        public var __typename: String {
+          get {
+            return snapshot["__typename"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: GraphQLID {
+          get {
+            return snapshot["id"]! as! GraphQLID
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        public var firstName: String? {
+          get {
+            return snapshot["firstName"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "firstName")
+          }
+        }
+
+        public var lastName: String? {
+          get {
+            return snapshot["lastName"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "lastName")
+          }
+        }
+
+        public var phoneNumber: String? {
+          get {
+            return snapshot["phoneNumber"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "phoneNumber")
+          }
+        }
+
+        public var createdAt: String {
+          get {
+            return snapshot["createdAt"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "createdAt")
+          }
+        }
+
+        public var updatedAt: String {
+          get {
+            return snapshot["updatedAt"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "updatedAt")
+          }
+        }
+      }
     }
   }
 }
 
 public final class OnDeleteEncounterSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnDeleteEncounter($filter: ModelSubscriptionEncounterFilterInput) {\n  onDeleteEncounter(filter: $filter) {\n    __typename\n    id\n    scans {\n      __typename\n      nextToken\n    }\n    vaccines {\n      __typename\n      nextToken\n    }\n    createdAt\n    updatedAt\n  }\n}"
+    "subscription OnDeleteEncounter($filter: ModelSubscriptionEncounterFilterInput) {\n  onDeleteEncounter(filter: $filter) {\n    __typename\n    id\n    scans {\n      __typename\n      nextToken\n    }\n    vaccines {\n      __typename\n      nextToken\n    }\n    provider {\n      __typename\n      id\n      firstName\n      lastName\n      phoneNumber\n      createdAt\n      updatedAt\n    }\n    createdAt\n    updatedAt\n    providerEncountersId\n  }\n}"
 
   public var filter: ModelSubscriptionEncounterFilterInput?
 
@@ -7825,8 +8922,10 @@ public final class OnDeleteEncounterSubscription: GraphQLSubscription {
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("scans", type: .object(Scan.selections)),
         GraphQLField("vaccines", type: .object(Vaccine.selections)),
+        GraphQLField("provider", type: .object(Provider.selections)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+        GraphQLField("providerEncountersId", type: .scalar(GraphQLID.self)),
       ]
 
       public var snapshot: Snapshot
@@ -7835,8 +8934,8 @@ public final class OnDeleteEncounterSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, scans: Scan? = nil, vaccines: Vaccine? = nil, createdAt: String, updatedAt: String) {
-        self.init(snapshot: ["__typename": "Encounter", "id": id, "scans": scans.flatMap { $0.snapshot }, "vaccines": vaccines.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt])
+      public init(id: GraphQLID, scans: Scan? = nil, vaccines: Vaccine? = nil, provider: Provider? = nil, createdAt: String, updatedAt: String, providerEncountersId: GraphQLID? = nil) {
+        self.init(snapshot: ["__typename": "Encounter", "id": id, "scans": scans.flatMap { $0.snapshot }, "vaccines": vaccines.flatMap { $0.snapshot }, "provider": provider.flatMap { $0.snapshot }, "createdAt": createdAt, "updatedAt": updatedAt, "providerEncountersId": providerEncountersId])
       }
 
       public var __typename: String {
@@ -7875,6 +8974,15 @@ public final class OnDeleteEncounterSubscription: GraphQLSubscription {
         }
       }
 
+      public var provider: Provider? {
+        get {
+          return (snapshot["provider"] as? Snapshot).flatMap { Provider(snapshot: $0) }
+        }
+        set {
+          snapshot.updateValue(newValue?.snapshot, forKey: "provider")
+        }
+      }
+
       public var createdAt: String {
         get {
           return snapshot["createdAt"]! as! String
@@ -7890,6 +8998,15 @@ public final class OnDeleteEncounterSubscription: GraphQLSubscription {
         }
         set {
           snapshot.updateValue(newValue, forKey: "updatedAt")
+        }
+      }
+
+      public var providerEncountersId: GraphQLID? {
+        get {
+          return snapshot["providerEncountersId"] as? GraphQLID
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "providerEncountersId")
         }
       }
 
@@ -7966,13 +9083,100 @@ public final class OnDeleteEncounterSubscription: GraphQLSubscription {
           }
         }
       }
+
+      public struct Provider: GraphQLSelectionSet {
+        public static let possibleTypes = ["Provider"]
+
+        public static let selections: [GraphQLSelection] = [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+          GraphQLField("firstName", type: .scalar(String.self)),
+          GraphQLField("lastName", type: .scalar(String.self)),
+          GraphQLField("phoneNumber", type: .scalar(String.self)),
+          GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
+          GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+        ]
+
+        public var snapshot: Snapshot
+
+        public init(snapshot: Snapshot) {
+          self.snapshot = snapshot
+        }
+
+        public init(id: GraphQLID, firstName: String? = nil, lastName: String? = nil, phoneNumber: String? = nil, createdAt: String, updatedAt: String) {
+          self.init(snapshot: ["__typename": "Provider", "id": id, "firstName": firstName, "lastName": lastName, "phoneNumber": phoneNumber, "createdAt": createdAt, "updatedAt": updatedAt])
+        }
+
+        public var __typename: String {
+          get {
+            return snapshot["__typename"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: GraphQLID {
+          get {
+            return snapshot["id"]! as! GraphQLID
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        public var firstName: String? {
+          get {
+            return snapshot["firstName"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "firstName")
+          }
+        }
+
+        public var lastName: String? {
+          get {
+            return snapshot["lastName"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "lastName")
+          }
+        }
+
+        public var phoneNumber: String? {
+          get {
+            return snapshot["phoneNumber"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "phoneNumber")
+          }
+        }
+
+        public var createdAt: String {
+          get {
+            return snapshot["createdAt"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "createdAt")
+          }
+        }
+
+        public var updatedAt: String {
+          get {
+            return snapshot["updatedAt"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "updatedAt")
+          }
+        }
+      }
     }
   }
 }
 
 public final class OnCreateVaccineSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnCreateVaccine($filter: ModelSubscriptionVaccineFilterInput) {\n  onCreateVaccine(filter: $filter) {\n    __typename\n    id\n    lotNumber\n    expirationDate\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n    }\n    createdAt\n    updatedAt\n    encounterVaccinesId\n  }\n}"
+    "subscription OnCreateVaccine($filter: ModelSubscriptionVaccineFilterInput) {\n  onCreateVaccine(filter: $filter) {\n    __typename\n    id\n    lotNumber\n    expirationDate\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterVaccinesId\n  }\n}"
 
   public var filter: ModelSubscriptionVaccineFilterInput?
 
@@ -8114,6 +9318,7 @@ public final class OnCreateVaccineSubscription: GraphQLSubscription {
           GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
           GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
           GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+          GraphQLField("providerEncountersId", type: .scalar(GraphQLID.self)),
         ]
 
         public var snapshot: Snapshot
@@ -8122,8 +9327,8 @@ public final class OnCreateVaccineSubscription: GraphQLSubscription {
           self.snapshot = snapshot
         }
 
-        public init(id: GraphQLID, createdAt: String, updatedAt: String) {
-          self.init(snapshot: ["__typename": "Encounter", "id": id, "createdAt": createdAt, "updatedAt": updatedAt])
+        public init(id: GraphQLID, createdAt: String, updatedAt: String, providerEncountersId: GraphQLID? = nil) {
+          self.init(snapshot: ["__typename": "Encounter", "id": id, "createdAt": createdAt, "updatedAt": updatedAt, "providerEncountersId": providerEncountersId])
         }
 
         public var __typename: String {
@@ -8161,6 +9366,15 @@ public final class OnCreateVaccineSubscription: GraphQLSubscription {
             snapshot.updateValue(newValue, forKey: "updatedAt")
           }
         }
+
+        public var providerEncountersId: GraphQLID? {
+          get {
+            return snapshot["providerEncountersId"] as? GraphQLID
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "providerEncountersId")
+          }
+        }
       }
     }
   }
@@ -8168,7 +9382,7 @@ public final class OnCreateVaccineSubscription: GraphQLSubscription {
 
 public final class OnUpdateVaccineSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnUpdateVaccine($filter: ModelSubscriptionVaccineFilterInput) {\n  onUpdateVaccine(filter: $filter) {\n    __typename\n    id\n    lotNumber\n    expirationDate\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n    }\n    createdAt\n    updatedAt\n    encounterVaccinesId\n  }\n}"
+    "subscription OnUpdateVaccine($filter: ModelSubscriptionVaccineFilterInput) {\n  onUpdateVaccine(filter: $filter) {\n    __typename\n    id\n    lotNumber\n    expirationDate\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterVaccinesId\n  }\n}"
 
   public var filter: ModelSubscriptionVaccineFilterInput?
 
@@ -8310,6 +9524,7 @@ public final class OnUpdateVaccineSubscription: GraphQLSubscription {
           GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
           GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
           GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+          GraphQLField("providerEncountersId", type: .scalar(GraphQLID.self)),
         ]
 
         public var snapshot: Snapshot
@@ -8318,8 +9533,8 @@ public final class OnUpdateVaccineSubscription: GraphQLSubscription {
           self.snapshot = snapshot
         }
 
-        public init(id: GraphQLID, createdAt: String, updatedAt: String) {
-          self.init(snapshot: ["__typename": "Encounter", "id": id, "createdAt": createdAt, "updatedAt": updatedAt])
+        public init(id: GraphQLID, createdAt: String, updatedAt: String, providerEncountersId: GraphQLID? = nil) {
+          self.init(snapshot: ["__typename": "Encounter", "id": id, "createdAt": createdAt, "updatedAt": updatedAt, "providerEncountersId": providerEncountersId])
         }
 
         public var __typename: String {
@@ -8357,6 +9572,15 @@ public final class OnUpdateVaccineSubscription: GraphQLSubscription {
             snapshot.updateValue(newValue, forKey: "updatedAt")
           }
         }
+
+        public var providerEncountersId: GraphQLID? {
+          get {
+            return snapshot["providerEncountersId"] as? GraphQLID
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "providerEncountersId")
+          }
+        }
       }
     }
   }
@@ -8364,7 +9588,7 @@ public final class OnUpdateVaccineSubscription: GraphQLSubscription {
 
 public final class OnDeleteVaccineSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnDeleteVaccine($filter: ModelSubscriptionVaccineFilterInput) {\n  onDeleteVaccine(filter: $filter) {\n    __typename\n    id\n    lotNumber\n    expirationDate\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n    }\n    createdAt\n    updatedAt\n    encounterVaccinesId\n  }\n}"
+    "subscription OnDeleteVaccine($filter: ModelSubscriptionVaccineFilterInput) {\n  onDeleteVaccine(filter: $filter) {\n    __typename\n    id\n    lotNumber\n    expirationDate\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterVaccinesId\n  }\n}"
 
   public var filter: ModelSubscriptionVaccineFilterInput?
 
@@ -8506,6 +9730,7 @@ public final class OnDeleteVaccineSubscription: GraphQLSubscription {
           GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
           GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
           GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+          GraphQLField("providerEncountersId", type: .scalar(GraphQLID.self)),
         ]
 
         public var snapshot: Snapshot
@@ -8514,8 +9739,8 @@ public final class OnDeleteVaccineSubscription: GraphQLSubscription {
           self.snapshot = snapshot
         }
 
-        public init(id: GraphQLID, createdAt: String, updatedAt: String) {
-          self.init(snapshot: ["__typename": "Encounter", "id": id, "createdAt": createdAt, "updatedAt": updatedAt])
+        public init(id: GraphQLID, createdAt: String, updatedAt: String, providerEncountersId: GraphQLID? = nil) {
+          self.init(snapshot: ["__typename": "Encounter", "id": id, "createdAt": createdAt, "updatedAt": updatedAt, "providerEncountersId": providerEncountersId])
         }
 
         public var __typename: String {
@@ -8553,6 +9778,15 @@ public final class OnDeleteVaccineSubscription: GraphQLSubscription {
             snapshot.updateValue(newValue, forKey: "updatedAt")
           }
         }
+
+        public var providerEncountersId: GraphQLID? {
+          get {
+            return snapshot["providerEncountersId"] as? GraphQLID
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "providerEncountersId")
+          }
+        }
       }
     }
   }
@@ -8560,7 +9794,7 @@ public final class OnDeleteVaccineSubscription: GraphQLSubscription {
 
 public final class OnCreateScanSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnCreateScan($filter: ModelSubscriptionScanFilterInput) {\n  onCreateScan(filter: $filter) {\n    __typename\n    id\n    fileName\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n    }\n    createdAt\n    updatedAt\n    encounterScansId\n  }\n}"
+    "subscription OnCreateScan($filter: ModelSubscriptionScanFilterInput) {\n  onCreateScan(filter: $filter) {\n    __typename\n    id\n    fileName\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterScansId\n  }\n}"
 
   public var filter: ModelSubscriptionScanFilterInput?
 
@@ -8692,6 +9926,7 @@ public final class OnCreateScanSubscription: GraphQLSubscription {
           GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
           GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
           GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+          GraphQLField("providerEncountersId", type: .scalar(GraphQLID.self)),
         ]
 
         public var snapshot: Snapshot
@@ -8700,8 +9935,8 @@ public final class OnCreateScanSubscription: GraphQLSubscription {
           self.snapshot = snapshot
         }
 
-        public init(id: GraphQLID, createdAt: String, updatedAt: String) {
-          self.init(snapshot: ["__typename": "Encounter", "id": id, "createdAt": createdAt, "updatedAt": updatedAt])
+        public init(id: GraphQLID, createdAt: String, updatedAt: String, providerEncountersId: GraphQLID? = nil) {
+          self.init(snapshot: ["__typename": "Encounter", "id": id, "createdAt": createdAt, "updatedAt": updatedAt, "providerEncountersId": providerEncountersId])
         }
 
         public var __typename: String {
@@ -8739,6 +9974,15 @@ public final class OnCreateScanSubscription: GraphQLSubscription {
             snapshot.updateValue(newValue, forKey: "updatedAt")
           }
         }
+
+        public var providerEncountersId: GraphQLID? {
+          get {
+            return snapshot["providerEncountersId"] as? GraphQLID
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "providerEncountersId")
+          }
+        }
       }
     }
   }
@@ -8746,7 +9990,7 @@ public final class OnCreateScanSubscription: GraphQLSubscription {
 
 public final class OnUpdateScanSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnUpdateScan($filter: ModelSubscriptionScanFilterInput) {\n  onUpdateScan(filter: $filter) {\n    __typename\n    id\n    fileName\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n    }\n    createdAt\n    updatedAt\n    encounterScansId\n  }\n}"
+    "subscription OnUpdateScan($filter: ModelSubscriptionScanFilterInput) {\n  onUpdateScan(filter: $filter) {\n    __typename\n    id\n    fileName\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterScansId\n  }\n}"
 
   public var filter: ModelSubscriptionScanFilterInput?
 
@@ -8878,6 +10122,7 @@ public final class OnUpdateScanSubscription: GraphQLSubscription {
           GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
           GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
           GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+          GraphQLField("providerEncountersId", type: .scalar(GraphQLID.self)),
         ]
 
         public var snapshot: Snapshot
@@ -8886,8 +10131,8 @@ public final class OnUpdateScanSubscription: GraphQLSubscription {
           self.snapshot = snapshot
         }
 
-        public init(id: GraphQLID, createdAt: String, updatedAt: String) {
-          self.init(snapshot: ["__typename": "Encounter", "id": id, "createdAt": createdAt, "updatedAt": updatedAt])
+        public init(id: GraphQLID, createdAt: String, updatedAt: String, providerEncountersId: GraphQLID? = nil) {
+          self.init(snapshot: ["__typename": "Encounter", "id": id, "createdAt": createdAt, "updatedAt": updatedAt, "providerEncountersId": providerEncountersId])
         }
 
         public var __typename: String {
@@ -8925,6 +10170,15 @@ public final class OnUpdateScanSubscription: GraphQLSubscription {
             snapshot.updateValue(newValue, forKey: "updatedAt")
           }
         }
+
+        public var providerEncountersId: GraphQLID? {
+          get {
+            return snapshot["providerEncountersId"] as? GraphQLID
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "providerEncountersId")
+          }
+        }
       }
     }
   }
@@ -8932,7 +10186,7 @@ public final class OnUpdateScanSubscription: GraphQLSubscription {
 
 public final class OnDeleteScanSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnDeleteScan($filter: ModelSubscriptionScanFilterInput) {\n  onDeleteScan(filter: $filter) {\n    __typename\n    id\n    fileName\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n    }\n    createdAt\n    updatedAt\n    encounterScansId\n  }\n}"
+    "subscription OnDeleteScan($filter: ModelSubscriptionScanFilterInput) {\n  onDeleteScan(filter: $filter) {\n    __typename\n    id\n    fileName\n    encounter {\n      __typename\n      id\n      createdAt\n      updatedAt\n      providerEncountersId\n    }\n    createdAt\n    updatedAt\n    encounterScansId\n  }\n}"
 
   public var filter: ModelSubscriptionScanFilterInput?
 
@@ -9064,6 +10318,7 @@ public final class OnDeleteScanSubscription: GraphQLSubscription {
           GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
           GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
           GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+          GraphQLField("providerEncountersId", type: .scalar(GraphQLID.self)),
         ]
 
         public var snapshot: Snapshot
@@ -9072,8 +10327,8 @@ public final class OnDeleteScanSubscription: GraphQLSubscription {
           self.snapshot = snapshot
         }
 
-        public init(id: GraphQLID, createdAt: String, updatedAt: String) {
-          self.init(snapshot: ["__typename": "Encounter", "id": id, "createdAt": createdAt, "updatedAt": updatedAt])
+        public init(id: GraphQLID, createdAt: String, updatedAt: String, providerEncountersId: GraphQLID? = nil) {
+          self.init(snapshot: ["__typename": "Encounter", "id": id, "createdAt": createdAt, "updatedAt": updatedAt, "providerEncountersId": providerEncountersId])
         }
 
         public var __typename: String {
@@ -9109,6 +10364,15 @@ public final class OnDeleteScanSubscription: GraphQLSubscription {
           }
           set {
             snapshot.updateValue(newValue, forKey: "updatedAt")
+          }
+        }
+
+        public var providerEncountersId: GraphQLID? {
+          get {
+            return snapshot["providerEncountersId"] as? GraphQLID
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "providerEncountersId")
           }
         }
       }

@@ -46,6 +46,10 @@ query GetProvider($id: ID!) {
     firstName
     lastName
     phoneNumber
+    encounters {
+      nextToken
+      __typename
+    }
     createdAt
     updatedAt
     __typename
@@ -91,8 +95,18 @@ query GetEncounter($id: ID!) {
       nextToken
       __typename
     }
+    provider {
+      id
+      firstName
+      lastName
+      phoneNumber
+      createdAt
+      updatedAt
+      __typename
+    }
     createdAt
     updatedAt
+    providerEncountersId
     __typename
   }
 }
@@ -115,6 +129,7 @@ query ListEncounters(
       id
       createdAt
       updatedAt
+      providerEncountersId
       __typename
     }
     nextToken
@@ -131,6 +146,7 @@ query GetVaccine($id: ID!) {
       id
       createdAt
       updatedAt
+      providerEncountersId
       __typename
     }
     createdAt
@@ -176,6 +192,7 @@ query GetScan($id: ID!) {
       id
       createdAt
       updatedAt
+      providerEncountersId
       __typename
     }
     createdAt

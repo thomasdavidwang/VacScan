@@ -10,12 +10,14 @@ type Provider @model @auth(rules: [{allow: public, operations: [read, create], p
 	firstName: String
 	lastName: String
 	phoneNumber: AWSPhone
+	encounters: [Encounter] @hasMany
 }
 
 type Encounter @model @auth(rules: [{allow: private}]){
 	id: ID! @primaryKey
 	scans: [Scan] @hasMany
 	vaccines: [Vaccine] @hasMany
+	provider: Provider @belongsTo
 }
 
 type Vaccine @model @auth(rules: [{allow: private}]) {
@@ -30,4 +32,6 @@ type Scan @model @auth(rules: [{allow: private}]) {
 	fileName: String
 	encounter: Encounter @belongsTo
 }
+
+
 

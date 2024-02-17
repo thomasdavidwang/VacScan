@@ -34,11 +34,11 @@
           "s3Key": "amplify-builds/vacscan8e15f32b8e15f32bPreSignup-6c726c43706957414444-build.zip"
         }
       },
-      "api": {
-        "vacscan": {}
-      },
       "storage": {
         "s372cb921b": {}
+      },
+      "api": {
+        "vacscan": {}
       }
     }
   }
